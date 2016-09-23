@@ -1,7 +1,7 @@
 # PingPing
 Help you find fun guys to do fantastic things
 
-## Git代码部署说明
+## Git代码部署说明(我只是在看看新浪云）
 
 在你应用的git代码目录里，添加一个新的git远程仓库 sae
 $ git remote add sae https://git.sinacloud.com/aipingping
