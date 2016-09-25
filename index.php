@@ -1,6 +1,6 @@
 <?php
 
-define("TOKEN", "aipingping");
+define("TOKEN", "aipingping12345678");
 $wechatObj = new wechatCallbackapiTest();
 $wechatObj->responseMsg();
 
