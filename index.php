@@ -1,44 +1,11 @@
 <?php
 
-//可以修改doulife为自己定义的名称，微信公众平台开启开发模式要用
 define("TOKEN", "aipingping");
 $wechatObj = new wechatCallbackapiTest();
-if (isset($_GET['echostr'])) {
-    $wechatObj->valid();
-}else{
-    $wechatObj->responseMsg();
-}
+$wechatObj->responseMsg();
 
 class wechatCallbackapiTest
 {
-    public function valid()
-    {
-        $echoStr = $_GET["echostr"];
-        if($this->checkSignature()){
-            echo $echoStr;
-            exit;
-        }
-    }
-
-    private function checkSignature()
-    {
-        $signature = $_GET["signature"];
-        $timestamp = $_GET["timestamp"];
-        $nonce = $_GET["nonce"];
-
-        $token = TOKEN;
-        $tmpArr = array($token, $timestamp, $nonce);
-        sort($tmpArr);
-        $tmpStr = implode( $tmpArr );
-        $tmpStr = sha1( $tmpStr );
-
-        if( $tmpStr == $signature ){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
     public function responseMsg()
     {
         $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
@@ -57,7 +24,7 @@ class wechatCallbackapiTest
                         <Content><![CDATA[%s]]></Content>
                         <FuncFlag>0</FuncFlag>
                         </xml>";
-            if($keyword == "?" || $keyword == "？")
+            if($keyword == "?")
             {
                 $msgType = "text";
                 $contentStr = date("Y-m-d H:i:s",time());
