@@ -13,3 +13,5 @@ $ git add .
 $ git commit -m 'Init my first app'
 $ git push sae master:1
 ```
+### 提交代码到github
+$ git push
