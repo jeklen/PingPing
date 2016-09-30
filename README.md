@@ -18,3 +18,7 @@ $ git push
 
 ### 目前有的功能
 回复和发送消息一样的文本
+
+### 微信mp.weixin.qq.com账号密码
+- 账号:1103939030@qq.com
+- 密码：aipingping110
