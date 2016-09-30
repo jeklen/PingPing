@@ -15,3 +15,6 @@ $ git push sae master:2
 ```
 ### 提交代码到github
 $ git push
+
+### 目前有的功能
+回复和发送消息一样的文本
