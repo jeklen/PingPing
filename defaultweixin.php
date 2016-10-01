@@ -44,6 +44,7 @@ class DefaultWeixin extends wxmessage {
                 //when user pressed button
             case "PUBLISH":
                 $this->click($data);
+                $this->fulinews();
                 break;
             //case "JOIN":
             }
@@ -71,7 +72,7 @@ class DefaultWeixin extends wxmessage {
                 'title' => '拼好活动',
                 'discription' => '现在发布吧',
                 'picurl' => 'https://raw.githubusercontent.com/ZhangQiaolun/PingPing/master/pic/party.jpg',
-                'url' => 'http://lovepingping.applinzi.com/reserve.php?user='  .$data->FromUserName,
+                'url' => 'http://lovepingping.applinzi.com/publish.php?user='  .$data->FromUserName,
             )
         );
         $this->outputNews($post);
