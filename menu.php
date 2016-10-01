@@ -7,9 +7,9 @@ $ACCESS_TOKEN=$ret['access_token'];
 $menuPostData='{
   				 "button":[
 					 {	
-						  "type":"click",
-						  "name":"发布活动",
-						  "key":"PUBLISH"
+						  "type":"view",
+						  "name":"点菜",
+                          "url":"http://lovepingping.applinzi.com/publish.php"
 					  },
 					  {
 						   "type":"click",
