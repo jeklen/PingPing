@@ -43,9 +43,7 @@ class DefaultWeixin extends wxmessage {
             switch ($data->Event) {
                 //when user pressed button
             case "CLICK":
-                $this->fulinews();
                 $this->click($data);
-                $this->fulinews();
                 break;
             //case "JOIN":
             }
