@@ -8,26 +8,26 @@ $menuPostData='{
   				 "button":[
 					 {	
 						  "type":"click",
-						  "name":"今日歌曲",
-						  "key":"V1001_TODAY_MUSIC"
+						  "name":"发布活动",
+						  "key":"PUBLISH"
 					  },
 					  {
 						   "type":"click",
-						   "name":"歌手简介",
-						   "key":"V1001_TODAY_SINGER"
+						   "name":"参与活动",
+						   "key":"JOIN"
 					  },
 					  {
 						   "name":"菜单",
 						   "sub_button":[
 							{
 							   "type":"click",
-							   "name":"hello word",
-							   "key":"V1001_HELLO_WORLD"
+							   "name":"我",
+							   "key":"ME"
 							},
 							{
 							   "type":"click",
 							   "name":"赞一下我们",
-							   "key":"V1001_GOOD"
+							   "key":"ENCOURAGE"
 							}]
 					   }]
 				 }';
@@ -41,5 +41,5 @@ $create=$wxmenu->createMenu($menuPostData);
 //var_dump($get);
 
 //delete current menu
-$del=$wxmenu->deleteMenu();
-var_dump($del);
+//$del=$wxmenu->deleteMenu();
+//var_dump($del);
