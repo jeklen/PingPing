@@ -71,7 +71,7 @@ class DefaultWeixin extends wxmessage {
                 'title' => '拼好活动',
                 'discription' => '现在发布吧',
                 'picurl' => 'https://raw.githubusercontent.com/ZhangQiaolun/PingPing/master/pic/party.jpg',
-                'url' => 'http://lovepingping.applinzi.com/reserve.php',
+                'url' => 'http://lovepingping.applinzi.com/reserve.php?user='  .$data->FromUserName,
             )
         );
         $this->outputNews($post);
