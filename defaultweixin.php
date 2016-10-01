@@ -40,10 +40,40 @@ class DefaultWeixin extends wxmessage {
         } elseif ($this->isLinkMsg()) {
             $this->fulinews();
         } elseif ($this->isEventMsg()) {
+            switch ($data->Event) {
+                //when user pressed button
+            case "PUBLISH":
+                $this->click($data);
+                break;
+            //case "JOIN":
+            }
             
         } else {
             
         }
+    }
+
+    /**
+     * Event message(button)
+     */
+    private function click($data) {
+        $eventKey = $data->EventKey;
+        switch ($eventKey) {
+        case 'PUBLISH'://处理发布活动
+            $this->gopublish($data);
+            break;
+        }
+    }
+
+    private function gopublish($data) {
+        $post = array(
+            array(
+                'title' => '拼好活动',
+                'discription' => '现在发布吧',
+                'picurl' => 
+                'url':
+            )
+        )
     }
 
    
