@@ -9,7 +9,7 @@ $menuPostData='{
 					 {	
 						  "type":"view",
 						  "name":"发布活动",
-                          "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx42dbf69f8939e9a8&redict_uri=http://lovepingping.applinzi.com/publish.php&response_type=code&scope=$snsapi_base&state=1"
+                          "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx42dbf69f8939e9a8&redict_uri=www.lovepingping.applinzi.com/publish.php&response_type=code&scope=$snsapi_base&state=1"
 					  },
 					  {
 						   "type":"click",
