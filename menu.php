@@ -41,5 +41,5 @@ $create=$wxmenu->createMenu($menuPostData);
 //var_dump($get);
 
 //delete current menu
-//$del=$wxmenu->deleteMenu();
-//var_dump($del);
+$del=$wxmenu->deleteMenu();
+var_dump($del);
