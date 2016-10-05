@@ -239,6 +239,17 @@ class wxmessage
         }    
         exit(0);
     }
+    /**
+     *获取用户access_token
+     *@param type $code 授权时获得code值
+     *@return type
+     */
+    public static function getAuthToken($code) {
+        $url = self::API_URL.'/sns/oauth2/access_token?appid='.APPID.'$secret='.APPSECRET.'$code='.$code.'$grant_type=authorization_code';
+        $content = curl_get($url);
+        $ret = json_decode($content, true);
+        return $ret;
+    }
 }
 
 /**
@@ -276,6 +287,8 @@ class wxcommon{
   * get the Token��
   *@return {"access_token":"ACCESS_TOKEN","expires_in":7200} or false
   */
+  const API_URL = 'http://api.weixin.qq.com';
+
   public static function getToken(){
   $url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".APPID."&secret=".APPSECRET;
   $content=file_get_contents($url);

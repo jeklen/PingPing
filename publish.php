@@ -1,3 +1,10 @@
+<?php
+require 'weixin.class.php';
+
+$token = weixin::getAuthToken($_GET['code']);
+$openid = $token['openid'];
+echo $openid;
+?>
 <html>
 <body>
 

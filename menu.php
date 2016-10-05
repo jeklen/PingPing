@@ -8,8 +8,8 @@ $menuPostData='{
   				 "button":[
 					 {	
 						  "type":"view",
-						  "name":"点菜",
-                          "url":"http://lovepingping.applinzi.com/publish.php"
+						  "name":"发布活动",
+                          "url":"https://openweixin.qq.com/connect/oauth2/authorize?appid=APPID&redict_uri=http://lovepingping.applinzi.com/publish.php&response_type=code&scope=$snsapi_base&state=a"
 					  },
 					  {
 						   "type":"click",
@@ -17,7 +17,7 @@ $menuPostData='{
 						   "key":"JOIN"
 					  },
 					  {
-						   "name":"菜单",
+						   "name":"更多",
 						   "sub_button":[
 							{
 							   "type":"click",
@@ -41,5 +41,5 @@ $create=$wxmenu->createMenu($menuPostData);
 //var_dump($get);
 
 //delete current menu
-//$del=$wxmenu->deleteMenu();
-//var_dump($del);
+$del=$wxmenu->deleteMenu();
+var_dump($del);
