@@ -1,9 +1,12 @@
 <?php
 require 'weixin.class.php';
 
-$token = wxmessage::getAuthToken($_GET['code']);
-$openid = $token['openid'];
-echo $openid;
+#  $token = wxmessage::getAuthToken($_GET['code']);
+# $openid = $token['openid'];
+# echo $openid;
+$data = $_GET['code'];
+echo $data;
+echo "helloworld";
 ?>
 <html>
 <body>
