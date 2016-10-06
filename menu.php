@@ -2,6 +2,8 @@
 
 require 'weixin.class.php';
 
+$open_url=urlencode('http://lovepingping.applinzi.com/publish.php');
+$redirect_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx42dbf69f8939e9a8&redirect_uri='.$redirect_url.'&response_type=code&scope=snsapi_base&state=1';
 $ret=wxcommon::getToken();
 $ACCESS_TOKEN=$ret['access_token'];
 $menuPostData='{
@@ -9,8 +11,8 @@ $menuPostData='{
 					 {	
 						  "type":"view",
 						  "name":"发布活动",
-                          "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx42dbf69f8939e9a8&redirect_uri=http://lovepingping.applinzi.com/publish.php&response_type=code&scope=snsapi_base&state=1"
-					  },
+                          "url":$redirect_url
+                      },
 					  {
 						   "type":"click",
 						   "name":"参与活动",
