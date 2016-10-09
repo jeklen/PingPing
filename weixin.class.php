@@ -245,7 +245,7 @@ class wxmessage
      *@return type
      */
     public static function getAuthToken($code) {
-        $url = 'http://api.weixin.qq.com/sns/oauth2/access_token?appid='.APPID.'$secret='.APPSECRET.'$code='.$code.'$grant_type=authorization_code';
+        $url = 'http://api.weixin.qq.com/sns/oauth2/access_token?appid='.APPID.'&secret='.APPSECRET.'&code='.$code.'&grant_type=authorization_code';
         $content = curl_get($url);
         $ret = json_decode($content, true);
         return $ret;
