@@ -23,3 +23,6 @@ $ git push
 - 账号:1103939030@qq.com
 - 密码：aipingping110
 ### 分工
+
+### 网站根目录
+lovepingping.applinzi.com
