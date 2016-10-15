@@ -2,12 +2,14 @@
 
 require 'weixin.class.php';
 
+$ret=wxcommon::getToken();
+$ACCESS_TOKEN=$ret['access_token'];
+
 $open_url=urlencode('http://lovepingping.applinzi.com/publish.php');
 $open_urlJoin=urlencode('http://lovepingping.applinzi.com/join.php');
 $redirect_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx42dbf69f8939e9a8&redirect_uri='.$open_url.'&response_type=code&scope=snsapi_base&state=1';
 $redirect_urlJoin= 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx42dbf69f8939e9a8&redirect_uri='.$open_urlJoin.'&response_type=code&scope=snsapi_base&state=1';
-$ret=wxcommon::getToken();
-$ACCESS_TOKEN=$ret['access_token'];
+
 $menuPostData='{
   				 "button":[
 					 {	
