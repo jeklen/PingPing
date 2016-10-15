@@ -26,3 +26,21 @@ $ git push
 
 ### 网站根目录
 lovepingping.applinzi.com
+
+### 代码架构
+#### 文件夹
+pic
+sqlScript
+backlog
+test
+Doc
+#### 微信菜单生成代码
+- menuDelete.php
+删除menu
+
+- menutest.php
+创建menu
+
+#### 微网页
+- publish.php发布活动
+- join.php参加活动
