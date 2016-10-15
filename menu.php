@@ -16,7 +16,7 @@ $menuPostData='{
                           "url":$redirect_url
                       },
                       {
-                            "type":"view"
+                            "type":"view",
                             "name":"参加活动",
                             "url":$redirect_urlJoin
                       },
