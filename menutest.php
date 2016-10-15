@@ -21,7 +21,7 @@ $menuPostData='{
 						   "sub_button":[
 							{
 							   "type":"click",
-							   "name":"我",
+							   "name":"我们",
 							   "key":"ME"
 							},
 							{
