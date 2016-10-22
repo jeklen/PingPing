@@ -1,6 +1,8 @@
 # PingPing
 Help you find fun guys to do fantastic things
 
+#
+http://lovepingping.applinzi.com/join.php
 ## Git代码部署说明
 ### 提交到新浪云
 
