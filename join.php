@@ -11,6 +11,8 @@ echo $openid;
 <?php
  header("Content-Type:text/html;charset=utf-8"); 
 $mysql = new SaeMysql();
+mysql_query("set character set 'utf8'");//读库
+mysql_query("set names 'utf8'");//写库 
 //查询单条数据
 $sql = "select * from activity limit 1";
 $result = $mysql->getLine($sql);
