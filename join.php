@@ -14,16 +14,26 @@ echo $openid;
 $mysql = new SaeMysql();
 mysql_query("set character set 'utf8'");//读库
 mysql_query("set names 'utf8'");//写库 
+$sqlOne = "SELECT activity.*, user.user_name
+	FROM activity, user
+	WHERE activity.id = activity_id_initiate
+	ORDER BY activity_time DESC 
+	LIMIT 1;";
+$result = $mysql->getLine($sqlOne);
+var_dump($result);
+?>
+
+<?php
 //查询单条数据
-$sql = "select * from activity limit 1";
-$result = $mysql->getLine($sql);
+//$sql = "select * from activity limit 1";
+//$result = $mysql->getLine($sql);
 //var_dump($result);
 //发现这个已经是按数组的方式返回的
-echo "<hr>";
+//echo "<hr>";
 //查询多条数据
 $sql = "select * from activity";
 $mut_data = $mysql->getData($sql);
-//var_dump($mut_data);
+var_dump($mut_data);
 //发现这个就是按二维数组输出的了，下面一个foreach输出
 echo "<hr>";
 foreach ($mut_data as $small) {
