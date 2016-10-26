@@ -7,3 +7,7 @@ $token = wxmessage::getAuthToken($_GET['code']);
 $openid = $token['openid'];
 echo $openid;
 ?>
+
+<?php 
+require("configsql.php");
+ ?>
