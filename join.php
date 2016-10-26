@@ -33,7 +33,7 @@ echo $result['activity_describe'].'<br>';
 //查询多条数据
 $sql = "select * from activity";
 $mut_data = $mysql->getData($sql);
-var_dump($mut_data);
+//var_dump($mut_data);
 //发现这个就是按二维数组输出的了，下面一个foreach输出
 echo "<hr>";
 foreach ($mut_data as $small) {
