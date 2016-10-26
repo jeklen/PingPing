@@ -1,4 +1,5 @@
 <?php
+header("Content-Type:text/html;charset=UTF-8");
 header("Content-Type:text/html;charset=utf-8");
 echo "用户名:".SAE_MYSQL_USER."<br>";
 echo "密码:". SAE_MYSQL_PASS.'<br>';
