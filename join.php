@@ -20,7 +20,7 @@ $sqlOne = "SELECT activity.*, user.user_name
 	ORDER BY activity_time DESC 
 	LIMIT 1;";
 $result = $mysql->getLine($sqlOne);
-var_dump($result);
+echo $result['activity_describe'].'<br>';
 ?>
 
 <?php
