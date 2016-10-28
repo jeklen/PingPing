@@ -14,7 +14,13 @@ echo $openid;
 $mysql = new SaeMysql();
 //mysql_query("set character set 'utf8'");//读库
 //mysql_query("set names 'utf8'");//写库
+//使用sae的库函数设置编码
 $mysql->setCharset("UTF8");
+
+$num_rec_per_page = 1;  //每页显示数量
+if (isset($_GET["page"])) {$page = $_GET["page"];} else {$page=1;}
+$start_from = ($page - 1) * $num_rec_per_page;
+
 $sqlOne = "SELECT activity.*, user.user_name
 	FROM activity, user
 	WHERE activity.id = activity_id_initiate
@@ -22,6 +28,7 @@ $sqlOne = "SELECT activity.*, user.user_name
 	LIMIT 1;";
 $result = $mysql->getLine($sqlOne);
 echo $result['activity_describe'].'<br>';
+echo $result['user_name'].'<br>';
 ?>
 
 <?php
