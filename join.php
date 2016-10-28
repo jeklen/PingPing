@@ -12,8 +12,9 @@ echo $openid;
 <?php
  header("Content-Type:text/html;charset=utf-8"); 
 $mysql = new SaeMysql();
-mysql_query("set character set 'utf8'");//读库
-mysql_query("set names 'utf8'");//写库 
+//mysql_query("set character set 'utf8'");//读库
+//mysql_query("set names 'utf8'");//写库
+$mysql->setCharset("UTF8");
 $sqlOne = "SELECT activity.*, user.user_name
 	FROM activity, user
 	WHERE activity.id = activity_id_initiate
