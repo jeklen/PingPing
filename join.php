@@ -51,6 +51,6 @@ echo "<hr>";
 foreach ($mut_data as $small) {
 	echo "活动".$small["activity_name"].'<br>';
 	echo "描述".$small["activity_place"].'<br>';
-    echo "<img src='$small["picture"]'>";
+    //echo "<img src='$small["picture"]'>";
 }
 ?>
