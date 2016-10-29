@@ -29,6 +29,7 @@ $sqlOne = "SELECT activity.*, user.user_name
 $result = $mysql->getLine($sqlOne);
 echo $result['activity_describe'].'<br>';
 echo $result['user_name'].'<br>';
+echo $result['picture'].'<br>';
 ?>
 
 <?php
