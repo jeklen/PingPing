@@ -29,10 +29,10 @@ $sqlOne = "SELECT activity.*, user.user_name
 $result = $mysql->getLine($sqlOne);
 echo $result['activity_describe'].'<br>';
 echo $result['user_name'].'<br>';
-}
+
 ?>
 
-<img src="getImage.php?id=1" alt=""/>
+<img src="getImage.php?id=1" alt="">
 //<img src="getImage.php?id=<?php echo $result['id']?>" alt="">
 <?php
 //查询单条数据
