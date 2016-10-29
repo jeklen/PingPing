@@ -30,7 +30,8 @@ $result = $mysql->getLine($sqlOne);
 echo $result['activity_describe'].'<br>';
 echo $result['user_name'].'<br>';
 if ($result['picture']) {
-    echo urlencode($story['picture']);
+    echo "do not null";
+    echo $result['picture'];
 }
 ?>
 
