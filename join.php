@@ -50,6 +50,7 @@ $mut_data = $mysql->getData($sql);
 echo "<hr>";
 foreach ($mut_data as $small) {
 	echo "活动".$small["activity_name"].'<br>';
+    echo "图片".$small['picture'].'<br>';
 	echo "描述".$small["activity_place"].'<br>';
 }
 ?>
