@@ -29,11 +29,9 @@ $sqlOne = "SELECT activity.*, user.user_name
 $result = $mysql->getLine($sqlOne);
 echo $result['activity_describe'].'<br>';
 echo $result['user_name'].'<br>';
-if ($result['picture']) {
-    echo "do not null";
-    echo $result['picture'];
 }
 ?>
+    <img src="getImage.php?id=<?php echo $result['id']?>" alt="">
 
 <?php
 //查询单条数据
