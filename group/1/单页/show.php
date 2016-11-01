@@ -110,7 +110,7 @@
 <p>活动详情</p>
 </div>
 <div class="nav">
-<p><a href="../分页界面.php?page=1">查看所有活动</a></p>
+<p><a href="../multi/index1.php?page=1">查看所有活动</a></p>
 </div>
 <!-- 显示活动详情 -->
 <div>
@@ -165,7 +165,7 @@
   <td>&nbsp;</td><td>&nbsp;</td>
   <?php }
         if($i==1){ ?>
-  <td colspan="2" rowspan="18"><textarea style="text-indent:2.4em;" class="commentpad" name="content" cols="40" rows="15"></textarea></td>
+  <td colspan="2" rowspan="15"><textarea style="text-indent:2.4em;" class="commentpad" name="content" cols="40" rows="15"></textarea></td>
   <?php }?>
   </tr>
   <tr><td>&nbsp;</td></tr>
