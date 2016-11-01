@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
 <title>活动详情</title>
 <!-- 简单的样式定义 -->
 <style>
@@ -113,10 +115,10 @@
 <!-- 显示活动详情 -->
 <div>
 <form action="show_action.php?" method="post" name="commentarea">
-<table width=89% align=right cellpadding=0 cellspacing=0>
+<table width=82% align=right cellpadding=0 cellspacing=0>
    <tr class="head2"><th align=left colspan="3"><?php echo "活动名称:" . $result['activity_name']; ?></th><th >&nbsp;</th></tr>
    <tr><td rowspan='8'><?php        
-				echo "<IMG SRC='show_pic.php?id=$show_id' width=350 height=400>";
+				echo "<IMG SRC='getImage.php?id=$show_id' width=350 height=400>";
 			?></td>
    <td width="30%" class='tag'>&nbsp;</td><td width="10%">&nbsp;</td><td width="30%">&nbsp;</td></tr>
    <tr><td class='tag'><?php echo "活动时间：" . $result['activity_time']; ?></td></tr>
@@ -168,8 +170,8 @@
   </tr>
   <tr><td>&nbsp;</td></tr>
   
-  <?php }
-       mysql_close($link);?>
+  <?php };
+   ?>
   <tr><td>&nbsp;</td><td>&nbsp;</td><td><input type="submit" value="提交"><input type="reset" value="取消">
   <input type="hidden"  name="id" value=<?php echo $show_id?>></td></tr>
   <tr><td>&nbsp;</td></tr>
