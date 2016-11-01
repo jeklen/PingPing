@@ -45,7 +45,7 @@
 -->
 <?php 
     $link=new SaeMysql();
-    $sql1="select (*) from table1";
+    $sql1="select (*) from activity";
 	// $result1=$link->getLine($sql1);
 	//$count=$result1[0];
     //$result = $runSql($sql1);
@@ -60,7 +60,7 @@
 	else $page=1;
 	$start=($page-1)*$pagesize;
 	//获取活动内容
-	$sql2="select * from table1 order by activity_id desc limit $start,$pagesize";
+	$sql2="select * from activity order by id desc limit $start,$pagesize";
 	$result2=$link->getData($sql2);
 	
 
@@ -74,7 +74,7 @@
 		 <?php } else{?>
 		 <li>
 		 <?php }?>
-		 
+		
 		 <a href="#tab1" data-toggle="tab"><i class="icon-home"></i>首页</a></li>
 		 <!--判断哪个标签页显示-->
 		 <?php if(isset($_GET['location']) && $_GET['location']==2){ ?>
@@ -150,14 +150,14 @@
 				<?php foreach($result2 as $obj){ ?>
 				<div class="row">
 				    <div class="span2">
-					<?php  $id= $obj['activity_id'];
+					<?php  $id= $obj['id'];
 					       echo "<IMG SRC='show_pic.php?id=$id' width=100% height=110%>"; ?>
 					</div>
 					<div class="span10">
 					<h4><?php echo $obj['activity_name'] ?></h4>
 					<p></p>
 					<p><span class="label label-info">活动简介</span></p>
-					<p><?php echo $obj['activity_content'] ?></p>
+					<p><?php echo $obj['activity_describe'] ?></p>
 					<p style="text-align:right"><a class="btn btn-success" href="show.php?id=<?php echo $id?>"><i class="icon-star icon-white"></i>了解详情</a></p>
 					</div>
 				</div>
