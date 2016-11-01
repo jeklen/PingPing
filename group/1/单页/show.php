@@ -115,12 +115,12 @@
 <!-- 显示活动详情 -->
 <div>
 <form action="show_action.php?" method="post" name="commentarea">
-<table width=82% align=right cellpadding=0 cellspacing=0>
+<table width=87% align=right cellpadding=0 cellspacing=0>
    <tr class="head2"><th align=left colspan="3"><?php echo "活动名称:" . $result['activity_name']; ?></th><th >&nbsp;</th></tr>
    <tr><td rowspan='8'><?php        
 				echo "<IMG SRC='getImage.php?id=$show_id' width=350 height=400>";
 			?></td>
-   <td width="30%" class='tag'>&nbsp;</td><td width="10%">&nbsp;</td><td width="30%">&nbsp;</td></tr>
+   <td width="40%" class='tag'>&nbsp;</td><td width="10%">&nbsp;</td><td width="20%">&nbsp;</td></tr>
    <tr><td class='tag'><?php echo "活动时间：" . $result['activity_time']; ?></td></tr>
    <tr><td class='tag'><?php echo "活动地点：" . $result['activity_place']; ?></td></tr>
    <tr><td class='tag'><?php echo "活动人数：" . $result['activity_population']; ?></td></tr>
