@@ -2,8 +2,8 @@
 Help you find fun guys to do fantastic things
 
 #
-http://lovepingping.applinzi.com/join.php
-http://lovepingping.applinzi.com/group/1/multi/index1.php
+- http://lovepingping.applinzi.com/join.php
+- http://lovepingping.applinzi.com/group/1/multi/index1.php
 ## Git代码部署说明
 ### 提交到新浪云
 
