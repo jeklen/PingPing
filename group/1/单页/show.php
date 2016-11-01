@@ -23,7 +23,7 @@
 	}
 	.nav{
 		float:left;
-		height:1300px;
+		height:1400px;
 		background-color:lightgrey;
 		font-size:20px;
 		font-family:"sans-serif";color:brown;
