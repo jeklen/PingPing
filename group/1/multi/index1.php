@@ -158,7 +158,7 @@
 					<p></p>
 					<p><span class="label label-info">活动简介</span></p>
 					<p><?php echo $obj['activity_describe'] ?></p>
-					<p style="text-align:right"><a class="btn btn-success" href="show.php?id=<?php echo $id?>"><i class="icon-star icon-white"></i>了解详情</a></p>
+					<p style="text-align:right"><a class="btn btn-success" href="../单页/show.php?id=<?php echo $id?>"><i class="icon-star icon-white"></i>了解详情</a></p>
 					</div>
 				</div>
 				<?php }?>
