@@ -118,7 +118,7 @@
 <table width=87% align=right cellpadding=0 cellspacing=0>
    <tr class="head2"><th align=left colspan="3"><?php echo "活动名称:" . $result['activity_name']; ?></th><th >&nbsp;</th></tr>
    <tr><td rowspan='8'><?php        
-				echo "<IMG SRC='getImage.php?id=$show_id' width=350 height=400>";
+				echo "<IMG SRC='../multi/getImage.php?id=$show_id' width=350 height=400>";
 			?></td>
    <td width="40%" class='tag'>&nbsp;</td><td width="10%">&nbsp;</td><td width="20%">&nbsp;</td></tr>
    <tr><td class='tag'><?php echo "活动时间：" . $result['activity_time']; ?></td></tr>
@@ -154,7 +154,7 @@
   </tr>  
   <tr>
    <td>&nbsp;</td> <td>&nbsp;</td>
-  <?php if($i==2){ ?>
+  <?php if($i==1){ ?>
   <td align=right style="font-family:'楷体';color:crimson;font-size:20px;">留言人:</td><td><input class="commentpad" type="text" name="user_name"></td>
   <?php }?>
   </tr>
