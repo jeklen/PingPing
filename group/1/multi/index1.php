@@ -48,8 +48,9 @@
     $sql1="select (*) from table1";
 	// $result1=$link->getLine($sql1);
 	//$count=$result1[0];
-    $result = $runSql($sql1);
-    $count = $link->affectedRows($result);
+    //$result = $runSql($sql1);
+    $result = $link.getData($sql1);
+    $count = count($result);
 	//计算留言页数
 	$pagesize=5;
 	$totalpage=ceil($count / $pagesize);
