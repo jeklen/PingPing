@@ -151,7 +151,7 @@
 				<div class="row">
 				    <div class="span2">
 					<?php  $id= $obj['id'];
-					       echo "<IMG SRC='show_pic.php?id=$id' width=100% height=110%>"; ?>
+					       echo "<IMG SRC='getImage.php?id=$id' width=100% height=110%>"; ?>
 					</div>
 					<div class="span10">
 					<h4><?php echo $obj['activity_name'] ?></h4>
