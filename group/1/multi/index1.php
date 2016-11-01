@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>大学生拼拼</title>
-<link rel="stylesheet" type="text/css" href="./bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="./bootstrap-responsive.css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap-responsive.css">
 <style>
    div.span5.outlined{
 	   border:1px dotted black;
@@ -158,7 +158,7 @@
 					<p></p>
 					<p><span class="label label-info">活动简介</span></p>
 					<p><?php echo $obj['activity_describe'] ?></p>
-					<p style="text-align:right"><a class="btn btn-success" href="show.php?id=<?php echo $id?>"><i class="icon-star icon-white"></i>了解详情</a></p>
+					<p style="text-align:right"><a class="btn btn-success" href="../单页/show.php?id=<?php echo $id?>"><i class="icon-star icon-white"></i>了解详情</a></p>
 					</div>
 				</div>
 				<?php }?>
