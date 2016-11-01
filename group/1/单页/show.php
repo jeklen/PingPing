@@ -83,22 +83,15 @@
     if(isset($_GET['id']) && is_numeric($_GET['id'])){
 		$show_id=$_GET['id'];}
 	else{
-		echo'<script type="text/javascript">location.href="../123.php"</script>';
+		echo'<script type="text/javascript">location.href="./index1.php"</script>';
 	}
-	$link=mysql_connect("localhost:3306","root") or die(mysql_error());
-	mysql_select_db("activity") or die(mysql_error());
-	$sql="select * from table1 where activity_id=$show_id";
-    $result=mysql_query($sql);
-    $row=mysql_fetch_object($result);
-	mysql_close($link);
+	$link=new SaeMysql();
+	$sql="select * from activity where id=$show_id";
+    $result=$link->getLine($sql);
 	//获取评论数目
-	$link=mysql_connect("localhost:3306","root") or die(mysql_error());
-	mysql_select_db("activity") or die(mysql_error());
-	$sql1="select count(*) from comment where activity_id=$show_id";
-	$result1=mysql_query($sql1) or die(mysql_error());
-	$row1=mysql_fetch_array($result1);
-	mysql_close($link);
-	$count=$row1[0];
+	$sql1="select * from comments where activity_id=$show_id";
+	$result1=$link->getData($sql1);
+	$count=count($result1);
 	//计算留言页数
 	$pagesize=5;
 	$totalpage=ceil($count / $pagesize);
@@ -121,19 +114,19 @@
 <div>
 <form action="show_action.php?" method="post" name="commentarea">
 <table width=89% align=right cellpadding=0 cellspacing=0>
-   <tr class="head2"><th align=left colspan="3"><?php echo "活动名称:" . $row->activity_name; ?></th><th >&nbsp;</th></tr>
+   <tr class="head2"><th align=left colspan="3"><?php echo "活动名称:" . $result['activity_name']; ?></th><th >&nbsp;</th></tr>
    <tr><td rowspan='8'><?php        
 				echo "<IMG SRC='show_pic.php?id=$show_id' width=350 height=400>";
 			?></td>
    <td width="30%" class='tag'>&nbsp;</td><td width="10%">&nbsp;</td><td width="30%">&nbsp;</td></tr>
-   <tr><td class='tag'><?php echo "活动类型：" . $row->activity_type; ?></td></tr>
-   <tr><td class='tag'><?php echo "活动地点：" . $row->activity_place; ?></td></tr>
-   <tr><td class='tag'><?php echo "活动人数：" . $row->activity_people; ?></td></tr>
-   <tr><td class='tag'><?php echo "活动联系人：" . $row->name; ?></td></tr>
-   <tr><td class='tag'><?php echo "联系人电话：" . $row->tel; ?></td></tr>
-   <tr><td class='tag'><?php echo "联系人QQ：" . $row->qq; ?></td></tr>
+   <tr><td class='tag'><?php echo "活动时间：" . $result['activity_time']; ?></td></tr>
+   <tr><td class='tag'><?php echo "活动地点：" . $result['activity_place']; ?></td></tr>
+   <tr><td class='tag'><?php echo "活动人数：" . $result['activity_population']; ?></td></tr>
+   <tr><td class='tag'><?php echo "活动联系人：" . "还不知道数据库里加这个没有我就没连"; ?></td></tr>
+   <tr><td class='tag'><?php echo "联系人电话："; ?></td></tr>
+   <tr><td class='tag'><?php echo "联系人QQ："; ?></td></tr>
    <tr><td >&nbsp;</td></tr>
-   <tr><td colspan='4' class='tag'><p><?php echo "活动内容：" . $row->activity_content;?></p></td></tr>
+   <tr><td colspan='4' class='tag'><p><?php echo "活动内容：" . $result['activity_describe'];?></p></td></tr>
    <tr><td >&nbsp;</td></tr>
    <tr><td >&nbsp;</td></tr>
    <tr><td >&nbsp;</td></tr>
@@ -142,21 +135,18 @@
    <tr><td align=center colspan='2' style="font-family:'楷体';color:crimson; font-size:35px;">留言板</td></tr>
    <?php
         //读取留言内容
-		$link=mysql_connect("localhost:3306","root") or die(mysql_error());
-	    mysql_select_db("activity") or die(mysql_error());
-	    $sql2="select * from comment where activity_id=$show_id order by time desc limit $start,$pagesize";
-	    $result2=mysql_query($sql2) or die(mysql_error());
-		for($i=1;$i<=5;++$i){
+	    
+		for($i=0;$i<5;++$i){
                $flag=false;			
    ?>
   <tr><td>&nbsp;</td></tr>
   <tr >
-  <?php if($row2=mysql_fetch_array($result2)) {?>
-  <td align=left class="namepad"><?php echo $row2['user_name']; ?></td><td class="namepad"><?php echo "发布于" . $row2{'time'}; ?></td>
+  <?php if($count-i>0) {?>
+  <td align=left class="namepad"><?php echo $result1[$i]['user_id'] . "号用户"; ?></td><td class="namepad"><?php echo "发布于" . $result1[$i]['time_of_comments']; ?></td>
   <?php $flag=true;} else { ?>
   <td>&nbsp;</td><td>&nbsp;</td>
   <?php } 
-        if($i==2){ ?>
+        if($i==1){ ?>
   <td align=left colspan="2" style="font-family:'楷体';color:crimson;font-size:20px;"><b>发布留言</b></td>
   <?php }?>
   </tr>  
@@ -168,7 +158,7 @@
   </tr>
   <tr>
   <?php if($flag){ ?>
-  <td class="contentpad" style="text-indent:2em;padding-left:3em"><b><?php echo $row2['content'] ?></b></td><td>&nbsp;</td>
+  <td class="contentpad" style="text-indent:2em;padding-left:3em"><b><?php echo $result1['content'] ?></b></td><td>&nbsp;</td>
   <?php } else { ?>
   <td>&nbsp;</td><td>&nbsp;</td>
   <?php }
