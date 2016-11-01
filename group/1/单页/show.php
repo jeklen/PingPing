@@ -164,7 +164,7 @@
   <?php } else { ?>
   <td>&nbsp;</td><td>&nbsp;</td>
   <?php }
-        if($i==2){ ?>
+        if($i==1){ ?>
   <td colspan="2" rowspan="18"><textarea style="text-indent:2.4em;" class="commentpad" name="content" cols="40" rows="15"></textarea></td>
   <?php }?>
   </tr>
