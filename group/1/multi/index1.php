@@ -45,9 +45,11 @@
 -->
 <?php 
     $link=new SaeMysql();
-    $sql1="select count(*) from table1";
-	$result1=$link->getLine($sql1);
-	$count=$result1[0];
+    $sql1="select (*) from table1";
+	// $result1=$link->getLine($sql1);
+	//$count=$result1[0];
+    $result = $runSql($sql1);
+    $count = $link->affectedRows($result);
 	//计算留言页数
 	$pagesize=5;
 	$totalpage=ceil($count / $pagesize);
