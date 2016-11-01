@@ -49,7 +49,7 @@
 	// $result1=$link->getLine($sql1);
 	//$count=$result1[0];
     //$result = $runSql($sql1);
-    $result = $link.getData($sql1);
+    $result = $link->getData($sql1);
     $count = count($result);
 	//计算留言页数
 	$pagesize=5;
