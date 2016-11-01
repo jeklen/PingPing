@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>大学生拼拼</title>
-<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css">
+<link rel="stylesheet" type="text/css" href="./bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./bootstrap-responsive.css">
 <style>
    div.span5.outlined{
 	   border:1px dotted black;
@@ -21,7 +21,7 @@
 </head>
 <body>
 <script src="http://code.jquery.com/jquery.js"></script>
-<script src="bootstrap/js/bootstrap.js"></script>
+<script src="./bootstrap.js"></script>
 <!--
      //获取活动数目
 	$link=mysql_connect("localhost:3306","root");
@@ -144,7 +144,7 @@
 					</div>
 				</div>
 				<div>&nbsp;</div>
-				<?php foreach($result2 as $obj)){ ?>
+				<?php foreach($result2 as $obj){ ?>
 				<div class="row">
 				    <div class="span2">
 					<?php  $id= $obj['activity_id'];
