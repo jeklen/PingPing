@@ -34,7 +34,8 @@ echo $result['id'].'<br>';
 ?>
 
 
-<img src="getImage.php?id=1" alt="">
+ <img src="getImage.php?id=1" alt="">
+ <img src="getImage.php?id=".<?php echo $result['id']?> alt="no picture">
 //<img src="getImage.php?id=<?php echo $result['id']?>" alt="">
 <?php
 //查询单条数据
