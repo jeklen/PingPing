@@ -1,5 +1,7 @@
 <?php
 require 'weixin.class.php';
+$openid = 0;
+echo $openid;
 if($_GET['code']){
     $ret = wxmessage::getAuthToken($_GET['code']);
     if(isset($ret['openid'])){
