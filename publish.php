@@ -1,13 +1,17 @@
 <?php
 require 'weixin.class.php';
-echo $openid;
+ini_set('session.use_cookies', 0);
 if($_GET['code']){
     $ret = wxmessage::getAuthToken($_GET['code']);
     if(isset($ret['openid'])){
         $openid = $ret['openid'];
     }
 }
-echo $openid;
+$sessionId = md5($openid);
+session_id($sessionId);
+session_start();
+echo session_id() . "<br>";
+echo md5($openid);
 ?>
 <!DOCTYPE html>
 <html>
