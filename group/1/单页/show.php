@@ -3,11 +3,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>活动详情</title>
-<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css">
+<link rel="stylesheet" type="text/css" href="../multi/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../multi/css/bootstrap-responsive.css">
 <link rel="stylesheet" type="text/css" href="greenpad.css">
 <script src="http://code.jquery.com/jquery.js"></script>
-<script src="bootstrap/js/bootstrap.js"></script>
+<script src="../multi/bootstrap.js"></script>
 <style>
    .pad{
 	   background-color:#F0F8FF;
