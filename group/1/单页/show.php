@@ -158,6 +158,7 @@
 		   <p style="text-align:right;"><a href="#" class="btn btn-info">回复</a></p>
 		   </div>
 		   </div>
+		   <?php }?>
 		   </div>
 		 </div>
 		 <div class="pagination" style="text-align:center">
