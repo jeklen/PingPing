@@ -100,8 +100,8 @@
 <body>
    <div class=container>
       <ul class="nav nav-tabs">
-	     <li><a href="index1.php"><i class="icon-home"></i>首页</a></li>
-		 <li><a href="index1.php?location=2"><i class="icon-heart"></i>活动</a></li>
+	     <li><a href="../multi/index1.php"><i class="icon-home"></i>首页</a></li>
+		 <li><a href="../multi/index1.php?location=2"><i class="icon-heart"></i>活动</a></li>
          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i>我的<span class="caret"></span></a>
 		       <ul class="dropdown-menu">
 			      <li><a href="#">我发布的</a></li>
@@ -147,7 +147,7 @@
 		 <div id="comment"><h2>评论区<i class="icon-edit"></i></h2></div>
 		 <div class="row">
 		   <div class="span12 pad2">
-		   <?php foreach($result1 as $row){?>
+		   <?php if($result1) {foreach($result1 as $row){?>
 		   <div class="row">
 		   <div class="span2">
 				      <a href="#" class="thumbnail"><img src="userimg.jpg" width=50% height=50%></a>
@@ -158,7 +158,7 @@
 		   <p style="text-align:right;"><a href="#" class="btn btn-info">回复</a></p>
 		   </div>
 		   </div>
-		   <?php }?>
+		   <?php } }?>
 		   </div>
 		 </div>
 		 <div class="pagination" style="text-align:center">
