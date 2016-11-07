@@ -1,4 +1,6 @@
 <?php
+session_start();
+echo session_id() . "<br>";
 $mysql = new SaeMysql();
 
 $mysql->setCharset("utf8");

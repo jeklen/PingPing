@@ -7,11 +7,11 @@ if($_GET['code']){
         $openid = $ret['openid'];
     }
 }
-//$sessionId = md5($openid);
-//session_id($sessionId);
+$sessionId = md5($openid);
+session_id($sessionId);
 session_start();
-echo session_id() . "<br>";
-echo md5($openid);
+//echo session_id() . "<br>";
+//echo md5($openid);
 ?>
 <!DOCTYPE html>
 <html>
