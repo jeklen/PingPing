@@ -33,11 +33,11 @@ id user_name tel qq activity_id_initiate activity_id_join
 <form enctype="multipart/form-data" action="insertPublish.php" method="post" role="form">
     <div class="form-group">
         <label for="activity_name">活动名称</label>
-        <input type="text" class="form-control" id="activity_name" placeholder="请输入活动名称">
+        <input name = "activity_name" type="text" class="form-control" id="activity_name" placeholder="请输入活动名称">
     </div>
     <div class="form-group">
         <label for="activity_describe">活动描述</label>
-        <textarea class="form-control" id="activity_describe" rows="9"></textarea>
+        <textarea name="activity_describe" class="form-control" id="activity_describe" rows="9"></textarea>
     </div>
     <div class="form-group">
         <label for="inputpicture">上传图片</label>
