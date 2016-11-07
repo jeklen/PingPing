@@ -40,6 +40,26 @@ id user_name tel qq activity_id_initiate activity_id_join
         <textarea name="activity_describe" class="form-control" id="activity_describe" rows="9"></textarea>
     </div>
     <div class="form-group">
+        <label for="activity_time">活动时间</label>
+        <input name="activity_time" id="activity_time" type="datetime" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="activity_population">活动人数</label>
+        <input name="activity_population" id="activity_population" type="number" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="activity_place">活动地点</label>
+        <input type="text" class="form-control" id="activity_place" name="activity_place">
+    </div>
+    <div class="form-control">
+        <label for="user_name">姓名</label>
+        <input type="text" class="form-control" id="user_name" name="姓名">
+    </div>
+    <div class="form-control">
+        <label for="tel">电话</label>
+        <input type="tel" class="form-control" id="tel" name="tel">
+    </div>
+    <div class="form-group">
         <label for="inputpicture">上传图片</label>
         <input name = "image" accept="image/jpeg" type="file" id="inputpicture">
         <p class="help-block">请上传jpeg格式的图片</p>
