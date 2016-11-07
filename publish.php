@@ -40,10 +40,8 @@ id user_name tel qq activity_id_initiate activity_id_join
         <textarea name="activity_describe" class="form-control" id="activity_describe" rows="9"></textarea>
     </div>
     <div class="form-group">
-        <!--<label for="inputpicture">上传图片</label>-->
-        <!--<input name = "image" accept="image/jpeg" type="file" id="inputpicture">-->
-        <!--<input accept="image/jpeg" name = "image" type="file" id="inputpicture">-->
-        <input accept="image/jpeg" name = "image" type="file">
+        <label for="inputpicture">上传图片</label>
+        <input name = "image" accept="image/jpeg" type="file" id="inputpicture">
         <p class="help-block">请上传jpeg格式的图片</p>
     </div>
     <button type="submit" class=""btn btn-default>提交</button>
