@@ -7,8 +7,8 @@ if($_GET['code']){
         $openid = $ret['openid'];
     }
 }
-$sessionId = md5($openid);
-session_id($sessionId);
+//$sessionId = md5($openid);
+//session_id($sessionId);
 session_start();
 echo session_id() . "<br>";
 echo md5($openid);
@@ -24,7 +24,13 @@ echo md5($openid);
 </head>
 <body>
 
-<form action="save.php" method="post" role="form">
+<!--
+tab1e1: activity
+activity_name activity_time activity_population activity_place activity_describe
+table2: user
+id user_name tel qq activity_id_initiate activity_id_join
+-->
+<form enctype="multipart/form-data" action="save.php" method="post" role="form">
     <div class="form-group">
         <label for="activity_name">活动名称</label>
         <input type="text" class="form-control" id="activity_name" placeholder="请输入活动名称">
@@ -35,8 +41,11 @@ echo md5($openid);
     </div>
     <div class="form-group">
         <label for="inputpicture">上传图片</label>
-        <input type="file" id="inputpicture">
+        <input name = "image" accept="image/jpeg" type="file" id="inputpicture">
         <p class="help-block">请上传jpeg格式的图片</p>
+    </div>
+    <div class="form-group">
+        <input type="typesubmit" value="Submit" class="form-control">
     </div>
 </form>
 
