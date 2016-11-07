@@ -30,7 +30,7 @@ activity_name activity_time activity_population activity_place activity_describe
 table2: user
 id user_name tel qq activity_id_initiate activity_id_join
 -->
-<form enctype="multipart/form-data" action="insertPublish.php" method="post" role="form">
+<form enctype="multipart/form-data" action="insertPublish.php" method="post" name="changer" role="form">
     <div class="form-group">
         <label for="activity_name">活动名称</label>
         <input name = "activity_name" type="text" class="form-control" id="activity_name" placeholder="请输入活动名称">
@@ -41,7 +41,7 @@ id user_name tel qq activity_id_initiate activity_id_join
     </div>
     <div class="form-group">
         <label for="inputpicture">上传图片</label>
-        <input name = "myimage" accept="image/jpeg" type="file" id="inputpicture">
+        <input name = "image" accept="image/jpeg" type="file" id="inputpicture">
         <p class="help-block">请上传jpeg格式的图片</p>
     </div>
     <button type="submit" class=""btn btn-default>提交</button>
