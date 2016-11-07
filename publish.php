@@ -44,8 +44,7 @@ id user_name tel qq activity_id_initiate activity_id_join
         <input name = "image" accept="image/jpeg" type="file" id="inputpicture">
         <p class="help-block">请上传jpeg格式的图片</p>
     </div>
-    //<button type="submit" class=""btn btn-default>提交</button>
-    <input value="Submit" type="submit">
+    <button type="submit" class=""btn btn-default>提交</button>
 </form>
 
 
