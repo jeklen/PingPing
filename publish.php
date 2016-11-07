@@ -51,11 +51,11 @@ id user_name tel qq activity_id_initiate activity_id_join
         <label for="activity_place">活动地点</label>
         <input type="text" class="form-control" id="activity_place" name="activity_place">
     </div>
-    <div class="form-control">
+    <div class="form-group">
         <label for="user_name">姓名</label>
         <input type="text" class="form-control" id="user_name" name="姓名">
     </div>
-    <div class="form-control">
+    <div class="form-group">
         <label for="tel">电话</label>
         <input type="tel" class="form-control" id="tel" name="tel">
     </div>
