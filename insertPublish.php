@@ -6,4 +6,7 @@ header("content-type:text/html; charset=utf8");
 
 var_dump($_POST);
 
+echo "<br>";
+var_dump($_FILES);
+
 ?>
