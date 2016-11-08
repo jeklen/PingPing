@@ -22,6 +22,9 @@ session_start();
     <meta charset="utf-8">
     <!--Bootstrap-->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- Bootstrap Date-Picker Plugin -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 </head>
 <body>
 
@@ -39,6 +42,14 @@ id user_name tel qq activity_id_initiate activity_id_join
     <div class="form-group">
         <label for="activity_describe">活动描述</label>
         <textarea name="activity_describe" class="form-control" id="activity_describe" rows="9"></textarea>
+    </div>
+    <div class="form-group">
+        <div class='input-group date' id='datetimepicker1'>
+            <input type='text' class="form-control" />
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
     </div>
     <div class="form-group">
         <label for="activity_time">活动时间</label>
@@ -67,6 +78,11 @@ id user_name tel qq activity_id_initiate activity_id_join
     </div>
     <button type="submit" class=""btn btn-default>提交</button>
 </form>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+</script>
 
 
 <!--
