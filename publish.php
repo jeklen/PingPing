@@ -22,9 +22,7 @@ session_start();
     <meta charset="utf-8">
     <!--Bootstrap-->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <!-- Bootstrap Date-Picker Plugin -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
 </head>
 <body>
 
@@ -47,8 +45,8 @@ id user_name tel qq activity_id_initiate activity_id_join
         <div class='input-group date' id='datetimepicker1'>
             <input type='text' class="form-control" />
             <span class="input-group-addon">
-                <span class="glyphicon glyphicon-calendar"></span>
-            </span>
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
         </div>
     </div>
     <script type="text/javascript">
@@ -102,5 +100,9 @@ E-mail: <input type="text" name="email"><br>
 
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
 </body>
 </html>
