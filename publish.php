@@ -23,6 +23,8 @@ session_start();
     <!--Bootstrap-->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
 </head>
 <body>
 
@@ -98,7 +100,6 @@ E-mail: <input type="text" name="email"><br>
 <script src="js/bootstrap.min.js"></script>
 <!-- Bootstrap Date-Picker Plugin -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 <script type="text/javascript">
     $(function () {
         $('#datetimepicker1').datetimepicker();
