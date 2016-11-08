@@ -49,11 +49,7 @@ id user_name tel qq activity_id_initiate activity_id_join
                     </span>
         </div>
     </div>
-    <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker1').datetimepicker();
-        });
-    </script>
+
     <div class="form-group">
         <label for="activity_time">活动时间</label>
         <input name="activity_time" id="activity_time" type="datetime" class="form-control">
@@ -103,6 +99,10 @@ E-mail: <input type="text" name="email"><br>
 <!-- Bootstrap Date-Picker Plugin -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+</script>
 </body>
 </html>
