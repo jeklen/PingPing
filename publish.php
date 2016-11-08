@@ -51,6 +51,11 @@ id user_name tel qq activity_id_initiate activity_id_join
             </span>
         </div>
     </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+    </script>
     <div class="form-group">
         <label for="activity_time">活动时间</label>
         <input name="activity_time" id="activity_time" type="datetime" class="form-control">
@@ -78,11 +83,13 @@ id user_name tel qq activity_id_initiate activity_id_join
     </div>
     <button type="submit" class=""btn btn-default>提交</button>
 </form>
+<!--
 <script type="text/javascript">
     $(function () {
         $('#datetimepicker1').datetimepicker();
     });
 </script>
+-->
 
 
 <!--
