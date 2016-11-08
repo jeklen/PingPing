@@ -47,11 +47,13 @@ id user_name tel qq activity_id_initiate activity_id_join
         <div class='input-group date' id='datetimepicker1'>
             <input type='text' class="form-control" />
             <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
+                <span class="glyphicon glyphicon-calendar"></span>
+                </span>
         </div>
     </div>
-
+    <div class="form-group">
+        <input type="text" value="02/16/12" data-date-format="mm/dd/yy" class="datepicker" >
+    </div>
     <div class="form-group">
         <label for="activity_time">活动时间</label>
         <input name="activity_time" id="activity_time" type="datetime" class="form-control">
@@ -102,7 +104,7 @@ E-mail: <input type="text" name="email"><br>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript">
     $(function () {
-        $('#datetimepicker1').datetimepicker();
+        $('.datepicker').datepicker();
     });
 </script>
 </body>
