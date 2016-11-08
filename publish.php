@@ -81,26 +81,10 @@ id user_name tel qq activity_id_initiate activity_id_join
     </div>
     <button type="submit" class=""btn btn-default>提交</button>
 </form>
-<!--
-<script type="text/javascript">
-    $(function () {
-        $('#datetimepicker1').datetimepicker();
-    });
-</script>
--->
-
-
-<!--
-<form action="welcome.php" method="post">
-Name: <input type="text" name="name"><br>
-E-mail: <input type="text" name="email"><br>
-<input type="submit">
-</form>
--->
 
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<!-- Bootstrap Date-Picker Plugin -->
+<!-- Bootstrap Date-Picker Plugin not sure whether go with css-->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript">
     $(function () {
