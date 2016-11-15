@@ -7,7 +7,7 @@ $mysql->setCharset("utf8");
 //header("content-type:text/html; charset=utf8");
 
 
-print_r($_SERVER)
+print_r($_SERVER);
 
 var_dump($_POST);
 
