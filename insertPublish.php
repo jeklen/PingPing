@@ -29,7 +29,7 @@ if (isset($_FILES['image']['tmp_name'])) {
     $image = addslashes(file_get_contents($_FILES['image']['tmp_name'])); //SQL Injection defence!
     $sql = "insert into activity";
     $sql .= "(activity_name, activity_time, activity_population, activity_place, activity_describe, picture)";
-    $sql .= "values('$activity_name', '$activity_time', '$activity_population', '$activity_place', '$activity_describe', '$image')"
+    $sql .= "values('$activity_name', '$activity_time', '$activity_population', '$activity_place', '$activity_describe', '$image')";
     //$sql .= "values('$image')";
     if ($mysql->runSql($sql) != TRUE) {
         echo "insert successful";
