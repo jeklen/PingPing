@@ -8,7 +8,7 @@ if($_GET['code']){
     }
 }
 $sessionId = md5($openid);
-header("content-type:text/html;charset=utf8");
+header("content-type:text/html;charset=utf-8");
 session_id($sessionId);
 session_start();
 //echo session_id() . "<br>";
