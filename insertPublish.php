@@ -6,8 +6,10 @@ $mysql = new SaeMysql();
 $mysql->setCharset("utf8");
 //header("content-type:text/html; charset=utf8");
 
+
+print_r($_SERVER)
+
 var_dump($_POST);
-echo "试着显示中文";
 
 echo "<br>";
 var_dump($_FILES);
