@@ -7,6 +7,7 @@ if($_GET['code']){
         $openid = $ret['openid'];
     }
 }
+ob_start();
 $sessionId = md5($openid);
 header("content-type:text/html;charset=utf-8");
 session_id($sessionId);
