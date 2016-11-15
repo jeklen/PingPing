@@ -63,7 +63,7 @@ id user_name tel qq activity_id_initiate activity_id_join
     </div>
     <div class="form-group">
         <label for="user_name">姓名</label>
-        <input type="text" class="form-control" id="user_name" name="姓名">
+        <input type="text" class="form-control" id="user_name" name="user_name">
     </div>
     <div class="form-group">
         <label for="tel">电话</label>
