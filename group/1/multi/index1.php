@@ -66,7 +66,7 @@
 
 ?>
     	
-   <div class="container">
+   <div class="container-fluid" style="background-image:url(bgi.jpg);">
       <ul class="nav nav-tabs">
 	     <!--判断哪个标签页显示-->
 	     <?php if(!isset($_GET['location']) || $_GET['location']!=2){ ?>
@@ -102,13 +102,48 @@
 			    <div class="row">
 				    <div class="span12">
 					     <h1>大学生拼拼平台</h1>
-						 <h3><pre>   
-						   
-						           
-							这里可以写关于平台的一些简介或放图片
-								   
-								   
-								   </pre></h3>
+						 <div id="box" class="carousel slide" data-ride="carousel" data-interval="1000">
+						   <ol class="carousel-indicators">
+						      <li class="active" data-target="#box" data-slide-to="0"></li>
+							  <li data-target="#box" data-slide-to="1"></li>
+							  <li data-target="#box" data-slide-to="2"></li>
+						   </ol>
+						   <div class="carousel-inner">
+						      <div class="item">
+							     <img src="sample1.jpg" alt="图片无法显示">
+								 <div class="carousel-caption">
+								      <h4>你好</h4>
+									  <p>&nbsp;</p>
+									  <p>这里是大学生拼拼平台</p>
+									  <p>&nbsp;</p>
+									  <p>&nbsp;</p>
+								 </div>
+							  </div>
+							  <div class="item active">
+							     <img src="sample2.jpg" alt="图片无法显示">
+								 <div class="carousel-caption">
+								      <h4>你好</h4>
+									  <p>&nbsp;</p>
+									  <p>这里是大学生拼拼平台</p>
+									  <p>&nbsp;</p>
+									  <p>&nbsp;</p>
+								 </div>
+							  </div>
+							  <div class="item">
+							     <img src="sample3.jpg" alt="图片无法显示">
+								 <div class="carousel-caption">
+								      <h4>你好</h4>
+									  <p>&nbsp;</p>
+									  <p>这里是大学生拼拼平台</p>
+									  <p>&nbsp;</p>
+									  <p>&nbsp;</p>
+								 </div>
+							  </div>
+							</div>
+							<a class="left carousel-control" href="#box" data-slide="prev">&lsaquo;</a>
+							<a class="right carousel-control" href="#box" data-slide="next">&rsaquo;</a>
+						</div>
+						
 						 <a href="#" class="btn btn-info btn-large"><i class="icon-th-large icon-white"></i>了解更多</a>
 					</div>
 					<div>&nbsp;</div>

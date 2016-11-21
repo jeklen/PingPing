@@ -88,6 +88,9 @@
 	$sql1="select * from comments where activity_id=$show_id";
 	$result1=$link->getData($sql1);
 	$count=count($result1);
+	//获取用户信息
+	$sql2="select * from user where activity_id_initiate=$show_id"
+	$result2=$link->getLine($sql2);
 	//计算留言页数
 	$pagesize=5;
 	$totalpage=ceil($count / $pagesize);
@@ -98,7 +101,7 @@
 	$start=($page-1)*$pagesize;
 ?>		
 <body>
-   <div class=container>
+   <div class="container-fluid" style="background-image:url(../multi/bgi.jpg)">
       <ul class="nav nav-tabs">
 	     <li><a href="../multi/index1.php"><i class="icon-home"></i>首页</a></li>
 		 <li><a href="../multi/index1.php?location=2"><i class="icon-heart"></i>活动</a></li>
@@ -126,9 +129,9 @@
 		   <p style="text-indent:2em;"><?php echo "活动时间：" . $result['activity_time']; ?></p>
 		   <p style="text-indent:2em;"><?php echo "活动地点：" . $result['activity_place']; ?></p>
            <p style="text-indent:2em;"><?php echo "活动人数：" . $result['activity_population'] ?></p>
-           <p style="text-indent:2em;"><?php echo "活动联系人：" . "还不知道数据库里加这个没有我就没连"; ?></p>
-           <p style="text-indent:2em;"><?php echo "联系人电话：" ; ?></p>
-           <p style="text-indent:2em;"><?php echo "联系人QQ：" ; ?></p>
+           <p style="text-indent:2em;"><?php echo "活动联系人：" . $result2['user_name'] ?></p>
+           <p style="text-indent:2em;"><?php echo "联系人电话：" .$result2['tel'] ?></p>
+           <p style="text-indent:2em;"><?php echo "联系人QQ：" .$result2['qq'] ?></p>
 		   <p>&nbsp;</p>
 		   <p style="text-align:center;"><a class="btn btn-large btn-warning" href="#">我要加入</a></p>
 		   </div>
