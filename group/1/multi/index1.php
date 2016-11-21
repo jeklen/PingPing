@@ -53,7 +53,7 @@
     //$result = $runSql($sql1);
     $result = $link->getData($sql1);
     $count = count($result);
-	//计算留言页数
+	//计算活动页数
 	$pagesize=5;
 	$totalpage=ceil($count / $pagesize);
 	if(isset($_GET['page']) && $_GET['page'] > 0 && $_GET['page'] <= $totalpage){
@@ -89,7 +89,7 @@
 		 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i>我的<span class="caret"></span></a>
 		       <ul class="dropdown-menu">
 			      <li><a href="#">我发布的</a></li>
-				  <li><a href="#">我参与的</a></li>
+				  <li><a href="my_activity.php">我参与的</a></li>
 			   </ul>
 		 </li>
       </ul>
@@ -202,7 +202,7 @@
 				<div class="pagination" style="text-align:center">
 					<ul>
 					   <li><a><?php if($totalpage!=0) echo $page. "/" .$totalpage;
-                         else echo "暂时没有活动哦"; ?></a></li>
+                         else echo "暂无活动"; ?></a></li>
 					   
 				       <li><?php if($page==1 || $page > $totalpage) {?><a >首页</a>
 					   <?php } else {?><a href="index1.php?location=2&&page=1">首页</a><?php }?>
