@@ -16,7 +16,9 @@
    
 </style>
 <script>
-
+ $(function () { 
+	$("#box").carousel();
+});
 </script>
 </head>
 <body>
@@ -102,7 +104,7 @@
 			    <div class="row">
 				    <div class="span12">
 					     <h1>大学生拼拼平台</h1>
-						 <div id="box" class="carousel slide" data-ride="carousel" data-interval="1000">
+						 <div id="box" class="carousel slide" data-ride="carousel" data-interval="3000">
 						   <ol class="carousel-indicators">
 						      <li class="active" data-target="#box" data-slide-to="0"></li>
 							  <li data-target="#box" data-slide-to="1"></li>
