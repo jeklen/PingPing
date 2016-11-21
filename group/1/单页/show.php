@@ -89,7 +89,7 @@
 	$result1=$link->getData($sql1);
 	$count=count($result1);
 	//获取用户信息
-	$sql2="select * from user where activity_id_initiate=$show_id"
+	$sql2="select * from user where activity_id_initiate=$show_id";
 	$result2=$link->getLine($sql2);
 	//计算留言页数
 	$pagesize=5;
