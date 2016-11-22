@@ -111,7 +111,7 @@
 		 <li>
 		 <?php }?>
 		
-		 <a href="#tab1" data-toggle="tab"><i class="icon-home"></i>首页</a></li>
+		 <a href="#tab1" data-toggle="tab"><i class="icon-home"></i><?php echo $user_id ?></a></li>
 		 <!--判断哪个标签页显示-->
 		 <?php if(isset($_GET['location']) && $_GET['location']==2){ ?>
 	     <li class="active">
