@@ -2,9 +2,13 @@
 header("content-type:text/html; charset=utf8");
 session_start();
 echo session_id() . "<br>";
-$mysql = new SaeMysql();
+//$mysql = new SaeMysql();
+$mysqli = mysqli_connect("127.0.0.1", "root", "19960907", "pingping");
+if (mysqli_connect_errno($mysqli)) {
+    echo "Failed to connect to MYSQL: " . mysqli_connect_error();
+}
 
-$mysql->setCharset("utf8");
+$mysqli->set_charset("utf8");
 
 //var_dump($_POST);
 
@@ -29,22 +33,24 @@ if (isset($_FILES['image']['tmp_name'])) {
     //echo $data;
     //$image = addslashes(file_get_contents($_FILES['image']['tmp_name'])); //SQL Injection defence!
     */
-    $file_destination =  'images/' . $_FILES['image']['name'];
-    if (move_uploaded_file($_FILES['image']['tmp_name'], $file_destination)) {
-        echo "image uploaded";
-    }
 
+    if (move_uploaded_file($_FILES['image']['tmp_name'], "f:\\github\\www\\PingPing\\images\\" . $_FILES['image']['name'])) {
+        echo "File is valid, and was successfully uploaded.\n";
+    } else {
+        echo "Possible file upload attack!\n";
+    }
     $file = "images/" . $_FILES['image']['name'];
+
     $sql = "insert into activity";
     $sql .= "(activity_name, activity_time, activity_population, activity_place, activity_describe, picdirectory)";
     $sql .= "values('$activity_name', '$activity_time', '$activity_population', '$activity_place', '$activity_describe', '$file')";
     //$sql .= "values('$image')";
-    if ($mysql->runSql($sql) != TRUE) {
+    if ($mysqli->query($sql) != TRUE) {
         echo "insert successful";
     }
 
     $sql = "select * from activity";
-    $result = $mysql->runSql($sql);
+    $result = $mysqli->query($sql);
     //var_dump($result);
 
     if ($result->num_rows > 0) {
