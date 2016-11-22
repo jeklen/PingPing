@@ -27,12 +27,10 @@
 <?php
   require '../../../weixin.class.php'; 
   $openid = 0;   
-  echo $_GET['code']."<br>"; 
   $token = wxmessage::getAuthToken($_GET['code']); 
   $openid = $token['openid']; 
-  echo $openid;
   session_start();
-  $_SESSION['user_id']=$openid;  
+  $_SESSION['user_id']=md5($openid);  
  ?> 
 
 
