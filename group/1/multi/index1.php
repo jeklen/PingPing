@@ -58,7 +58,10 @@
 	
 -->
 <?php
-    echo "<script>alert('欢迎');</script>"; 
+    if(isset($openid)){
+    echo "<script>alert('欢迎'. $openid);</script>";
+    }
+    else echo	"<script>alert('user_id还是不行');</script>";
     $link=new SaeMysql();
     $sql1="select * from activity";
 	// $result1=$link->getLine($sql1);
