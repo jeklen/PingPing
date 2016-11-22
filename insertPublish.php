@@ -42,7 +42,7 @@ if (isset($_FILES['image']['tmp_name'])) {
     $tmp = $_FILES['image']['tmp_name'];
     $fp = fopen($tmp, 'rb');
     $data = fread($fp, $size);
-    $data= mysqli_real_escape_string($mysqli, $data);
+    $data= mysqli_real_escape_string($mysql, $data);
 
     $sql = "insert into activity";
     $sql .= "(activity_name, activity_time, activity_population, activity_place, activity_describe, picdirectory)";
