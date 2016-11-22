@@ -20,19 +20,33 @@ if (isset($_FILES['image']['tmp_name'])) {
     $activity_population = $_POST['activity_population'];
     $activity_place = $_POST['activity_place'];
     $activity_describe = $_POST['activity_describe'];
+    /*
     // Read the file
     $fp = fopen($tmpName, 'r');
     $data = fread($fp, filesize($tmpName));
     $data = addslashes($data);
     fclose($fp);
     //echo $data;
-    $image = addslashes(file_get_contents($_FILES['image']['tmp_name'])); //SQL Injection defence!
+    //$image = addslashes(file_get_contents($_FILES['image']['tmp_name'])); //SQL Injection defence!
+    */
+
     $sql = "insert into activity";
-    $sql .= "(activity_name, activity_time, activity_population, activity_place, activity_describe, picture)";
+    $sql .= "(activity_name, activity_time, activity_population, activity_place, activity_describe, picdirectory)";
     $sql .= "values('$activity_name', '$activity_time', '$activity_population', '$activity_place', '$activity_describe', '$image')";
     //$sql .= "values('$image')";
     if ($mysql->runSql($sql) != TRUE) {
         echo "insert successful";
+    }
+
+    $sql = "select * from activity";
+    $result = $mysql->runSql($sql);
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo $row["picdirectory"];
+            //echo "<img src= 'images/carrot.jpg'>";
+            echo "<img src='" . $row["picdirectory"] . "'>";
+        }
     }
 }
 
