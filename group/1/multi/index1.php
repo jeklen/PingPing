@@ -1,3 +1,11 @@
+<?php 
+  session_start();
+  require '../../../weixin.class.php'; 
+  $openid = 0;   
+  $token = wxmessage::getAuthToken($_GET['code']); 
+  $openid = $token['openid']; 
+  $_SESSION['user_id']=md5($openid);  
+ ?> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,17 +32,10 @@
 <body>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="./bootstrap.js"></script>
-<?php
-  session_start();
-  require '../../../weixin.class.php'; 
-  $openid = 0;   
-  $token = wxmessage::getAuthToken($_GET['code']); 
-  $openid = $token['openid']; 
-  $_SESSION['user_id']=md5($openid);  
- ?> 
 
 
-?>
+
+
 <!--
      //获取活动数目
 	$link=mysql_connect("localhost:3306","root");
