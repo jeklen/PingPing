@@ -29,15 +29,24 @@ if (isset($_FILES['image']['tmp_name'])) {
     //echo $data;
     //$image = addslashes(file_get_contents($_FILES['image']['tmp_name'])); //SQL Injection defence!
     */
+    /*
     $file_destination =  'images/' . $_FILES['image']['name'];
     if (move_uploaded_file($_FILES['image']['tmp_name'], $file_destination)) {
         echo "image uploaded";
     }
 
     $file = "images/" . $_FILES['image']['name'];
+    */
+
+    $size = $_FILES['image']['size'];
+    $tmp = $_FILES['image']['tmp_name'];
+    $fp = fopen($tmp, 'rb');
+    $data = fread($fp, $size);
+    $data= mysqli_real_escape_string($mysqli, $data);
+
     $sql = "insert into activity";
     $sql .= "(activity_name, activity_time, activity_population, activity_place, activity_describe, picdirectory)";
-    $sql .= "values('$activity_name', '$activity_time', '$activity_population', '$activity_place', '$activity_describe', '$file')";
+    $sql .= "values('$activity_name', '$activity_time', '$activity_population', '$activity_place', '$activity_describe', '$data')";
     //$sql .= "values('$image')";
     if ($mysql->runSql($sql) != TRUE) {
         echo "insert successful";
