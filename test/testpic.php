@@ -12,6 +12,7 @@ $result = $mysql->runSql($sql);
 //var_dump($result);
 
 if ($result->num_rows > 0) {
+    echo $result->num_rows ."<br>";
     while ($row = $result->fetch_assoc()) {
         //echo $row["picdirectory"];
         //echo "<img src= 'images/carrot.jpg'>";
