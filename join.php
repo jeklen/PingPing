@@ -1,24 +1,23 @@
 <?php 
   require 'weixin.class.php'; 
-  ob_start(); 
-  header("content-type:text/html;charset=utf-8"); 
-  session_start();
   $flag=0;  
-  if(!isset($_SESSION['user_id'])){ 
-     $flag=1;
-     ini_set('session.use_cookies', 0); 
-     if($_GET['code']){ 
+  ob_start(); 
+  header("content-type:text/html;charset=utf-8");  
+  if($_GET['code']){ 
+         $flag=1;
          $ret = wxmessage::getAuthToken($_GET['code']); 
          if(isset($ret['openid'])){ 
              $openid = $ret['openid']; 
          } 
-     } 
+     
    $sessionId = md5($openid);
-   session_destroy();
    session_id($sessionId);
    session_start();
    $_SESSION['user_id']=$sessionId;   
   }
+  else {
+   session_start();
+  }   
   $user_id=$_SESSION['user_id'];
 ?> 
 
