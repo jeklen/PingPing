@@ -35,7 +35,7 @@ activity_name activity_time activity_population activity_place activity_describe
 table2: user
 id user_name tel qq activity_id_initiate activity_id_join
 -->
-<form enctype="multipart/form-data" action="insertPublish1.php" method="post" name="changer" role="form" accept-charset="utf-8">
+<form enctype="multipart/form-data" action="insertPublish.php" method="post" name="changer" role="form" accept-charset="utf-8">
     <div class="form-group">
         <label for="activity_name">活动名称</label>
         <input name = "activity_name" type="text" class="form-control" id="activity_name" placeholder="请输入活动名称">
