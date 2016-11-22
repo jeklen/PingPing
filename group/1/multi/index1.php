@@ -204,7 +204,7 @@
 				<?php }?>
 				<div class="pagination" style="text-align:center">
 					<ul>
-					   <li><a><?php if($totalpage!=0) echo $page. "/" .$count;
+					   <li><a><?php if($totalpage!=0) echo $page. "/" .$totalpage;
                          else echo "暂无活动"; ?></a></li>
 					   
 				       <li><?php if($page==1 || $page > $totalpage) {?><a >首页</a>
