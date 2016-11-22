@@ -79,7 +79,7 @@
     if(isset($_GET['id']) && is_numeric($_GET['id'])){
 		$show_id=$_GET['id'];}
 	else{
-		echo'<script type="text/javascript">location.href="./index1.php"</script>';
+		echo'<script type="text/javascript">location.href="../multi/index1.php"</script>';
 	}
 	$link=new SaeMysql();
 	$sql="select * from activity where id=$show_id";
@@ -114,7 +114,7 @@
       </ul>
 	  <div>&nbsp;</div>
 	  <div>&nbsp;</div>
-	  <div>
+	  <div class="container">
 	     <div class="row">
 		   <div class="span8 pad">
 		   <p><span class="label label-info">活动详情</span><h2 style="text-align:center"><i class="icon-flag"></i><?php echo $result['activity_name'];?></h2></p>
@@ -167,7 +167,7 @@
 		 <div class="pagination" style="text-align:center">
 					<ul>
 					   <li><a><?php if($totalpage!=0) echo $page. "/" .$totalpage;
-                         else echo "暂时没有评论哦"; ?></a></li>
+                         else echo "暂无评论"; ?></a></li>
 					   
 				       <li><?php if($page==1 || $page > $totalpage) {?><a >首页</a>
 					   <?php } else {?><a href="show_2.php?id=<?php echo $show_id ?>&&page=1#comment">首页</a><?php }?>
