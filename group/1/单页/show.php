@@ -103,8 +103,8 @@
 <body>
    <div class="container-fluid" style="background-image:url(../multi/bgi.jpg)">
       <ul class="nav nav-tabs">
-	     <li><a href="../multi/index1.php"><i class="icon-home"></i>首页</a></li>
-		 <li><a href="../multi/index1.php?location=2"><i class="icon-heart"></i>活动</a></li>
+	     <li><a href="../../../join.php"><i class="icon-home"></i>首页</a></li>
+		 <li><a href="../../../join.php?location=2"><i class="icon-heart"></i>活动</a></li>
          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i>我的<span class="caret"></span></a>
 		       <ul class="dropdown-menu">
 			      <li><a href="#">我发布的</a></li>

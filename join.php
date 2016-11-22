@@ -74,9 +74,9 @@
 -->
 <?php
     if(isset($user_id)){
-    echo "<script>alert($flag);</script>";
+    echo "<script>alert('欢迎' . $user_id);</script>";
     }
-    else echo	"<script>alert($flag);</script>";
+    else echo	"<script>alert('没有user_id');</script>";
     $link=new SaeMysql();
     $sql1="select * from activity";
 	// $result1=$link->getLine($sql1);
