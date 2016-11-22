@@ -58,7 +58,7 @@
 	
 -->
 <?php
-    echo "<script>alert('欢迎' . $openid);</script>"; 
+    echo "<script>alert('欢迎');</script>"; 
     $link=new SaeMysql();
     $sql1="select * from activity";
 	// $result1=$link->getLine($sql1);
