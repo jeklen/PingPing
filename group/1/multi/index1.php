@@ -57,7 +57,8 @@
 	$result2=mysql_query($sql2) or die(mysql_error());
 	
 -->
-<?php 
+<?php
+    echo "<script>alert('欢迎' . $openid);</script>"; 
     $link=new SaeMysql();
     $sql1="select * from activity";
 	// $result1=$link->getLine($sql1);
