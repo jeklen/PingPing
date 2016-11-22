@@ -79,7 +79,7 @@
     if(isset($_GET['id']) && is_numeric($_GET['id'])){
 		$show_id=$_GET['id'];}
 	else{
-		echo'<script type="text/javascript">location.href="./index1.php"</script>';
+		echo'<script type="text/javascript">location.href="../multi/index1.php"</script>';
 	}
 	$link=new SaeMysql();
 	$sql="select * from activity where id=$show_id";
