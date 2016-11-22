@@ -25,11 +25,11 @@
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="./bootstrap.js"></script>
 <?php
+  session_start();
   require '../../../weixin.class.php'; 
   $openid = 0;   
   $token = wxmessage::getAuthToken($_GET['code']); 
   $openid = $token['openid']; 
-  session_start();
   $_SESSION['user_id']=md5($openid);  
  ?> 
 
