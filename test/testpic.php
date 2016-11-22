@@ -13,7 +13,7 @@ $result = $mysql->runSql($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo $row["picdirectory"];
+        //echo $row["picdirectory"];
         //echo "<img src= 'images/carrot.jpg'>";
         echo "<img src='" . $row["picdirectory"] . "'>";
     }
