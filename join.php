@@ -1,9 +1,11 @@
 <?php 
+  require 'weixin.class.php'; 
   ob_start(); 
   header("content-type:text/html;charset=utf-8"); 
-  session_start(); 
-  if(!isset($_SESSION['user_id'])){
-     require 'weixin.class.php'; 
+  session_start();
+  $flag=0;  
+  if(!isset($_SESSION['user_id'])){ 
+     $flag=1;
      ini_set('session.use_cookies', 0); 
      if($_GET['code']){ 
          $ret = wxmessage::getAuthToken($_GET['code']); 
@@ -73,9 +75,9 @@
 -->
 <?php
     if(isset($user_id)){
-    echo "<script>alert('欢迎'. $user_id);</script>";
+    echo "<script>alert($flag);</script>";
     }
-    else echo	"<script>alert('user_id还是不行');</script>";
+    else echo	"<script>alert($flag);</script>";
     $link=new SaeMysql();
     $sql1="select * from activity";
 	// $result1=$link->getLine($sql1);
