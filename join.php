@@ -1,11 +1,25 @@
 <?php 
-  session_start();
-  require 'weixin.class.php'; 
-  $openid = 0;   
-  $token = wxmessage::getAuthToken($_GET['code']); 
-  $openid = $token['openid']; 
-  $_SESSION['user_id']=md5($openid);  
- ?> 
+  ob_start(); 
+  header("content-type:text/html;charset=utf-8"); 
+  session_start(); 
+  if(!isset($_SESSION['user_id'])){
+     require 'weixin.class.php'; 
+     ini_set('session.use_cookies', 0); 
+     if($_GET['code']){ 
+         $ret = wxmessage::getAuthToken($_GET['code']); 
+         if(isset($ret['openid'])){ 
+             $openid = $ret['openid']; 
+         } 
+     } 
+   $sessionId = md5($openid);
+   session_destroy();
+   session_id($sessionId);
+   session_start();
+   $_SESSION['user_id']=$sessionId;   
+  }
+  $user_id=$_SESSION['user_id'];
+?> 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,8 +72,8 @@
 	
 -->
 <?php
-    if(isset($openid)){
-    echo "<script>alert('欢迎'. $openid);</script>";
+    if(isset($user_id)){
+    echo "<script>alert('欢迎'. $user_id);</script>";
     }
     else echo	"<script>alert('user_id还是不行');</script>";
     $link=new SaeMysql();
