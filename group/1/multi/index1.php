@@ -47,7 +47,7 @@
 -->
 <?php 
     $link=new SaeMysql();
-    $sql1="select (*) from activity";
+    $sql1="select * from activity";
 	// $result1=$link->getLine($sql1);
 	//$count=$result1[0];
     //$result = $runSql($sql1);
