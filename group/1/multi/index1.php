@@ -25,8 +25,7 @@
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="./bootstrap.js"></script>
 <?php
-  header("Content-Type: text/html;charset=utf-8");  
-  require 'weixin.class.php'; 
+  require '../../../weixin.class.php'; 
   $openid = 0;   
   echo $_GET['code']."<br>"; 
   $token = wxmessage::getAuthToken($_GET['code']); 
