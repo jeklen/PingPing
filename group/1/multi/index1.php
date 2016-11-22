@@ -52,7 +52,10 @@
 	//$count=$result1[0];
     //$result = $runSql($sql1);
     $result = $link->getData($sql1);
-    $count = count($result);
+    $count = 0;
+	foreach($result as $data ){
+		$count++;
+	}
 	//计算活动页数
 	$pagesize=5;
 	$totalpage=ceil($count / $pagesize);
