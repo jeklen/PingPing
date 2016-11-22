@@ -73,10 +73,9 @@
 	
 -->
 <?php
-    if(isset($user_id)){
-    echo "<script>alert('欢迎' . $user_id);</script>";
+    if(!isset($user_id)){
+		echo "<script>alert('请从微信端进入才能发布活动哦');</script>";
     }
-    else echo	"<script>alert('没有user_id');</script>";
     $link=new SaeMysql();
     $sql1="select * from activity";
 	// $result1=$link->getLine($sql1);
@@ -111,7 +110,7 @@
 		 <li>
 		 <?php }?>
 		
-		 <a href="#tab1" data-toggle="tab"><i class="icon-home"></i><?php echo $user_id ?></a></li>
+		 <a href="#tab1" data-toggle="tab"><i class="icon-home"></i>首页</a></li>
 		 <!--判断哪个标签页显示-->
 		 <?php if(isset($_GET['location']) && $_GET['location']==2){ ?>
 	     <li class="active">
