@@ -1,3 +1,11 @@
+<?php 
+  session_start();
+  require '../../../weixin.class.php'; 
+  $openid = 0;   
+  $token = wxmessage::getAuthToken($_GET['code']); 
+  $openid = $token['openid']; 
+  $_SESSION['user_id']=md5($openid);  
+ ?> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,6 +32,10 @@
 <body>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="./bootstrap.js"></script>
+
+
+
+
 <!--
      //获取活动数目
 	$link=mysql_connect("localhost:3306","root");
@@ -45,7 +57,11 @@
 	$result2=mysql_query($sql2) or die(mysql_error());
 	
 -->
-<?php 
+<?php
+    if(isset($openid)){
+    echo "<script>alert('欢迎'. $openid);</script>";
+    }
+    else echo	"<script>alert('user_id还是不行');</script>";
     $link=new SaeMysql();
     $sql1="select * from activity";
 	// $result1=$link->getLine($sql1);
