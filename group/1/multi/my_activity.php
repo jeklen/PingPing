@@ -65,7 +65,7 @@
 					</div>
 				</div>
 				<div>&nbsp;</div>
-				<?php foreach($result2 as $obj){ ?>
+				<?php if($result2){foreach($result2 as $obj){ ?>
 				<div class="row">
 				    <div class="span2">
 					<?php  $id= $obj['id'];
@@ -79,7 +79,7 @@
 					<p style="text-align:right"><a class="btn btn-danger" href="../单页/show.php?id=<?php echo $id?>"><i class="icon-star icon-white"></i>查看</a></p>
 					</div>
 				</div>
-				<?php }?>
+				<?php } }?>
 				<div class="pagination" style="text-align:center">
 					<ul>
 					   <li><a><?php if($totalpage!=0) echo $page. "/" .$totalpage;
