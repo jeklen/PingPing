@@ -1,3 +1,12 @@
+<?php
+    //身份认证
+    session_start();
+	if(!isset($_SESSION['user_id'])){
+		echo "<script>alert('请从微信端进入');history.back();</script>";
+	}
+	else $user_id=$_SESSION['user_id'];
+
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -11,15 +20,9 @@
 <script src="../multi/bootstrap.js"></script>
 </head>
 <?php
-    /*身份验证
-    session_start();
-	if(isset($_SESSION['user_id'])){
-		$user_id=$_SESSION['user_id'];
-	}
-	else echo "<script>alert('请从微信登陆');history.back();</script>";*/
-	//读取参与的活动(现在只是示例)
+	//读取参与的活动
 	$link=new SaeMysql();
-	$sql="select from activity where id=8";
+	$sql="select * from activity where user_id=$user_id";
 	$result=$link->getData($sql);
 	$count = count($result);
 	//计算活动页数
@@ -31,7 +34,7 @@
 	else $page=1;
 	$start=($page-1)*$pagesize;
 	//获取活动内容
-	$sql2="select * from activity where id=8 order by id desc limit $start,$pagesize";
+	$sql2="select * from activity where user_id=$user_id order by id desc limit $start,$pagesize";
 	$result2=$link->getData($sql2);
 ?>
 <body>
