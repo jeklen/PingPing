@@ -87,7 +87,10 @@
 	//获取评论数目
 	$sql1="select * from comments where activity_id=$show_id";
 	$result1=$link->getData($sql1);
-	$count=count($result1);
+	$count = 0;
+	foreach($result1 as $data ){
+		$count++;
+	}
 	//获取用户信息
 	$sql2="select * from user where activity_id_initiate=$show_id";
 	$result2=$link->getLine($sql2);
@@ -99,6 +102,9 @@
 	}
 	else $page=1;
 	$start=($page-1)*$pagesize;
+	//获取评论内容
+	$sql1="select * from comments where activity_id=$show_id order by time desc limit $start,$pagesize";
+	$result1=$link->getData($sql1);
 ?>		
 <body>
    <div class="container-fluid" style="background-image:url(../multi/bgi.jpg)">
