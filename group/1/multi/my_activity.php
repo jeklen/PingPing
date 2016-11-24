@@ -22,9 +22,12 @@
 <?php
 	//读取参与的活动
 	$link=new SaeMysql();
-	$sql="select * from activity where user_id=$user_id";
+	$sql="select * from activity_user_joiner where joiner_id=$user_id";
 	$result=$link->getData($sql);
-	$count = count($result);
+	$count = 0;
+	if($result1){foreach($result1 as $data ){
+		$count++;
+	}}
 	//计算活动页数
 	$pagesize=5;
 	$totalpage=ceil($count / $pagesize);
@@ -33,9 +36,6 @@
 	}
 	else $page=1;
 	$start=($page-1)*$pagesize;
-	//获取活动内容
-	$sql2="select * from activity where id=$user_id order by id desc limit $start,$pagesize";
-	$result2=$link->getData($sql2);
 ?>
 <body>
    <div class="container-fluid" style="background-image:url(../multi/bgi.jpg)">
@@ -65,17 +65,20 @@
 					</div>
 				</div>
 				<div>&nbsp;</div>
-				<?php if($result2){foreach($result2 as $obj){ ?>
+				<?php if($result){foreach($result as $obj){ 
+				        $ac_id=$obj['activity_id'];
+				        $sql1="select * from activity where activity_id=$ac_id";
+						$result1=$link->getline($sql1);?>
 				<div class="row">
 				    <div class="span2">
-					<IMG SRC=<?php $id=$obj['id'];
-					            echo $obj['picdirectory'] ?> width=100% height=110%>
+					<IMG SRC=<?php $id=$result1['id'];
+					            echo $result1['picdirectory'] ?> width=100% height=110%>
 					</div>
 					<div class="span10">
-					<h4><?php echo $obj['activity_name'] ?></h4>
+					<h4><?php echo $result1['activity_name'] ?></h4>
 					<p></p>
 					<p><span class="label label-info">活动简介</span></p>
-					<p><?php echo $obj['activity_describe'] ?></p>
+					<p><?php echo $result1['activity_describe'] ?></p>
 					<p style="text-align:right"><a class="btn btn-danger" href="../单页/show.php?id=<?php echo $id?>"><i class="icon-star icon-white"></i>查看</a></p>
 					</div>
 				</div>
