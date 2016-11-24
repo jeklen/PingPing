@@ -139,7 +139,7 @@
            <p style="text-indent:2em;"><?php echo "联系人电话：" .$result2['tel'] ?></p>
            <p style="text-indent:2em;"><?php echo "联系人QQ：" .$result2['qq'] ?></p>
 		   <p>&nbsp;</p>
-		   <p style="text-align:center;"><a class="btn btn-large btn-warning" href="../../../join_action.php">我要加入</a></p>
+		   <p style="text-align:center;"><a class="btn btn-large btn-warning" href="../../../join_action.php?id=<?php echo $show_id ?>">我要加入</a></p>
 		   </div>
 		 </div>
 		 <div>&nbsp;</div>
