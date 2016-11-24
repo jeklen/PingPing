@@ -22,7 +22,7 @@
 <?php
 	//读取参与的活动
 	$link=new SaeMysql();
-	$sql="select * from activity_user_joiner where joiner_id=$user_id";
+	$sql="select * from activity_user_joiner where joiner_id='$user_id'";
 	$result=$link->getData($sql);
 	$count = 0;
 	if($result){foreach($result as $data ){
