@@ -16,7 +16,7 @@
 	    $sql="insert into activity_user_joiner (activity_id,joiner_id) values('$id','$user_id')";
 		$link->runSql($sql);
 		if($link->errno()==0){
-		echo "<script>alert('报名成功');history.back();</script>";
+		echo "<script>alert('报名成功');location.href='./group/1/单页/show.php?id=$id';</script>";
 	    }
         else die("error" . $link->errmsg());
     }}
