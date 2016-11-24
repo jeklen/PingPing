@@ -25,7 +25,7 @@
 	$sql="select * from activity_user_joiner where joiner_id=$user_id";
 	$result=$link->getData($sql);
 	$count = 0;
-	if($result){foreach($result1 as $data ){
+	if($result){foreach($result as $data ){
 		$count++;
 	}}
 	//计算活动页数
