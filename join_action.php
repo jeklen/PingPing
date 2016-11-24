@@ -4,7 +4,7 @@
 	if(!isset($_SESSION['user_id'])){
 		echo "<script>alert('请从微信端进入');history.back();</script>";
 	}
-	else{ $user_id=strlen($_SESSION['user_id']);
+	else{ $user_id=$_SESSION['user_id'];
 	$id=$_GET['id'];
 	$link=new SaeMysql();
 	$check_sql="select * from activity_user_joiner where activity_id='$id' and joiner_id='$user_id'";

@@ -34,7 +34,7 @@
 	else $page=1;
 	$start=($page-1)*$pagesize;
 	//获取活动内容
-	$sql2="select * from activity where user_id=$user_id order by id desc limit $start,$pagesize";
+	$sql2="select * from activity where id=$user_id order by id desc limit $start,$pagesize";
 	$result2=$link->getData($sql2);
 ?>
 <body>
