@@ -220,7 +220,9 @@
 				<?php if($result2){foreach($result2 as $obj){ ?>
 				<div class="row">
 				    <div class="span2">
-				    <IMG SRC=<?php echo $obj['picdirectory'] ?> width=100% height=110%>
+				    <IMG SRC=<?php $id=$obj['id'];
+					            echo $obj['picdirectory'] ?> width=100% height=110%>
+								<?php  $id= $obj['id'];
 					</div>
 					<div class="span10">
 					<h4><?php echo $obj['activity_name'] ?></h4>
