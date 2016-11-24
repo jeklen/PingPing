@@ -8,7 +8,7 @@
 	$comment=$_POST['content'];
 	$id=$_POST['id'];
 	$link=new SaeMysql();
-	$sql="insert into comments (activity_id,user_id,time_of_comments,content) values('$id','$user_id',date(),'$comment')";
+	$sql="insert into comments (activity_id,user_id,time_of_comments,content) values('$id','$user_id',default,'$comment')";
 	$link->runSql($sql);
 	if($link->errno()==0){
 		echo "插入成功";
