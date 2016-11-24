@@ -1,12 +1,10 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <?php
     //身份认证
     session_start();
 	if(!isset($_SESSION['user_id'])){
 		echo "<script>alert('请从微信端进入');history.back();</script>";
 	}
-	else $user_id=strlen($_SESSION['user_id']);
+	else{ $user_id=strlen($_SESSION['user_id']);
 	$comment=$_POST['content'];
 	$id=$_POST['id'];
 	$link=new SaeMysql();
@@ -16,4 +14,7 @@
 		echo "<script>alert('评论成功');history.back();</script>";
 	}
     else die("error" . $link->errmsg());
+	}
 ?>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
