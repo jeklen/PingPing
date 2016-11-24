@@ -67,7 +67,7 @@
 				<div>&nbsp;</div>
 				<?php if($result){foreach($result as $obj){ 
 				        $ac_id=$obj['activity_id'];
-				        $sql1="select * from activity where activity_id=$ac_id";
+				        $sql1="select * from activity where activity_id='$ac_id'";
 						$result1=$link->getline($sql1);?>
 				<div class="row">
 				    <div class="span2">
