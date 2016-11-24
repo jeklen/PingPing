@@ -103,7 +103,7 @@
 	else $page=1;
 	$start=($page-1)*$pagesize;
 	//获取评论内容
-	$sql1="select * from comments where activity_id=$show_id order by time desc limit $start,$pagesize";
+	$sql1="select * from comments where activity_id=$show_id order by time_of_comments desc limit $start,$pagesize";
 	$result1=$link->getData($sql1);
 ?>		
 <body>
