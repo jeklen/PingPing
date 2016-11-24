@@ -2,6 +2,7 @@
 header("content-type:text/html; charset=utf8");
 session_start();
 echo session_id() . "<br>";
+$userid = session_id();
 $mysql = new SaeMysql();
 
 $mysql->setCharset("utf8");
@@ -51,7 +52,7 @@ if (isset($_FILES['image']['tmp_name'])) {
     $img = new SaeImage();
     $img_data = file_get_contents($form_data);//获取本地上传的图片数据
     $img->setData($img_data);
-    $img->resize(360,360); //图片缩放为180*180
+    $img->resize(720,720); //图片缩放为180*180
     $img->improve();//提高图片质量的函数
     $new_data = $img->exec(); // 执行处理并返回处理后的二进制数据
     $s2->write('images',$name,$new_data);//将public修改为自己的storage 名称
@@ -60,8 +61,8 @@ if (isset($_FILES['image']['tmp_name'])) {
     //echo "<img src='$url' />";
 
     $sql = "insert into activity";
-    $sql .= "(activity_name, activity_time, activity_population, activity_place, activity_describe, picdirectory)";
-    $sql .= "values('$activity_name', '$activity_time', '$activity_population', '$activity_place', '$activity_describe', '$url')";
+    $sql .= "(activity_name, user_id, activity_time, activity_population, activity_place, activity_describe, picdirectory)";
+    $sql .= "values('$activity_name', '$userid', '$activity_time', '$activity_population', '$activity_place', '$activity_describe', '$url')";
     //$sql .= "values('$image')";
     if ($mysql->runSql($sql) != TRUE) {
         echo "insert successful";
@@ -78,6 +79,16 @@ if (isset($_FILES['image']['tmp_name'])) {
             echo "<img src='" . $row["picdirectory"] . "'>";
         }
     }
+
+    /*
+    $sql = "insert into activity_user_joiner";
+    $sql .= "(activity_id, activity_time, user_id, joiner_id)";
+    $sql .= "values('$activity_name', '$userid', '$activity_time', '$activity_population', '$activity_place', '$activity_describe', '$url')";
+    //$sql .= "values('$image')";
+    if ($mysql->runSql($sql) != TRUE) {
+        echo "insert successful";
+    }
+    */
 
 
 }
