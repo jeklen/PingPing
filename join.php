@@ -83,9 +83,9 @@
     //$result = $runSql($sql1);
     $result = $link->getData($sql1);
     $count = 0;
-	foreach($result as $data ){
+	if($result){foreach($result as $data ){
 		$count++;
-	}
+	}}
 	//计算活动页数
 	$pagesize=5;
 	$totalpage=ceil($count / $pagesize);
@@ -227,7 +227,7 @@
 					<h4><?php echo $obj['activity_name'] ?></h4>
 					<p></p>
 					<p><span class="label label-info">活动简介</span></p>
-					<p><?php echo $obj['activity_describe'] ?></p>
+					<p><?php echo $user_id ?></p>
 					<p style="text-align:right"><a class="btn btn-success" href="./group/1/单页/show.php?id=<?php echo $id?>"><i class="icon-star icon-white"></i>了解详情</a></p>
 					</div>
 				</div>

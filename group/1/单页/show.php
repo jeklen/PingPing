@@ -88,9 +88,9 @@
 	$sql1="select * from comments where activity_id=$show_id";
 	$result1=$link->getData($sql1);
 	$count = 0;
-	foreach($result1 as $data ){
+	if($result1){foreach($result1 as $data ){
 		$count++;
-	}
+	}}
 	//获取用户信息
 	$sql2="select * from user where activity_id_initiate=$show_id";
 	$result2=$link->getLine($sql2);
@@ -139,7 +139,7 @@
            <p style="text-indent:2em;"><?php echo "联系人电话：" .$result2['tel'] ?></p>
            <p style="text-indent:2em;"><?php echo "联系人QQ：" .$result2['qq'] ?></p>
 		   <p>&nbsp;</p>
-		   <p style="text-align:center;"><a class="btn btn-large btn-warning" href="#">我要加入</a></p>
+		   <p style="text-align:center;"><a class="btn btn-large btn-warning" href="../../../join_action.php">我要加入</a></p>
 		   </div>
 		 </div>
 		 <div>&nbsp;</div>

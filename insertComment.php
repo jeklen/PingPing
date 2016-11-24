@@ -11,7 +11,7 @@
 	$sql="insert into comments (activity_id,user_id,time_of_comments,content) values('$id','$user_id',current_timestamp(),'$comment')";
 	$link->runSql($sql);
 	if($link->errno()==0){
-		echo "插入成功";
+		echo "<script>alert('评论成功');history.back();</script>";
 	}
     else die("error" . $link->errmsg());
 ?>
