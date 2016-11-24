@@ -119,7 +119,7 @@
 		   <div class="span8 pad">
 		   <p><span class="label label-info">活动详情</span><h2 style="text-align:center"><i class="icon-flag"></i><?php echo $result['activity_name'];?></h2></p>
 		   <p>&nbsp;</p>
-		   <p style="text-align:center"><?php echo "<IMG SRC='../multi/getImage.php?id=$show_id' width=50% height=50%>"; ?></p>
+		   <p style="text-align:center"><IMG SRC=<?php  echo $result['picdirectory'] ?> width=50% height=50%></p>
 		   <p>&nbsp;</p>
 		   <blockquote style="font-family:'宋体'"><?php echo $result['activity_describe'];?></blockquote>
 		   </div>
