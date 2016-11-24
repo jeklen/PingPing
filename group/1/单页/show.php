@@ -140,10 +140,11 @@
 	     <div>&nbsp;</div>
 		 <div style="text-align:right"><a href="#mymodal" class="btn" data-toggle="modal" >发表评论</a></div>
 		 <div id="mymodal" class="elegant-aero modal hide fade">
-		 <form action="#" method="post" name="comment">
+		 <form action="insertComment.php" method="post" name="comment">
 		          <h1>评论<i class="icon-edit"></i><h1>
 				  <p>&nbsp;</p>
 				  <p style="text-align:center"><textarea rows="15" cols="50" placeholder="请在这里写下评论~" name="content"></textarea></p>
+				  <input type='hidden' name="id" value=<?php echo $show_id ?> />
 				  <p style="text-align:right"><input type="submit" class="button" name="comment" value="提交" /></p>
 		 </form>
 		 </div>

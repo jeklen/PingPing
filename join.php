@@ -257,7 +257,7 @@
 	<div>&nbsp;</div>
 	<div>&nbsp;</div>
 	<div>&nbsp;</div>
-	<div class="navbar">
+	<div class="navbar" style="background-image:url(./group/1/multi/bgi.jpg);">
 	  <div class="navbar-inner">
 	      <p style="text-align:center">版权@大学生拼拼平台</p>
 	  </div>
