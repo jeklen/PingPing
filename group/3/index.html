@@ -65,20 +65,20 @@
     <div class="container">
         <div class="row" id="zanshu">
             <div class="col-md-6 col-sm-12">
-                <h1>The Big Picture</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, iusto, unde, sunt incidunt id sapiente rerum soluta voluptate harum veniam fuga odit ea pariatur vel eaque sint sequi tenetur eligendi.</p>
+                <h1>The First Page</h1>
+                <p>The first page</p>
             </div>
         </div>
         <div class="row" id="showus">
             <div class="col-md-6 col-sm-12 ">
-                <h1>The Big Picture</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, iusto, unde, sunt incidunt id sapiente rerum soluta voluptate harum veniam fuga odit ea pariatur vel eaque sint sequi tenetur eligendi.</p>
+                <h1>The Second Page</h1>
+                <p>The second page</p>
             </div>
         </div>
         <div class="row" id="contactgit">
             <div class="col-md-6 col-sm-12">
-                <h1>The Big Picture</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, iusto, unde, sunt incidunt id sapiente rerum soluta voluptate harum veniam fuga odit ea pariatur vel eaque sint sequi tenetur eligendi.</p>
+                <h1>The Third Page</h1>
+                <p>The third page</p>
             </div>
         </div>
 
@@ -93,10 +93,20 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
-    $(".bottom-menu").on('click',function(e) {
+    $(".bottom-menu a").on('click',function(e) {
         e.preventDefault(); // stops link form loading
         $('.row').hide(); // hides all content divs
-        $('#' + $(this).attr('href') ).show(); //get the href and use it find which div to show
+        //$('#' + $(this).attr('href') ).show(); //get the href and use it find which div to show
+        $($(this).attr('href') ).show(); //get the href and use it find which div to show
+        //$('#' + $(this).attr('href') ).show(); //get the href and use it find which div to show
+    });
+    </script>
+
+    <script>
+    $(document).ready(function() {
+        $('.row').hide();
+        $('#zanshu').show();
+        //do jQuery stuff when DOM is ready
     });
     </script>
 
