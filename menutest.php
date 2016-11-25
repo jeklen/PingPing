@@ -20,14 +20,14 @@ $menuPostData='{
 						   "name":"更多",
 						   "sub_button":[
 							{
-							   "type":"click",
-							   "name":"我们",
-							   "key":"ME"
+							   "type":"view",
+							   "name":"我要吐槽",
+							   "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx42dbf69f8939e9a8&redirect_uri=http://lovepingping.applinzi.com/tucao.php&response_type=code&scope=snsapi_base&state=1"
 							},
 							{
 							   "type":"click",
 							   "name":"赞一下我们",
-							   "key":"ENCOURAGE"
+							   "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx42dbf69f8939e9a8&redirect_uri=http://lovepingping.applinzi.com/dianzan.php&response_type=code&scope=snsapi_base&state=1"
 							}]
 					   }]
 				 }';
