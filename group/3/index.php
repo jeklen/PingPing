@@ -66,18 +66,21 @@
         <div class="row" id="zanshu">
             <div class="col-md-6 col-sm-12">
                 <h1>The First Page</h1>
+                <?php echo "hello world"; ?>
                 <p>The first page</p>
             </div>
         </div>
         <div class="row" id="showus">
             <div class="col-md-6 col-sm-12 ">
                 <h1>The Second Page</h1>
+                <?php echo "hello world"; ?>
                 <p>The second page</p>
             </div>
         </div>
         <div class="row" id="contactgit">
             <div class="col-md-6 col-sm-12">
                 <h1>The Third Page</h1>
+                <?php echo "the second page"; ?>
                 <p>The third page</p>
             </div>
         </div>
