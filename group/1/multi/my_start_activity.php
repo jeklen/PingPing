@@ -66,7 +66,7 @@
 				</div>
 				<div>&nbsp;</div>
 				<?php if($result){foreach($result as $obj){ 
-				        $id=$obj['activity_id'];
+				        $id=$obj['id'];
 						?>
 				<div class="row">
 				    <div class="span2">
