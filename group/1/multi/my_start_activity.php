@@ -71,13 +71,13 @@
 				<div class="row">
 				    <div class="span2">
 					<IMG SRC=<?php
-					            echo $result['picdirectory'] ?> width=100% height=110%>
+					            echo $obj['picdirectory'] ?> width=100% height=110%>
 					</div>
 					<div class="span10">
-					<h4><?php echo $result['activity_name'] ?></h4>
+					<h4><?php echo $obj['activity_name'] ?></h4>
 					<p></p>
 					<p><span class="label label-info">活动简介</span></p>
-					<p><?php echo $result['activity_describe'] ?></p>
+					<p><?php echo $obj['activity_describe'] ?></p>
 					<p style="text-align:right"><a class="btn btn-danger" href="../单页/show.php?id=<?php echo $id?>"><i class="icon-star icon-white"></i>查看</a></p>
 					</div>
 				</div>
