@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test 1</title>
+</head>
+<body>
+
+<div class="navbar-header">
+    <button type="button" class="navbar navbar-default" role="navigation">
+        <span class="sr-only">Toggle navigation></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#home">Home</a>
+</div>
+<div class="collapse navbar-collapse" id="navbar-collapse-1">
+    <ul class="nav navbar-nav">
+        <li><a href="#mywork" onclick="return show_div('mywork');">My Work</a></li>
+        <li><a href="#myprofile">Profile</a></li>
+        <li class="dropdown">
+            <a href="#other" data-toggle="dropdown" class="dropdown-toggle">Other actions <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#contactme">Contact Me</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a href="#actions" data-toggle="dropdown" class="dropdown-toggle">Actions <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#updateprofile">Update profile</a></li>
+                <li><a href="#logout">Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</div>
+
+<div id="home" style="display: none;">
+    Test Data
+</div>
+
+</body>
+</html>
