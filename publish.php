@@ -23,7 +23,7 @@ session_start();
     <meta charset="utf-8">
     <!--Bootstrap-->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-
+	<link rel="stylesheet" type="text/css" href="css/publish.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 	
 </head>
@@ -35,7 +35,7 @@ activity_name activity_time activity_population activity_place activity_describe
 table2: user
 id user_name tel qq activity_id_initiate activity_id_join
 -->
-
+<div class="dark-matter">
 <form enctype="multipart/form-data"  method="post" name="changer" role="form" action="insertPublish.php"  accept-charset="utf-8" onsubmit="var the_result=check_form();return the_result;">
     <div class="form-group">
         <label for="activity_name">活动名称</label>
@@ -76,7 +76,7 @@ id user_name tel qq activity_id_initiate activity_id_join
     </div>
     <button type="submit" class="btn btn-default">提交</button>
 </form>
-
+</div>
 
 <script type="text/javascript" src="js/check.js"></script>
 <script src="http://code.jquery.com/jquery.js"></script>
