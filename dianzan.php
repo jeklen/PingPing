@@ -13,7 +13,6 @@ if($_GET['code']){
 }
 ob_start();
 $sessionId = md5($openid);
-header("content-type:text/html;charset=utf-8");
 session_id($sessionId);
 session_start();
 $mysql = new SaeMysql();
@@ -28,6 +27,7 @@ if ($result->num_rows > 0) {
 if (!$mysql->affectedRows()) {
     header("Location: diangezan.php");die;
 }
+header("content-type:text/html;charset=utf-8");
 ?>
 <!DOCTYPE html>
 <html class="full" lang="en" xmlns="http://www.w3.org/1999/html">
