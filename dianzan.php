@@ -16,6 +16,12 @@ $sessionId = md5($openid);
 header("content-type:text/html;charset=utf-8");
 session_id($sessionId);
 session_start();
+$mysql = new SaeMysql();
+$mysql->setCharset("utf8");
+$query = "SELECT * FROM user WHERE id = '$sessionId' AND dianzan = 1";
+if (!affectedRows()) {
+    header("Location: diangezan.php");die;
+}
 ?>
 <!DOCTYPE html>
 <html class="full" lang="en" xmlns="http://www.w3.org/1999/html">
