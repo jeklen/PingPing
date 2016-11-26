@@ -150,7 +150,6 @@ header("content-type:text/html;charset=utf-8");
 
 <script>
     $(document).ready(function(e) {
-        e.preventDefault(); // stops link form loading
         $('.row').hide();
         $('#zanshu').show();
         //do jQuery stuff when DOM is ready
