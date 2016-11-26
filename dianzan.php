@@ -3,7 +3,19 @@
  * Date: 2016/11/25
  * Time: 15:56
  */
-
+require 'weixin.class.php';
+ini_set('session.use_cookies', 0);
+if($_GET['code']){
+    $ret = wxmessage::getAuthToken($_GET['code']);
+    if(isset($ret['openid'])){
+        $openid = $ret['openid'];
+    }
+}
+ob_start();
+$sessionId = md5($openid);
+header("content-type:text/html;charset=utf-8");
+session_id($sessionId);
+session_start();
 ?>
 <!DOCTYPE html>
 <html class="full" lang="en" xmlns="http://www.w3.org/1999/html">
