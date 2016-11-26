@@ -53,7 +53,7 @@ echo "<br>";
             $result = $mysql->runSql($sql);
             $zenshu = $mysql-> affectedRows();
             ?>
-            <h1>你是第<?php echo $zenshu ?>个点赞的人</h1>
+            <h1>你是第<?php echo $zenshu+1?>个点赞的人</h1>
             <p>谢谢支持</p>
         </div>
     </div>
