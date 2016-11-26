@@ -24,12 +24,15 @@ if ($result->num_rows > 0) {
         echo $row["id"];
     }
 }
+/*
 if (1) {
     header("location: diangezan.php");
     die;
 }
-if (!$mysql->affectedRows()) {
-    header("Location: diangezan.php");die;
+*/
+if ($result->num_rows > 0) {
+    header("location: diangezan.php");
+    die;
 }
 header("content-type:text/html;charset=utf-8");
 ?>
