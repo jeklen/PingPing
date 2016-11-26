@@ -30,7 +30,7 @@ if (1) {
     die;
 }
 */
-if ($result->num_rows > 0) {
+if ($result->num_rows == 0) {
     header("location: diangezan.php");
     die;
 }
@@ -63,14 +63,7 @@ header("content-type:text/html;charset=utf-8");
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script>
-        $(document).ready(function(e) {
-            e.preventDefault(); // stops link form loading
-            $('.row').hide();
-            $('#zanshu').show();
-            //do jQuery stuff when DOM is ready
-        });
-    </script>
+
 
 </head>
 
@@ -151,6 +144,14 @@ header("content-type:text/html;charset=utf-8");
     });
 </script>
 
+<script>
+    $(document).ready(function(e) {
+        e.preventDefault(); // stops link form loading
+        $('.row').hide();
+        $('#zanshu').show();
+        //do jQuery stuff when DOM is ready
+    });
+</script>
 
 
 </body>
