@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html class="full" lang="en" xmlns="http://www.w3.org/1999/html">
 <!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
@@ -24,6 +27,15 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script>
+    $(document).ready(function(e) {
+        e.preventDefault(); // stops link form loading
+        $('.row').hide();
+        $('#zanshu').show();
+        //do jQuery stuff when DOM is ready
+    });
+    </script>
 
 </head>
 
@@ -87,7 +99,8 @@
 
         <!-- /.row -->
     </div>
-    <!-- /.container -->
+
+   <!-- /.container -->
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -99,19 +112,11 @@
     $(".bottom-menu a").on('click',function(e) {
         e.preventDefault(); // stops link form loading
         $('.row').hide(); // hides all content divs
-        //$('#' + $(this).attr('href') ).show(); //get the href and use it find which div to show
         $($(this).attr('href') ).show(); //get the href and use it find which div to show
-        //$('#' + $(this).attr('href') ).show(); //get the href and use it find which div to show
     });
     </script>
 
-    <script>
-    $(document).ready(function() {
-        $('.row').hide();
-        $('#zanshu').show();
-        //do jQuery stuff when DOM is ready
-    });
-    </script>
+
 
 </body>
 
