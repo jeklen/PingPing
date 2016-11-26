@@ -1,7 +1,6 @@
 <?php
 header("content-type:text/html; charset=utf8");
 session_start();
-echo session_id() . "<br>";
 $userid = session_id();
 $mysql = new SaeMysql();
 
