@@ -54,9 +54,12 @@ echo "<br>";
             $zenshu = $mysql-> affectedRows();
             ?>
             <h1>你是第<?php echo $zenshu+1?>个点赞的人</h1>
-            <p>谢谢支持</p>
         </div>
     </div>
+    <div class="row">
+        <button class="btn btn-info">了解更多</button>
+    </div>
+
     <!-- /.row -->
 </div>
 <!-- /.container -->

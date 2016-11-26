@@ -17,20 +17,24 @@ session_id($sessionId);
 session_start();
 $mysql = new SaeMysql();
 $mysql->setCharset("utf8");
-$query = "SELECT * FROM user WHERE id = '$sessionId' AND dianzan = 1";
+$query = "SELECT * FROM user WHERE id = '$sessionId'";
 $result = $mysql->runSql($query);
+/*
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo $row["id"];
     }
 }
-/*
-if (1) {
-    header("location: diangezan.php");
-    die;
-}
 */
-if ($result->num_rows == 0) {
+$row = $result->fetch_assoc();
+if ($row['dianzan'] == 0) {
+    if ($result->num_rows == 1) {
+        $sql = "update user set dianzan = 1 where id = '$sessionId'";
+    }else {
+        $sql = "insert into user (id, dianzan)";
+        $sql .= "values('$sessionId', 1)";
+    }
+    $mysql->runSql($sql);
     header("location: diangezan.php");
     die;
 }
