@@ -23,15 +23,15 @@ class DefaultWeixin extends wxmessage {
                 case 'music':
                     $this->yishengmusic();
                     break;              
-              case 'joke':
+                case 'joke':
                    $this->xiaohua();
                    break;
-			  case '爱拼拼':
+			    case '爱拼拼':
 			       $this->introduction();
 				   break;
                 default:
-              $this->text($input);
-                break;
+                   $this->text($input);
+                   break;
                    
             }         
         }
