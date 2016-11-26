@@ -51,9 +51,12 @@ echo "<br>";
             <?php
             $sql = "select * from zanshu";
             $result = $mysql->runSql($sql);
-            $zenshu = $mysql-> affectedRows();
+            $zanshu = $mysql-> affectedRows() + 1;
+            $sqlInsert = "insert into zanshu";
+            $sqlInsert .= "(numzan, user_id) values('$userid', '$zanshu')";
+            $mysql-> runSql($sqlInsert);
             ?>
-            <h1>你是第<?php echo $zenshu+1?>个点赞的人</h1>
+            <h1>你是第<?php echo $zanshu?>个点赞的人</h1>
         </div>
     </div>
     <div class="row">
