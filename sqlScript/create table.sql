@@ -27,3 +27,9 @@ CREATE TABLE comments(
                  content text,
                  PRIMARY KEY(id)
                  );
+
+CREATE TABLE zanshu(
+            id INT(10) NOT NULL AUTO_INCREMENT,
+            numzan INT,
+            PRIMARY KEY(id)
+            )

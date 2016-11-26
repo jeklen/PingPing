@@ -1,11 +1,15 @@
 <?php
+header("content-type:text/html; charset=utf8");
+session_start();
+$userid = session_id();
+$mysql = new SaeMysql();
+
+$mysql->setCharset("utf8");
+echo "<br>";
 /**
- * Created by PhpStorm.
- * User: zhang
  * Date: 2016/11/26
  * Time: 15:18
  */
-echo "你可以点赞了";
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +49,12 @@ echo "你可以点赞了";
     <div class="row">
         <div class="col-md-6 col-sm-12">
             <h1>The Big Picture</h1>
+            <?php
+            $sql = "select * from zanshu";
+            $result = $mysql->runSql($sql);
+            echo $mysql-> afftctedRows();
+            ?>
+            ?>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, iusto, unde, sunt incidunt id sapiente rerum soluta voluptate harum veniam fuga odit ea pariatur vel eaque sint sequi tenetur eligendi.</p>
         </div>
     </div>
