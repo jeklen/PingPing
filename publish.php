@@ -25,7 +25,7 @@ session_start();
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-
+	
 </head>
 <body>
 
@@ -35,7 +35,8 @@ activity_name activity_time activity_population activity_place activity_describe
 table2: user
 id user_name tel qq activity_id_initiate activity_id_join
 -->
-<form enctype="multipart/form-data" action="insertPublish.php" method="post" name="changer" role="form" accept-charset="utf-8">
+
+<form enctype="multipart/form-data"  method="post" name="changer" role="form" action="insertPublish.php"  accept-charset="utf-8" onsubmit="var the_result=check_form();return the_result;">
     <div class="form-group">
         <label for="activity_name">活动名称</label>
         <input name = "activity_name" type="text" class="form-control" id="activity_name" placeholder="请输入活动名称">
@@ -66,14 +67,18 @@ id user_name tel qq activity_id_initiate activity_id_join
         <input type="text" class="form-control" id="user_name" name="user_name">
     </div>
     <div class="form-group">
-        <label for="tel">电话</label>
+        <label for="tel">手机</label>
         <input type="tel" class="form-control" id="tel" name="tel">
     </div>
-    <button type="submit" class=""btn btn-default>提交</button>
+	<div class="form-group">
+        <label for="qq">QQ或微信</label>
+        <input type="tel" class="form-control" id="qq" name="qq">
+    </div>
+    <button type="submit" class="btn btn-default">提交</button>
 </form>
 
 
-
+<script type="text/javascript" src="js/check.js"></script>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- Bootstrap Date-Picker Plugin not sure whether go with css-->
