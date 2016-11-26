@@ -1,0 +1,13 @@
+参与活动共有以下几个文件:
+
+join.php-> 目录：根目录 
+           主页面  包括欢迎界面、分页显示活动界面
+
+show.php-> 目录：./group/1/单页/show.php
+           单页显示活动详情界面
+
+my_activity.php ->目录：./group/1/multi/my_activity.php
+                  查看我报名参与的活动的界面
+
+my_start_activity.php ->目录：./group/1/multi/my_start_activity.php
+                        查看我发起的活动的界面
