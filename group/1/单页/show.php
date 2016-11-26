@@ -3,11 +3,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>活动详情</title>
-<link rel="stylesheet" type="text/css" href="../multi/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../multi/css/bootstrap-responsive.css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap-responsive.css">
 <link rel="stylesheet" type="text/css" href="greenpad.css">
 <script src="http://code.jquery.com/jquery.js"></script>
-<script src="../multi/bootstrap.js"></script>
+<script src="./js/bootstrap.js"></script>
 <style>
    .pad{
 	   background-color:#F0F8FF;
@@ -107,14 +107,14 @@
 	$result1=$link->getData($sql1);
 ?>		
 <body>
-   <div class="container-fluid" style="background-image:url(../multi/bgi.jpg)">
+   <div class="container-fluid" style="background-image:url(./bgi.jpg)">
       <ul class="nav nav-tabs">
-	     <li><a href="../../../join.php"><i class="icon-home"></i>首页</a></li>
-		 <li><a href="../../../join.php?location=2"><i class="icon-heart"></i>活动</a></li>
+	     <li><a href="./join.php"><i class="icon-home"></i>首页</a></li>
+		 <li><a href="./join.php?location=2"><i class="icon-heart"></i>活动</a></li>
          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i>我的<span class="caret"></span></a>
 		       <ul class="dropdown-menu">
-			      <li><a href="../multi/my_start_activity.php">我发布的</a></li>
-				  <li><a href="../multi/my_activity.php">我参与的</a></li>
+			      <li><a href="./my_start_activity.php">我发布的</a></li>
+				  <li><a href="./my_activity.php">我参与的</a></li>
 			   </ul>
 		 </li>
       </ul>
@@ -139,7 +139,7 @@
            <p style="text-indent:2em;"><?php echo "联系人电话：" .$result2['tel'] ?></p>
            <p style="text-indent:2em;"><?php echo "联系人QQ：" .$result2['qq'] ?></p>
 		   <p>&nbsp;</p>
-		   <p style="text-align:center;"><a class="btn btn-large btn-warning" href="../../../join_action.php?id=<?php echo $show_id ?>">我要加入</a></p>
+		   <p style="text-align:center;"><a class="btn btn-large btn-warning" href="./join_action.php?id=<?php echo $show_id ?>">我要加入</a></p>
 		   </div>
 		 </div>
 		 <div>&nbsp;</div>

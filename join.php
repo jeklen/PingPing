@@ -19,7 +19,7 @@
    session_start();
   }   
   $user_id=$_SESSION['user_id'];
-?>
+?> 
 
 <!DOCTYPE html>
 <html>
@@ -27,8 +27,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>大学生拼拼</title>
-<link rel="stylesheet" type="text/css" href="./group/1/multi/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="./group/1/multi/css/bootstrap-responsive.css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./css/bootstrap-responsive.css">
 <style>
    div.span5.outlined{
 	   border:1px dotted black;
@@ -46,7 +46,7 @@
 </head>
 <body>
 <script src="http://code.jquery.com/jquery.js"></script>
-<script src="./group/1/multi/bootstrap.js"></script>
+<script src="./js/bootstrap.js"></script>
 
 
 
@@ -101,7 +101,7 @@
 
 ?>
     	
-   <div class="container-fluid" style="background-image:url(./group/1/multi/bgi.jpg);">
+   <div class="container-fluid" style="background-image:url(./bgi.jpg);">
       <ul class="nav nav-tabs">
 	     <!--判断哪个标签页显示-->
 	     <?php if(!isset($_GET['location']) || $_GET['location']!=2){ ?>
@@ -121,8 +121,8 @@
 		 <a href="#tab2" data-toggle="tab"><i class="icon-heart"></i>活动</a></li>
 		 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i>我的<span class="caret"></span></a>
 		       <ul class="dropdown-menu">
-			      <li><a href="./group/1/multi/my_start_activity.php">我发布的</a></li>
-				  <li><a href="./group/1/multi/my_activity.php">我参与的</a></li>
+			      <li><a href="./my_start_activity.php">我发布的</a></li>
+				  <li><a href="./my_activity.php">我参与的</a></li>
 			   </ul>
 		 </li>
       </ul>
@@ -228,7 +228,7 @@
 					<p></p>
 					<p><span class="label label-info">活动简介</span></p>
 					<p><?php echo $obj['activity_describe'] ?></p>
-					<p style="text-align:right"><a class="btn btn-success" href="./group/1/单页/show.php?id=<?php echo $id?>"><i class="icon-star icon-white"></i>了解详情</a></p>
+					<p style="text-align:right"><a class="btn btn-success" href="./show.php?id=<?php echo $id?>"><i class="icon-star icon-white"></i>了解详情</a></p>
 					</div>
 				</div>
 				<?php } }?>
