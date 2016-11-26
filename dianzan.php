@@ -19,7 +19,12 @@ session_start();
 $mysql = new SaeMysql();
 $mysql->setCharset("utf8");
 $query = "SELECT * FROM user WHERE id = '$sessionId' AND dianzan = 1";
-$mysql->runSql($query);
+$result = $mysql->runSql($query);
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo $row["id"];
+    }
+}
 if (!$mysql->affectedRows()) {
     header("Location: diangezan.php");die;
 }
