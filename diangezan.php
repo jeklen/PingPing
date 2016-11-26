@@ -48,14 +48,13 @@ echo "<br>";
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-sm-12">
-            <h1>The Big Picture</h1>
             <?php
             $sql = "select * from zanshu";
             $result = $mysql->runSql($sql);
-            echo $mysql-> affectedRows();
+            $zenshu = $mysql-> affectedRows();
             ?>
-            ?>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, iusto, unde, sunt incidunt id sapiente rerum soluta voluptate harum veniam fuga odit ea pariatur vel eaque sint sequi tenetur eligendi.</p>
+            <h1>你是第<?php echo $zenshu ?>个点赞的人</h1>
+            <p>谢谢支持</p>
         </div>
     </div>
     <!-- /.row -->
