@@ -67,6 +67,7 @@ if (isset($_FILES['image']['tmp_name'])) {
     if ($mysql->runSql($sql) != TRUE) {
         echo "insert successful";
     }
+    /*
 
     $sql = "select * from activity";
     $result = $mysql->runSql($sql);
@@ -79,6 +80,7 @@ if (isset($_FILES['image']['tmp_name'])) {
             echo "<img src='" . $row["picdirectory"] . "'>";
         }
     }
+    */
 
     /*
     $sql = "insert into activity_user_joiner";
