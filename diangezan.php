@@ -53,14 +53,17 @@ echo "<br>";
             $result = $mysql->runSql($sql);
             $zanshu = $mysql-> affectedRows() + 1;
             $sqlInsert = "insert into zanshu";
-            $sqlInsert .= "(numzan, user_id) values('$userid', '$zanshu')";
+            $sqlInsert .= "(numzan, user_id) values('$userid', '$userid')";
             $mysql-> runSql($sqlInsert);
             ?>
             <h1>你是第<?php echo $zanshu?>个点赞的人</h1>
         </div>
     </div>
-    <div class="row">
-        <button class="btn btn-info">了解更多</button>
+    <div class="row text-center">
+        <form action="dianzan.php" method="get">
+            <input type="submit" value="了解更多"
+                   name="Submit" id="frm1_submit" />
+        </form>
     </div>
 
     <!-- /.row -->
