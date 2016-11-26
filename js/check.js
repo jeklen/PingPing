@@ -39,4 +39,8 @@
 				alert("未填写手机联系方式");
 				return false;
 			}
+			if(document.changer.tel.value.length != 11){
+				alert("您输入的手机号不正确");
+				return false;
+			}
 		}
