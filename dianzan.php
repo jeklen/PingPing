@@ -56,7 +56,10 @@ header("content-type:text/html;charset=utf-8");
 
     <!-- Custom CSS -->
     <link href="css/dianzan.css" rel="stylesheet">
-
+	<!--First Page CSS-->
+	<link rel="stylesheet" href="css/dianzanpage1_1.css" type="text/css" />
+	<link rel="stylesheet" href="css/dianzanpage1_2.css" type="text/css" />
+	<link rel="stylesheet" href="fonts/iconfont.css" type="text/css" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -106,8 +109,73 @@ header("content-type:text/html;charset=utf-8");
 <div class="container">
     <div class="row" id="zanshu">
         <div class="col-md-6 col-sm-12">
-            <h1>点个赞</h1>
-            <h2>谢谢啦，你已经点过赞了</h2>
+            <div class="box">
+				<h1><img src="pic/indexpicture.png" width="300" height="150"></h1>
+				<div class="content">
+					<p>如果觉得我们做的不错的话，就给我们点个赞吧~</p>
+				</div>
+			</div>
+			<div class="opera">
+				<span id="btn">
+					<i class="iconfont"></i> 点击
+				</span>
+			</div>
+			<script src="js/jquery.min.js" type="text/javascript"></script>
+			<script type="text/javascript">
+			(function ($) {
+				$.extend({
+					tipsBox: function (options) {
+						options = $.extend({
+							obj: null, 
+							str: "+1", 
+							startSize: "12px", 
+							endSize: "30px", 
+							interval: 600, 
+							color: "red", 
+							callback: function () { } 
+						}, options);
+						$("body").append("<span class='num'>" + options.str + "</span>");
+						var box = $(".num");
+						var left = options.obj.offset().left + options.obj.width() / 2;
+						var top = options.obj.offset().top - options.obj.height();
+						box.css({
+							"position": "absolute",
+							"left": left + "px",
+							"top": top + "px",
+							"z-index": 9999,
+							"font-size": options.startSize,
+							"line-height": options.endSize,
+							"color": options.color
+						});
+						box.animate({
+							"font-size": options.endSize,
+							"opacity": "0",
+							"top": top - parseInt(options.endSize) + "px"
+						}, options.interval, function () {
+							box.remove();
+							options.callback();
+						});
+					}
+				});
+			})(jQuery);
+			function niceIn(prop){
+				prop.find('i').addClass('niceIn');
+				setTimeout(function(){
+					prop.find('i').removeClass('niceIn');  
+				},1000);    
+			}
+			$(function () {
+				$("#btn").click(function () {
+					$.tipsBox({
+						obj: $(this),
+						str: "+1",
+						callback: function () {
+						}
+					});
+					niceIn($(this));
+				});
+			});
+			</script>
         </div>
     </div>
     <div class="row" id="showus">
