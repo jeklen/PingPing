@@ -132,7 +132,7 @@ class DefaultWeixin extends wxmessage {
      */
      private function introduction() {
 	 $text = "爱拼拼是一个在线的拼团平台。您可以在这里发布活动，召集志同道合的小伙伴一起吃喝玩乐，或者约图自习。希望爱拼拼能给您的校园生活带来便利与舒心！\n现在就发布您的第一个活动吧！";
-	 $xml = $tihs->outputText($text);
+	 $xml = $this->outputText($text);
 	 header('Content-Type: application/xml');
 	 echo $xml;
 	}
