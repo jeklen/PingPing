@@ -1,4 +1,4 @@
-<?php
+ <?php
 /**
  * Date: 2016/11/25
  * Time: 15:56
@@ -35,8 +35,8 @@ if ($row['dianzan'] == 0) {
     die;
 }
 
-header("content-type:text/html;charset=utf-8");
-?>
+header("content-type:text/html;charset=utf-8"); 
+?> 
 <!DOCTYPE html>
 <html class="full" lang="en" xmlns="http://www.w3.org/1999/html">
 <!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
@@ -72,7 +72,8 @@ header("content-type:text/html;charset=utf-8");
 </head>
 
 <body>
-
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
     <div class="container">
@@ -116,7 +117,6 @@ header("content-type:text/html;charset=utf-8");
 			<span id="btn">
 				<i class="iconfont"></i> 点击
 			</span>
-			<script src="js/jquery.min.js" type="text/javascript"></script>
 			<script type="text/javascript">
 			(function ($) {
 				$.extend({
@@ -192,8 +192,7 @@ header("content-type:text/html;charset=utf-8");
 
 <!-- /.container -->
 
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
+
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
