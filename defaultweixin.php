@@ -131,9 +131,9 @@ class DefaultWeixin extends wxmessage {
 	 * return '爱拼拼'
 	 */
 	/*private function introduction() {
-		$text = "爱拼拼是一个在线的拼团平台。您可以在这里发布活动，召集志同道合的小伙伴一起吃喝玩乐，或者约图自习。希望爱拼拼能给您的校园生活带来便利与舒心！\n现在就发布您的第一个活动吧！"
+		$text = "爱拼拼是一个在线的拼团平台。您可以在这里发布活动，召集志同道合的小伙伴一起吃喝玩乐，或者约图自习。希望爱拼拼能给您的校园生活带来便利与舒心！\n现在就发布您的第一个活动吧！";
 	    $xml = $tihs->outputText($text);
-		header('Content-Typt:application/xml');
+		header('Content-Type:application/xml');
 		echo $xml;
 	}*/
 	
@@ -153,7 +153,7 @@ class DefaultWeixin extends wxmessage {
 		if  (empty($result1)){
 			$text = "您还没有发起或参加过活动，现在开始尝试加入一个活动吧！";
 			$xml = $this->outputText($text);
-			header('Content-Typt:application/xml');
+			header('Content-Type:application/xml');
 			echo $xml;
 		}
 		
@@ -199,7 +199,7 @@ class DefaultWeixin extends wxmessage {
 		if (empty($result1)){
 			$text = "您还没有参加过活动，现在开始参加一个活动吧！";
 			$xml = $this->outputText($text);
-			header('Content-Typt:application/xml');
+			header('Content-Type:application/xml');
 			echo $xml;
 		}
 		
@@ -245,7 +245,7 @@ class DefaultWeixin extends wxmessage {
 		if (empty($result1)){
 			$text = "您还没有发起过活动，现在开始发布一个活动吧！";
 			$xml = $this->outputText($text);
-			header('Content-Typt:application/xml');
+			header('Content-Type:application/xml');
 			echo $xml;
 		}
 		
