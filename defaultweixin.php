@@ -23,15 +23,24 @@ class DefaultWeixin extends wxmessage {
                 case 'music':
                     $this->yishengmusic();
                     break;              
-              case 'joke':
+                case 'joke':
                    $this->xiaohua();
                    break;
-			  case '爱拼拼':
+			    case '爱拼拼':
 			       $this->introduction();
 				   break;
+				case '我的活动':
+				   $this->re_activity():
+				   break;
+				case '我加入的';
+				   $this->re_activity_join();
+				   break;
+				case '我发起的';
+				   $this->re_activity_initiate();
+				   break;
                 default:
-              $this->text($input);
-                break;
+                   $this->text($input);
+                   break;
                    
             }         
         }
@@ -126,6 +135,145 @@ class DefaultWeixin extends wxmessage {
 	    $xml = $this->outputText($text);
 		header('Content-Typt:application/xml');
 		echo $xml;
+	}
+	
+	/**
+	 * return '我的活动'
+	 */
+	private function re_activity($data){
+	    $mysql = new SaeMysql();
+		$openid = $this->escape($data->FromUserName);
+		$sql1 = "SELECT 'user_id' , 'joiner_id'
+		         FROM   'activity_user_joiner'
+				 WHERE  'user_id' LIKE '{$openid}' , 'joiner_id' LIKE '{$openid}'
+		         ORDER BY 'activity_time' desc";
+		$result1 = $mysql->getData($sql1);
+		
+		//如果还没有发起或参加活动
+		if  (empty($result1)){
+			$text = "您还没有发起或参加过活动，现在开始尝试加入一个活动吧！";
+			$xml = $this->outputText($text);
+			header('Content-Typt:application/xml');
+			echo $xml;
+		}
+		
+		//已经有过活动信息
+		else{
+		$sql2 = "SELECT 'id'
+		         FROM 'activity'
+				 WHERE 'id'  LIKE  '{$result1[0]['activity_id']}'";
+		$result2 = $mysql->getData($sql2);
+		$post = array( 
+			array(
+			    'title' => "即将开始的活动",
+				'discription' => "活动名称：".$result2['activity_name']."\n".
+				                 "活动时间：".$result2['activity_time']."\n".
+								 "活动地点：".$result2['activity_place']."\n".
+								 "活动描述：".$result2['activity_describe']."\n";				             
+				'picurl' => "",
+				'url' => "",
+				)
+			/*,array(
+			'title' => "获取更多活动信息，请点击这里！",
+			'discription' => "",
+			'picurl' => "",
+			'url' => "",                //加入这个用户的分页链接！！！
+			)*/
+        ); 
+        $this->outputNews($post); 
+		}		
+	}
+	
+	/**
+	 * return '我加入的'
+	 */
+	private function re_activity_join($data){
+		$openid = $this->escape($data->FromUserName);
+		$sql1 = "SELECT joiner_id
+		         FROM   'activity_user_joiner'
+				 WHERE  'joiner_id'  LIKE  '{$openid}'
+				 ORDER BY  'activity_time' desc";
+	    $result1 = $mysql->getData($sql1);
+		
+		//如果还没有参加过活动
+		if (empty($result1)){
+			$text = "您还没有参加过活动，现在开始参加一个活动吧！";
+			$xml = $this->outputText($text);
+			header('Content-Typt:application/xml');
+			echo $xml;
+		}
+		
+		//已经参加过活动
+		else{
+		$sql2 = "select 'id'
+		         from 'activity'
+				 where 'id'  like  '{$result1[0]['activity_id']}'";
+		$result2 = $mysql->getData($sql2);
+		$post = array( 
+			array(
+			    'title' => "我加入的活动",
+				'discription' => "活动名称：".$result2['activity_name']."\n".
+				                 "活动时间：".$result2['activity_time']."\n".
+								 "活动地点：".$result2['activity_place']."\n".
+								 "活动描述：".$result2['activity_describe']."\n";				             
+				'picurl' => "",
+				'url' => "",                    //    加入该活动的分页链接！！！
+				)
+			/*,array(
+			'title' => "获取更多活动信息，请点击这里！",
+			'discription' => "",
+			'picurl' => "",
+			'url' => "",                //加入这个用户的分页链接！！！
+			)*/
+        ); 
+        $this->outputNews($post);
+		}
+	}
+	
+	/**
+	 * return '我发起的'
+	 */
+	private function re_activity_initiate($data){
+		$openid = $this->escape($data->FromUserName);
+		$sql1 = "SELECT 'user_id'
+		         FROM   'activity_user_joiner'
+				 WHERE  'user_id'  LIKE  '{$openid}'
+				 ORDER BY  'activity_time' desc";
+		$result1 = $mysql->getData($sql1);
+		
+		//如果还没有发起过活动
+		if (empty($result1)){
+			$text = "您还没有发起过活动，现在开始发布一个活动吧！";
+			$xml = $this->outputText($text);
+			header('Content-Typt:application/xml');
+			echo $xml;
+		}
+		
+		//已经发布过活动
+		else{
+		$sql2 = "select 'id'
+		         from 'activity'
+				 where 'id'  like  '{$result1[0]['activity_id']}'";
+		$result2 = $mysql->getData($sql2);
+		$post = array( 
+			array(
+			    'title' => "我发起的活动",
+				'discription' => "活动名称：".$result2['activity_name']."\n".
+				                 "活动时间：".$result2['activity_time']."\n".
+								 "活动地点：".$result2['activity_place']."\n".
+								 "活动描述：".$result2['activity_describe']."\n";				             
+				'picurl' => "",
+				'url' => "",                    //    加入该活动的分页链接！！！
+				)
+			/*,array(
+			'title' => "获取更多活动信息，请点击这里！",
+			'discription' => "",
+			'picurl' => "",
+			'url' => "",                //加入这个用户的分页链接！！！
+			)*/
+        ); 
+        $this->outputNews($post);
+		}
 	}
 	
     /**
