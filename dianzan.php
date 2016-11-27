@@ -111,9 +111,7 @@ header("content-type:text/html;charset=utf-8");
         <div class="col-md-6 col-sm-12">
             <div class="box">
 				<h1><img src="pic/indexpicture.png" width="300" height="150"></h1>
-				<div class="content">
-					<p>如果觉得我们做的不错的话，就给我们点个赞吧~</p>
-				</div>
+				<p>如果觉得我们做的不错的话，就给我们点个赞吧~</p>				
 			</div>
 			<div class="opera">
 				<span id="btn">
