@@ -4,7 +4,7 @@
  * Time: 15:56
  */
 
-/*
+
 require 'weixin.class.php';
 ini_set('session.use_cookies', 0);
 if($_GET['code']){
@@ -34,7 +34,7 @@ if ($row['dianzan'] == 0) {
     header("location: diangezan.php");
     die;
 }
- */
+
 header("content-type:text/html;charset=utf-8");
 ?>
 <!DOCTYPE html>
