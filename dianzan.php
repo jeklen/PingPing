@@ -3,6 +3,8 @@
  * Date: 2016/11/25
  * Time: 15:56
  */
+
+/*
 require 'weixin.class.php';
 ini_set('session.use_cookies', 0);
 if($_GET['code']){
@@ -19,13 +21,7 @@ $mysql = new SaeMysql();
 $mysql->setCharset("utf8");
 $query = "SELECT * FROM user WHERE id = '$sessionId'";
 $result = $mysql->runSql($query);
-/*
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo $row["id"];
-    }
-}
-*/
+
 $row = $result->fetch_assoc();
 if ($row['dianzan'] == 0) {
     if ($result->num_rows == 1) {
@@ -38,6 +34,7 @@ if ($row['dianzan'] == 0) {
     header("location: diangezan.php");
     die;
 }
+ */
 header("content-type:text/html;charset=utf-8");
 ?>
 <!DOCTYPE html>
@@ -55,10 +52,10 @@ header("content-type:text/html;charset=utf-8");
     <title>赞一下我们</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dianzan/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/the-big-picture.css" rel="stylesheet">
+    <link href="css/dianzan/the-big-picture.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
