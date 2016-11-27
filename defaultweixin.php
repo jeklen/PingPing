@@ -26,10 +26,10 @@ class DefaultWeixin extends wxmessage {
                 case 'joke':
                    $this->xiaohua();
                    break;
-			 /*   case '爱拼拼':
-			       $this->introduction();
-				   break;
-				case '我的活动':
+	        case '爱拼拼':
+		   $this->introduction();
+	           break;
+			/*	case '我的活动':
 				   $this->re_activity():
 				   break;
 				case '我加入的';
@@ -127,15 +127,15 @@ class DefaultWeixin extends wxmessage {
         echo $xml;
     }
     
-	/**
-	 * return '爱拼拼'
-	 */
-	/*private function introduction() {
-		$text = "爱拼拼是一个在线的拼团平台。您可以在这里发布活动，召集志同道合的小伙伴一起吃喝玩乐，或者约图自习。希望爱拼拼能给您的校园生活带来便利与舒心！\n现在就发布您的第一个活动吧！";
-	    $xml = $tihs->outputText($text);
-		header('Content-Type:application/xml');
-		echo $xml;
-	}*/
+    /**
+     * return '爱拼拼'
+     */
+     private function introduction() {
+	 $text = "爱拼拼是一个在线的拼团平台。您可以在这里发布活动，召集志同道合的小伙伴一起吃喝玩乐，或者约图自习。希望爱拼拼能给您的校园生活带来便利与舒心！\n现在就发布您的第一个活动吧！";
+	 $xml = $tihs->outputText($text);
+	 header('Content-Type: application/xml');
+	 echo $xml;
+	}
 	
 	/**
 	 * return '我的活动'
