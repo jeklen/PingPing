@@ -136,7 +136,7 @@
 		    <div class="container">
 			    <div class="row">
 				    <div class="span12">
-					     <h1><img src="pic/indexpicture.png"></h1>
+					     <h1><img src="pic/indexpicture.png" width="200" height="100"></h1>
 						 <div id="box" class="carousel slide" data-ride="carousel" data-interval="3000">
 						   <ol class="carousel-indicators">
 						      <li class="active" data-target="#box" data-slide-to="0"></li>
