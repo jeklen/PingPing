@@ -26,7 +26,7 @@ class DefaultWeixin extends wxmessage {
                 case 'joke':
                    $this->xiaohua();
                    break;
-			    case '爱拼拼':
+			 /*   case '爱拼拼':
 			       $this->introduction();
 				   break;
 				case '我的活动':
@@ -37,7 +37,7 @@ class DefaultWeixin extends wxmessage {
 				   break;
 				case '我发起的';
 				   $this->re_activity_initiate();
-				   break;
+				   break;*/
                 default:
                    $this->text($input);
                    break;
@@ -130,17 +130,17 @@ class DefaultWeixin extends wxmessage {
 	/**
 	 * return '爱拼拼'
 	 */
-	private function introduction() {
+	/*private function introduction() {
 		$text = "爱拼拼是一个在线的拼团平台。您可以在这里发布活动，召集志同道合的小伙伴一起吃喝玩乐，或者约图自习。希望爱拼拼能给您的校园生活带来便利与舒心！\n现在就发布您的第一个活动吧！"
-	    $xml = $this->outputText($text);
+	    $xml = $tihs->outputText($text);
 		header('Content-Typt:application/xml');
 		echo $xml;
-	}
+	}*/
 	
 	/**
 	 * return '我的活动'
 	 */
-	private function re_activity($data){
+	/*private function re_activity($data){
 	    $mysql = new SaeMysql();
 		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT 'user_id' , 'joiner_id'
@@ -179,15 +179,15 @@ class DefaultWeixin extends wxmessage {
 			'picurl' => "",
 			'url' => "",                //加入这个用户的分页链接！！！
 			)*/
-        ); 
+    /*    ); 
         $this->outputNews($post); 
 		}		
-	}
+	}*/
 	
 	/**
 	 * return '我加入的'
 	 */
-	private function re_activity_join($data){
+	/*private function re_activity_join($data){
 		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT joiner_id
 		         FROM   'activity_user_joiner'
@@ -225,15 +225,15 @@ class DefaultWeixin extends wxmessage {
 			'picurl' => "",
 			'url' => "",                //加入这个用户的分页链接！！！
 			)*/
-        ); 
+     /*   ); 
         $this->outputNews($post);
 		}
-	}
+	}*/
 	
 	/**
 	 * return '我发起的'
 	 */
-	private function re_activity_initiate($data){
+	/*private function re_activity_initiate($data){
 		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT 'user_id'
 		         FROM   'activity_user_joiner'
@@ -271,10 +271,10 @@ class DefaultWeixin extends wxmessage {
 			'picurl' => "",
 			'url' => "",                //加入这个用户的分页链接！！！
 			)*/
-        ); 
+       /* ); 
         $this->outputNews($post);
 		}
-	}
+	}*/
 	
     /**
      * return welcome msg
