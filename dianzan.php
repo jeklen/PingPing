@@ -55,7 +55,7 @@ header("content-type:text/html;charset=utf-8");
     <link href="css/dianzan/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/dianzan/the-big-picture.css" rel="stylesheet">
+    <link href="css/dianzan.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
