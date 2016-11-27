@@ -106,23 +106,20 @@ header("content-type:text/html;charset=utf-8");
 <div class="container">
     <div class="row" id="zanshu">
         <div class="col-md-6 col-sm-12">
-            <h1>The First Page</h1>
-            <?php echo "hello world"; ?>
-            <p>The first page</p>
+            <h1>点个赞</h1>
+            <h2>谢谢啦，你已经点过赞了</h2>
         </div>
     </div>
     <div class="row" id="showus">
         <div class="col-md-6 col-sm-12 ">
-            <h1>The Second Page</h1>
-            <?php echo "hello world"; ?>
-            <p>The second page</p>
+            <h1>我们</h1>
+            <h2>我们是社会主义好青年</h2>
         </div>
     </div>
     <div class="row" id="contactgit">
         <div class="col-md-6 col-sm-12">
-            <h1>The Third Page</h1>
-            <?php echo "the second page"; ?>
-            <p>The third page</p>
+            <h1>联系我们</h1>
+            <h2>我们的github链接是：https://github.com/ZhangQiaolun/PingPing</h2>
         </div>
     </div>
 
