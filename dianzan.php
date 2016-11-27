@@ -119,7 +119,7 @@ header("content-type:text/html;charset=utf-8");
     <div class="row" id="contactgit">
         <div class="col-md-6 col-sm-12">
             <h1>联系我们</h1>
-            <h2>我们的github链接是：https://github.com/ZhangQiaolun/PingPing</h2>
+            <h2>我们的github<a href="https://github.com/ZhangQiaolun/PingPing"> 链接</a></h2>
         </div>
     </div>
 
