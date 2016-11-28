@@ -84,7 +84,7 @@
 	$link=new SaeMysql();
 	$sql="select * from activity where id=$show_id";
     $result=$link->getLine($sql);
-	$sql2="select * from user where id=$show_id";
+	$sql2="select * from user where activity_id_initiate=$show_id";
 	$result2=$link->getLine($sql2);
 	//获取评论数目
 	$sql1="select * from comments where activity_id=$show_id";
@@ -138,7 +138,7 @@
            <p style="text-indent:2em;"><?php echo "活动人数：" . $result['activity_population'] ;?></p>
            <p style="text-indent:2em;"><?php echo "活动联系人：" . $result2['user_name'] ;?></p>
            <p style="text-indent:2em;"><?php echo "联系人电话：" .$result2['tel']; ?></p>
-           <p style="text-indent:2em;"><?php echo "联系人QQ：" .$result2['qq']; ?></p>
+           <p style="text-indent:2em;"><?php echo "联系人QQ：" .$result2['qq'] ?></p>
 		   <p>&nbsp;</p>
 		   <p style="text-align:center;"><a class="btn btn-large btn-warning" href="./join_action.php?id=<?php echo $show_id ?>">我要加入</a></p>
 		   </div>
