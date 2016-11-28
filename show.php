@@ -84,8 +84,10 @@
 	$link=new SaeMysql();
 	$sql="select * from activity where id=$show_id";
     $result=$link->getLine($sql);
-	$sql2="select * from activity_user_joiner where activity_id=$show_id";
+	//获取发起人ID
+	$sql2="select top 1 * from activity_user_joiner where activity_id=$show_id";
 	$result2=$link->getLine($sql2);
+	//获取发起人联系信息
 	$u_id=$result2['user_id'];
 	$sql3="select * from user where id='$u_id'";
 	$result3=$link->getLine($sql3);
