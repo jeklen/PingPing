@@ -67,7 +67,7 @@ id user_name tel qq activity_id_initiate activity_id_join */
 
     $sql = "insert into activity";
     $sql .= "(activity_name, user_id, activity_time, activity_population, activity_place, activity_describe, picdirectory)";
-    $sql .= "values('$activity_name', '$user_id', '$activity_time', '$activity_population', '$activity_place', '$activity_describe', '$url')";
+    $sql .= "values('$activity_name', '$userid', '$activity_time', '$activity_population', '$activity_place', '$activity_describe', '$url')";
     //$sql .= "values('$image')";
     if ($mysql->runSql($sql) != TRUE) {
         echo "insert successful";
