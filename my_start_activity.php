@@ -20,7 +20,7 @@
 <script src="./js/bootstrap.js"></script>
 </head>
 <?php
-	//读取参与的活动
+	//读取发布的活动
 	$link=new SaeMysql();
 	$sql="select * from activity where user_id='$user_id'";
 	$result=$link->getData($sql);
