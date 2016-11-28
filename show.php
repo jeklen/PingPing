@@ -85,9 +85,9 @@
 	$sql="select * from activity where id=$show_id";
     $result=$link->getLine($sql);
 	//获取发起人ID
-	$u_id=$result['user_id'];
+	$uid=$result['user_id'];
 	//获取发起人联系信息
-	$sql3="select * from user where id='$u_id'";
+	$sql3="select * from user where id='$uid'";
 	$result3=$link->getLine($sql3);
 	//获取评论数目
 	$sql1="select * from comments where activity_id=$show_id";
@@ -113,7 +113,7 @@
 <body>
    <div class="container-fluid" style="background-image:url(./bgi.jpg)">
       <ul class="nav nav-tabs">
-	     <li><a href="./join.php"><i class="icon-home"></i><?php echo $u_id;?></a></li>
+	     <li><a href="./join.php"><i class="icon-home"></i>首页</a></li>
 		 <li><a href="./join.php?location=2"><i class="icon-heart"></i>活动</a></li>
          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i>我的<span class="caret"></span></a>
 		       <ul class="dropdown-menu">

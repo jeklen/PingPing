@@ -73,8 +73,8 @@ id user_name tel qq activity_id_initiate activity_id_join */
         echo "insert successful";
     }
 	$sql2 = "insert into user";
-    $sql2 .= "(user_name,tel,qq)";
-    $sql2 .= "values('$user_name','$tel','$qq')";
+    $sql2 .= "(id,user_name,tel,qq)";
+    $sql2 .= "values('user_id','$user_name','$tel','$qq')";
 	if ($mysql->runSql($sql2) != TRUE) {
         echo "insert successful";
     }
