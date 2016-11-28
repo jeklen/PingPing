@@ -29,7 +29,7 @@ class DefaultWeixin extends wxmessage {
 	        case 'aipinpin':
 		   $this->introduction();
 	           break;
-		case '我的活动':
+/*		case '我的活动':
 		   $this->re_activity($data);
 		   break;
 		case '我加入的':
@@ -37,7 +37,7 @@ class DefaultWeixin extends wxmessage {
 	           break;
 		case '我发起的':
 		   $this->re_activity_initiate($data);
-		   break;
+		   break;*/
                 default:
                    $this->text($input);
                    break;
