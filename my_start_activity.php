@@ -23,6 +23,7 @@
 	//读取参与的活动
 	$link=new SaeMysql();
 	$sql="select * from activity where user_id='$user_id'";
+	$sql3="delete * from activity where id=$show_id";
 	$result=$link->getData($sql);
 	$count = 0;
 	if($result){foreach($result as $data ){

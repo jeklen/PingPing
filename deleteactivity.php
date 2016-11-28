@@ -3,9 +3,9 @@
     if(isset($_GET['id']) && is_numeric($_GET['id'])){
 		$show_id=$_GET['id'];}
 	else{
-		echo'<script type="text/javascript">location.href="../../../join.php"</script>';
+		return false;
 	}
 	$link=new SaeMysql();
-	$sql="delete * from activity where id=$show_id";
-	$link->runSql($sql);
+	$sql3="delete * from activity where id=$show_id";
+	$link->runSql($sql3);
 ?>
