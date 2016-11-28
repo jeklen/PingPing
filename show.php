@@ -84,6 +84,8 @@
 	$link=new SaeMysql();
 	$sql="select * from activity where id=$show_id";
     $result=$link->getLine($sql);
+	$sql2="select * from user where id=$show_id";
+	$result2=$link->getLine($sql2);
 	//获取评论数目
 	$sql1="select * from comments where activity_id=$show_id";
 	$result1=$link->getData($sql1);
@@ -92,8 +94,7 @@
 		$count++;
 	}}
 	//获取用户信息
-	$sql2="select * from user where activity_id_initiate=$show_id";
-	$result2=$link->getLine($sql2);
+	
 	//计算留言页数
 	$pagesize=5;
 	$totalpage=ceil($count / $pagesize);
