@@ -84,8 +84,11 @@
 	$link=new SaeMysql();
 	$sql="select * from activity where id=$show_id";
     $result=$link->getLine($sql);
-	$sql2="select * from user where activity_id_initiate=$show_id";
+	$sql2="select * from activity_user_joiner where activity_id=$show_id";
 	$result2=$link->getLine($sql2);
+	$u_id=$result2['user_id'];
+	$sql3="select * from user where id='$u_id'";
+	$result3=$link->getLine($sql3);
 	//获取评论数目
 	$sql1="select * from comments where activity_id=$show_id";
 	$result1=$link->getData($sql1);
@@ -136,9 +139,9 @@
 		   <p style="text-indent:2em;"><?php echo "活动时间：" . $result['activity_time']; ?></p>
 		   <p style="text-indent:2em;"><?php echo "活动地点：" . $result['activity_place']; ?></p>
            <p style="text-indent:2em;"><?php echo "活动人数：" . $result['activity_population'] ;?></p>
-           <p style="text-indent:2em;"><?php echo "活动联系人：" . $result2['user_name'] ;?></p>
-           <p style="text-indent:2em;"><?php echo "联系人电话：" .$result2['tel']; ?></p>
-           <p style="text-indent:2em;"><?php echo "联系人QQ：" .$result2['qq'] ?></p>
+           <p style="text-indent:2em;"><?php echo "活动联系人：" . $result3['user_name'] ;?></p>
+           <p style="text-indent:2em;"><?php echo "联系人电话：" .$result3['tel']; ?></p>
+           <p style="text-indent:2em;"><?php echo "联系人QQ：" .$result3['qq'] ?></p>
 		   <p>&nbsp;</p>
 		   <p style="text-align:center;"><a class="btn btn-large btn-warning" href="./join_action.php?id=<?php echo $show_id ?>">我要加入</a></p>
 		   </div>
