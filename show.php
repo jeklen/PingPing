@@ -85,7 +85,7 @@
 	$sql="select * from activity where id=$show_id";
     $result=$link->getLine($sql);
 	//获取发起人ID
-	$sql2="select top 1 * from activity_user_joiner where activity_id=$show_id";
+	$sql2="select top 1 * from activity where activity_id=$show_id";
 	$result2=$link->getLine($sql2);
 	//获取发起人联系信息
 	$u_id=$result2['user_id'];
