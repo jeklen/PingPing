@@ -79,6 +79,7 @@
 					<p><span class="label label-info">活动简介</span></p>
 					<p><?php echo $obj['activity_describe'] ?></p>
 					<p style="text-align:right"><a class="btn btn-danger" href="./show.php?id=<?php echo $id?>"><i class="icon-star icon-white"></i>查看</a></p>
+					<p style="text-align:right"><a class="btn btn-danger" href="./show.php?id=<?php echo $id?>"><i class="icon-star icon-white"></i>删除活动</a></p>
 					</div>
 				</div>
 				<?php } }?>
@@ -88,16 +89,16 @@
                          else echo "暂无活动"; ?></a></li>
 					   
 				       <li><?php if($page==1 || $page > $totalpage) {?><a >首页</a>
-					   <?php } else {?><a href="my_activity.php?page=1">首页</a><?php }?>
+					   <?php } else {?><a href="my_start_activity.php?page=1">首页</a><?php }?>
 					   </li>
 					   <li><?php if($page==1 || $page > $totalpage) {?><a >上一页</a>
-					   <?php } else {?><a href="my_activity.php?page=<?php echo $page-1 ?>">上一页</a><?php }?>
+					   <?php } else {?><a href="my_start_activity.php?page=<?php echo $page-1 ?>">上一页</a><?php }?>
 					   </li>
 					   <li><?php if($page==$totalpage || $page > $totalpage) { ?><a >下一页</a>
-					   <?php } else {?><a href="my_activity.php?page=<?php echo $page+1 ?>">下一页</a><?php }?>
+					   <?php } else {?><a href="my_start_activity.php?page=<?php echo $page+1 ?>">下一页</a><?php }?>
 					   </li>
 					   <li><?php if($page==$totalpage || $page > $totalpage) { ?><a >尾页</a>
-					   <?php } else {?><a href="my_activity.php?page=<?php echo $totalpage ?>">尾页</a><?php }?>
+					   <?php } else {?><a href="my_start_activity.php?page=<?php echo $totalpage ?>">尾页</a><?php }?>
 					   </li>
 				</div>
 			</div>
