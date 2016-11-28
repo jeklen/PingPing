@@ -113,7 +113,7 @@
 <body>
    <div class="container-fluid" style="background-image:url(./bgi.jpg)">
       <ul class="nav nav-tabs">
-	     <li><a href="./join.php"><i class="icon-home"></i>首页</a></li>
+	     <li><a href="./join.php"><i class="icon-home"></i><?php echo $u_id;?></a></li>
 		 <li><a href="./join.php?location=2"><i class="icon-heart"></i>活动</a></li>
          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i>我的<span class="caret"></span></a>
 		       <ul class="dropdown-menu">
