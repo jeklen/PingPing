@@ -7,4 +7,5 @@
 	}
 	$link=new SaeMysql();
 	$sql="delete * from activity where id=$show_id";
+	mysql_query($sql);
 ?>
