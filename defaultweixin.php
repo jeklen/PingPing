@@ -26,18 +26,18 @@ class DefaultWeixin extends wxmessage {
                 case 'joke':
                    $this->xiaohua();
                    break;
-	        case 'aipinpin':
+	        case '爱拼拼':
 		   $this->introduction();
 	           break;
-			/*	case '我的活动':
-				   $this->re_activity():
-				   break;
-				case '我加入的';
-				   $this->re_activity_join();
-				   break;
-				case '我发起的';
-				   $this->re_activity_initiate();
-				   break;*/
+		case '我的活动':
+		   $this->re_activity();
+		   break;
+		case '我加入的':
+		   $this->re_activity_join();
+	           break;
+		case '我发起的':
+		   $this->re_activity_initiate();
+		   break;
                 default:
                    $this->text($input);
                    break;
@@ -128,7 +128,7 @@ class DefaultWeixin extends wxmessage {
     }
     
     /**
-     * return 'aipinpin'
+     * return '爱拼拼'
      */
      private function introduction() {
 	 $text = "爱拼拼是一个在线的拼团平台。您可以在这里发布活动，召集志同道合的小伙伴一起吃喝玩乐，或者约图自习。希望爱拼拼能给您的校园生活带来便利与舒心！\n现在就发布您的第一个活动吧！";
@@ -137,17 +137,17 @@ class DefaultWeixin extends wxmessage {
 	 echo $xml;
 	}
 	
-	/**
-	 * return '我的活动'
-	 */
-	/*private function re_activity($data){
-	    $mysql = new SaeMysql();
-		$openid = $this->escape($data->FromUserName);
-		$sql1 = "SELECT 'user_id' , 'joiner_id'
-		         FROM   'activity_user_joiner'
-				 WHERE  'user_id' LIKE '{$openid}' , 'joiner_id' LIKE '{$openid}'
-		         ORDER BY 'activity_time' desc";
-		$result1 = $mysql->getData($sql1);
+     /**
+      * return '我的活动'
+      */
+     private function re_activity($data){
+	 $mysql = new SaeMysql();
+	 $openid = $this->escape($data->FromUserName);
+	 $sql1 = "SELECT 'user_id' , 'joiner_id'
+		  FROM   'activity_user_joiner'
+		  WHERE  'user_id' LIKE '{$openid}' , 'joiner_id' LIKE '{$openid}'
+		  ORDER BY 'activity_time' desc";
+	 $result1 = $mysql->getData($sql1);
 		
 		//如果还没有发起或参加活动
 		if  (empty($result1)){
@@ -161,7 +161,7 @@ class DefaultWeixin extends wxmessage {
 		else{
 		$sql2 = "SELECT 'id'
 		         FROM 'activity'
-				 WHERE 'id'  LIKE  '{$result1[0]['activity_id']}'";
+			 WHERE 'id'  LIKE  '{$result1[0]['activity_id']}'";
 		$result2 = $mysql->getData($sql2);
 		$post = array( 
 			array(
@@ -179,15 +179,16 @@ class DefaultWeixin extends wxmessage {
 			'picurl' => "",
 			'url' => "",                //加入这个用户的分页链接！！！
 			)*/
-    /*    ); 
+        ); 
         $this->outputNews($post); 
 		}		
-	}*/
+	}
 	
 	/**
 	 * return '我加入的'
 	 */
-	/*private function re_activity_join($data){
+	private function re_activity_join($data){
+		$mysql = new SaeMysql();
 		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT joiner_id
 		         FROM   'activity_user_joiner'
@@ -225,15 +226,16 @@ class DefaultWeixin extends wxmessage {
 			'picurl' => "",
 			'url' => "",                //加入这个用户的分页链接！！！
 			)*/
-     /*   ); 
+        ); 
         $this->outputNews($post);
 		}
-	}*/
+	}
 	
 	/**
 	 * return '我发起的'
 	 */
-	/*private function re_activity_initiate($data){
+	private function re_activity_initiate($data){
+		$mysql = new SaeMysql();
 		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT 'user_id'
 		         FROM   'activity_user_joiner'
@@ -271,10 +273,10 @@ class DefaultWeixin extends wxmessage {
 			'picurl' => "",
 			'url' => "",                //加入这个用户的分页链接！！！
 			)*/
-       /* ); 
+        ); 
         $this->outputNews($post);
 		}
-	}*/
+	}
 	
     /**
      * return welcome msg

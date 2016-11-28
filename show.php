@@ -131,7 +131,7 @@
 		   <p>&nbsp;</p>
 		   <p style="text-align:center"><IMG SRC=<?php  echo $result['picdirectory'] ?> width=50% height=50%></p>
 		   <p>&nbsp;</p>
-		   <blockquote style="font-family:'宋体'"><?php echo $result['activity_describe'];?></blockquote>
+		   <blockquote style="font-family:'SimHei'"><?php echo $result['activity_describe'];?></blockquote>
 		   </div>
 		   <div class="span4 width5 pad">
 		   <p><span class="label label-success label-big pull-right" style="text-align:right">快来拼拼吧~</span></p>
