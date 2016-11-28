@@ -3,8 +3,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>活动详情</title>
-<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="./css/bootstrap-responsive.css">
+<link rel="stylesheet" type="text/css" href="./css2/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./css2/bootstrap-responsive.css">
 <link rel="stylesheet" type="text/css" href="greenpad.css">
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="./js/bootstrap.js"></script>
@@ -131,7 +131,7 @@
 		   <p>&nbsp;</p>
 		   <p style="text-align:center"><IMG SRC=<?php  echo $result['picdirectory'] ?> width=50% height=50%></p>
 		   <p>&nbsp;</p>
-		   <blockquote style="font-family:'SimHei'"><?php echo $result['activity_describe'];?></blockquote>
+		   <blockquote style="font-family:'宋体'"><?php echo $result['activity_describe'];?></blockquote>
 		   </div>
 		   <div class="span4 width5 pad">
 		   <p><span class="label label-success label-big pull-right" style="text-align:right">快来拼拼吧~</span></p>

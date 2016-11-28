@@ -27,8 +27,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>大学生拼拼</title>
-<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="./css/bootstrap-responsive.css">
+<link rel="stylesheet" type="text/css" href="./css2/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./css2/bootstrap-responsive.css">
 <style>
    div.span5.outlined{
 	   border:1px dotted black;
