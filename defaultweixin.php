@@ -32,10 +32,10 @@ class DefaultWeixin extends wxmessage {
 		case '我的活动':
 		   $this->re_activity();
 		   break;
-	/*	case '我加入的':
+		case '我加入的':
 		   $this->re_activity_join();
 	           break;
-		case '我发起的':
+	/*	case '我发起的':
 		   $this->re_activity_initiate();
 		   break;*/
                 default:
@@ -187,7 +187,8 @@ class DefaultWeixin extends wxmessage {
 	/**
 	 * return '我加入的'
 	 */
-	/*private function re_activity_join($data){
+	private function re_activity_join($data){
+		$mysql = new SaeMysql();
 		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT joiner_id
 		         FROM   'activity_user_joiner'
@@ -225,15 +226,16 @@ class DefaultWeixin extends wxmessage {
 			'picurl' => "",
 			'url' => "",                //加入这个用户的分页链接！！！
 			)*/
-     /*   ); 
+        ); 
         $this->outputNews($post);
 		}
-	}*/
+	}
 	
 	/**
 	 * return '我发起的'
 	 */
-	/*private function re_activity_initiate($data){
+	private function re_activity_initiate($data){
+		$mysql = new SaeMysql();
 		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT 'user_id'
 		         FROM   'activity_user_joiner'
@@ -271,10 +273,10 @@ class DefaultWeixin extends wxmessage {
 			'picurl' => "",
 			'url' => "",                //加入这个用户的分页链接！！！
 			)*/
-       /* ); 
+        ); 
         $this->outputNews($post);
 		}
-	}*/
+	}
 	
     /**
      * return welcome msg
