@@ -21,6 +21,11 @@ if (isset($_FILES['image']['tmp_name'])) {
     $activity_population = $_POST['activity_population'];
     $activity_place = $_POST['activity_place'];
     $activity_describe = $_POST['activity_describe'];
+	/* table2: user
+id user_name tel qq activity_id_initiate activity_id_join */
+	$user_name = $_POST['user_name'];
+	$tel = $_POST['tel'];
+	$qq = $_POST['qq'];
     /*
     // Read the file
     $fp = fopen($tmpName, 'r');
@@ -62,9 +67,15 @@ if (isset($_FILES['image']['tmp_name'])) {
 
     $sql = "insert into activity";
     $sql .= "(activity_name, user_id, activity_time, activity_population, activity_place, activity_describe, picdirectory)";
-    $sql .= "values('$activity_name', '$userid', '$activity_time', '$activity_population', '$activity_place', '$activity_describe', '$url')";
+    $sql .= "values('$activity_name', '$user_id', '$activity_time', '$activity_population', '$activity_place', '$activity_describe', '$url')";
     //$sql .= "values('$image')";
     if ($mysql->runSql($sql) != TRUE) {
+        echo "insert successful";
+    }
+	$sql2 = "insert into user";
+    $sql2 .= "(user_name,tel,qq)";
+    $sql2 .= "values('$user_name','$tel','$qq')";
+	if ($mysql->runSql($sql2) != TRUE) {
         echo "insert successful";
     }
     /*
