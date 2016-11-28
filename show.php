@@ -85,10 +85,8 @@
 	$sql="select * from activity where id=$show_id";
     $result=$link->getLine($sql);
 	//获取发起人ID
-	$sql2="select top 1 * from activity where activity_id=$show_id";
-	$result2=$link->getLine($sql2);
+	$u_id=$result['user_id'];
 	//获取发起人联系信息
-	$u_id=$result2['user_id'];
 	$sql3="select * from user where id='$u_id'";
 	$result3=$link->getLine($sql3);
 	//获取评论数目
