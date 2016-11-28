@@ -26,17 +26,17 @@ class DefaultWeixin extends wxmessage {
                 case 'joke':
                    $this->xiaohua();
                    break;
-	        case '爱拼拼':
+	        case 'aipinpin':
 		   $this->introduction();
 	           break;
 		case '我的活动':
-		   $this->re_activity();
+		   $this->re_activity($data);
 		   break;
 		case '我加入的':
-		   $this->re_activity_join();
+		   $this->re_activity_join($data);
 	           break;
 		case '我发起的':
-		   $this->re_activity_initiate();
+		   $this->re_activity_initiate($data);
 		   break;
                 default:
                    $this->text($input);
@@ -128,7 +128,7 @@ class DefaultWeixin extends wxmessage {
     }
     
     /**
-     * return '爱拼拼'
+     * return 'aipinpin'
      */
      private function introduction() {
 	 $text = "爱拼拼是一个在线的拼团平台。您可以在这里发布活动，召集志同道合的小伙伴一起吃喝玩乐，或者约图自习。希望爱拼拼能给您的校园生活带来便利与舒心！\n现在就发布您的第一个活动吧！";
