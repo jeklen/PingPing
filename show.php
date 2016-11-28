@@ -135,10 +135,10 @@
 		   <p><h3 style="text-align:center;"><i class="icon-tag icon-white"></i>活动具体</h3></p>
 		   <p style="text-indent:2em;"><?php echo "活动时间：" . $result['activity_time']; ?></p>
 		   <p style="text-indent:2em;"><?php echo "活动地点：" . $result['activity_place']; ?></p>
-           <p style="text-indent:2em;"><?php echo "活动人数：" . $result['activity_population'] ?></p>
-           <p style="text-indent:2em;"><?php echo "活动联系人：" . $result2['user_name'] ?></p>
-           <p style="text-indent:2em;"><?php echo "联系人电话：" .$result2['tel'] ?></p>
-           <p style="text-indent:2em;"><?php echo "联系人QQ：" .$result2['qq'] ?></p>
+           <p style="text-indent:2em;"><?php echo "活动人数：" . $result['activity_population'] ;?></p>
+           <p style="text-indent:2em;"><?php echo "活动联系人：" . $result2['user_name'] ;?></p>
+           <p style="text-indent:2em;"><?php echo "联系人电话：" .$result2['tel']; ?></p>
+           <p style="text-indent:2em;"><?php echo "联系人QQ：" .$result2['qq']; ?></p>
 		   <p>&nbsp;</p>
 		   <p style="text-align:center;"><a class="btn btn-large btn-warning" href="./join_action.php?id=<?php echo $show_id ?>">我要加入</a></p>
 		   </div>
