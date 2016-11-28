@@ -35,9 +35,9 @@ class DefaultWeixin extends wxmessage {
 		case '我加入的':
 		   $this->re_activity_join();
 	           break;
-	/*	case '我发起的':
+		case '我发起的':
 		   $this->re_activity_initiate();
-		   break;*/
+		   break;
                 default:
                    $this->text($input);
                    break;
