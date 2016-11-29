@@ -150,7 +150,7 @@
 	     <div>&nbsp;</div>
 		 <div style="text-align:right"><a href="#mymodal" class="btn" data-toggle="modal" >发表评论</a></div>
 		 <div id="mymodal" class="elegant-aero modal hide fade">
-		 <form action="../../../insertComment.php" method="post" name="comment">
+		 <form action="./insertComment.php" method="post" name="comment">
 		          <h1>评论<i class="icon-edit"></i><h1>
 				  <p>&nbsp;</p>
 				  <p style="text-align:center"><textarea rows="15" cols="50" placeholder="请在这里写下评论~" name="content"></textarea></p>
