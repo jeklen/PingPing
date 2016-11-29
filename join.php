@@ -188,7 +188,7 @@
 					     <div class="row">
 						 <?php foreach($result2 as $one){?> 
 						    <div class="span5 outlined"><p><img src=<?php echo $one["url"]?>></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
-						 <?php}??
+						 <?php}?>
 						 </div>
 					</div>
 				</div>
