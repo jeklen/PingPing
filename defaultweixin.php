@@ -26,18 +26,18 @@ class DefaultWeixin extends wxmessage {
                 case 'joke':
                    $this->xiaohua();
                    break;
-	        case 'aipinpin':
-		   $this->introduction();
-	           break;
-/*		case '我的活动':
-		   $this->re_activity($data);
-		   break;
-		case '我加入的':
-		   $this->re_activity_join($data);
-	           break;
-		case '我发起的':
-		   $this->re_activity_initiate($data);
-		   break;*/
+	            case 'aipinpin':
+		           $this->introduction();
+	               break;
+/*		        case '我的活动':
+		           $this->re_activity($data);
+		           break;
+		        case '我加入的':
+		           $this->re_activity_join($data);
+	               break;
+		        case '我发起的':
+		           $this->re_activity_initiate($data);
+		           break;*/
                 default:
                    $this->text($input);
                    break;
@@ -161,7 +161,7 @@ class DefaultWeixin extends wxmessage {
 		else{
 		$sql2 = "SELECT 'id'
 		         FROM 'activity'
-			 WHERE 'id'  LIKE  '{$result1[0]['activity_id']}'";
+			     WHERE 'id'  LIKE  '{$result1[0]['activity_id']}'";
 		$result2 = $mysql->getData($sql2);
 		$post = array( 
 			array(
