@@ -26,10 +26,10 @@ class DefaultWeixin extends wxmessage {
                 case 'joke':
                    $this->xiaohua();
                    break;
-	            case 'aipinpin':
+/*	            case 'aipinpin':
 		           $this->introduction();
 	               break;
-/*		        case '我的活动':
+		        case '我的活动':
 		           $this->re_activity($data);
 		           break;
 		        case '我加入的':
@@ -130,17 +130,17 @@ class DefaultWeixin extends wxmessage {
     /**
      * return 'aipinpin'
      */
-     private function introduction() {
+/*     private function introduction() {
 	 $text = "爱拼拼是一个在线的拼团平台。您可以在这里发布活动，召集志同道合的小伙伴一起吃喝玩乐，或者约图自习。希望爱拼拼能给您的校园生活带来便利与舒心！\n现在就发布您的第一个活动吧！";
 	 $xml = $this->outputText($text);
 	 header('Content-Type: application/xml');
 	 echo $xml;
-	}
+	}*/
 	
      /**
       * return '我的活动'
       */
-     private function re_activity($data){
+/*     private function re_activity($data){
 	 $mysql = new SaeMysql();
 	 $openid = $this->escape($data->FromUserName);
 	 $sql1 = "SELECT 'user_id' , 'joiner_id'
@@ -182,12 +182,12 @@ class DefaultWeixin extends wxmessage {
         ); 
         $this->outputNews($post); 
 		}		
-	}
+	}*/
 	
 	/**
 	 * return '我加入的'
 	 */
-	private function re_activity_join($data){
+/*	private function re_activity_join($data){
 		$mysql = new SaeMysql();
 		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT joiner_id
@@ -229,12 +229,12 @@ class DefaultWeixin extends wxmessage {
         ); 
         $this->outputNews($post);
 		}
-	}
+	}*/
 	
 	/**
 	 * return '我发起的'
 	 */
-	private function re_activity_initiate($data){
+/*	private function re_activity_initiate($data){
 		$mysql = new SaeMysql();
 		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT 'user_id'
@@ -276,7 +276,7 @@ class DefaultWeixin extends wxmessage {
         ); 
         $this->outputNews($post);
 		}
-	}
+	}*/
 	
     /**
      * return welcome msg
