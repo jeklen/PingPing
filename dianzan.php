@@ -1,11 +1,4 @@
- <?php
-/**
- * Date: 2016/11/25
- * Time: 15:56
- */
-
-
-require 'weixin.class.php';
+<?phprequire 'weixin.class.php';
 ini_set('session.use_cookies', 0);
 if($_GET['code']){
     $ret = wxmessage::getAuthToken($_GET['code']);
@@ -21,7 +14,6 @@ $mysql = new SaeMysql();
 $mysql->setCharset("utf8");
 $query = "SELECT * FROM user WHERE id = '$sessionId'";
 $result = $mysql->runSql($query);
-
 $row = $result->fetch_assoc();
 if ($row['dianzan'] == 0) {
     if ($result->num_rows == 1) {
@@ -34,7 +26,6 @@ if ($row['dianzan'] == 0) {
     header("location: diangezan.php");
     die;
 }
-
 header("content-type:text/html;charset=utf-8"); 
 ?> 
 <!DOCTYPE html>
@@ -94,10 +85,10 @@ header("content-type:text/html;charset=utf-8");
                     <a href="#zanshu" class="link">点个赞</a>
                 </li>
                 <li>
-                    <a href="#showus" class="link">我们</a>
+                    <a href="#showus" class="link">了解我们</a>
                 </li>
                 <li>
-                    <a href="#contactgit" class="link">Contact</a>
+                    <a href="#contactgit" class="link">联系我们</a>
                 </li>
             </ul>
         </div>
@@ -115,7 +106,7 @@ header("content-type:text/html;charset=utf-8");
 				<p>如果觉得我们做的不错的话，就给我们点个赞吧~</p>				
 			</div>
 			<span id="btn">
-				<i class="iconfont"></i> 点击
+				<i class="iconfont"></i> 点赞
 			</span>
 			<script type="text/javascript">
 			(function ($) {
@@ -176,14 +167,22 @@ header("content-type:text/html;charset=utf-8");
     </div>
     <div class="row" id="showus">
         <div class="col-md-6 col-sm-12 ">
-            <h1>我们</h1>
-            <h2>我们是社会主义好青年</h2>
+		    <h1>了解我们</h1>
+            <p>7个信安专业的征途者</p>
+			<p>7个不断探索的学习者</p>
+			<p>20岁的秋雨下得很急</p>
+			<p>20岁的步履走的懵懂</p>
+			<p>20岁，却从未停在原地</p>
+			<p>缘分不停歇</p>
+			<p>拼拼不止步</p>
         </div>
     </div>
     <div class="row" id="contactgit">
         <div class="col-md-6 col-sm-12">
             <h1>联系我们</h1>
-            <h2>我们的github<a href="https://github.com/ZhangQiaolun/PingPing"> 链接</a></h2>
+			<p>感兴趣？有bug？有建议？<p>
+			<p>联系我们，我们一起成长！<p>
+            <h2>我们的GitHub<a href="https://github.com/ZhangQiaolun/PingPing"> 链接</a></h2>
         </div>
     </div>
 
