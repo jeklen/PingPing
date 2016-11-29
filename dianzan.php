@@ -1,4 +1,5 @@
-<?phprequire 'weixin.class.php';
+<?php
+require 'weixin.class.php';
 ini_set('session.use_cookies', 0);
 if($_GET['code']){
     $ret = wxmessage::getAuthToken($_GET['code']);

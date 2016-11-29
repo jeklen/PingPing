@@ -98,7 +98,6 @@
 	$sql2="select * from activity order by id desc limit $start,$pagesize";
 	$result2=$link->getData($sql2);
 	
-
 ?>
     	
    <div class="container-fluid" style="background-image:url(./bgi.jpg);">
@@ -187,10 +186,9 @@
 					<div>&nbsp;</div>
 					<div class="span12"><h2>热门活动</h2>
 					     <div class="row">
-						    <div class="span5 outlined"><p>热门活动1</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
-							<div class="span5 outlined"><p>热门活动2</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
-							<div class="span5 outlined"><p>热门活动3</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
-							<div class="span5 outlined"><p>热门活动4</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
+						 <?php foreach($result2 as $one){?> 
+						    <div class="span5 outlined"><p><img src=<?php echo $one["url"]?>></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
+						 <?php}??
 						 </div>
 					</div>
 				</div>
@@ -262,4 +260,4 @@
 	      <p style="text-align:center">版权@大学生拼拼平台</p>
 	  </div>
 	</div>
-</html>
+</html
