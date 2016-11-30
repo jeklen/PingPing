@@ -1,9 +1,26 @@
 <?php
 
 require 'weixin.class.php';
+$flag=0;  
+ob_start(); 
+header("content-type:text/xml;charset=utf-8");  
+if($_GET['code']){ 
+        $flag=1;
+        $ret = wxmessage::getAuthToken($_GET['code']); 
+        if(isset($ret['openid'])){ 
+            $openid = $ret['openid']; 
+        } 
+    $sessionId = md5($openid);
+    session_id($sessionId);
+    session_start();
+    $_SESSION['user_id']=$sessionId;   
+ }
+else {
+   session_start();
+}   
+$user_id=$_SESSION['user_id'];
 
 class DefaultWeixin extends wxmessage {
-
 
     public function processRequest($data) {
         // $input is the content that user inputs
@@ -141,7 +158,6 @@ class DefaultWeixin extends wxmessage {
 	 */
 	private function re_activity_initiate($data){
 	    $mysql = new SaeMysql();
-		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT activity_id
 		         FROM   activity_user_joiner
 				 WHERE  user_id = '$openid'
@@ -184,7 +200,6 @@ class DefaultWeixin extends wxmessage {
 	 */
 	private function re_activity_join($data){
 	    $mysql = new SaeMysql();		
-		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT activity_id
 		         FROM   activity_user_joiner
 				 WHERE  joiner_id = '$openid'
@@ -227,7 +242,6 @@ class DefaultWeixin extends wxmessage {
 	 */
 	private function re_activity($data){
 	    $mysql = new SaeMysql();
-		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT activity_id
 		         FROM   activity_user_joiner
 				 WHERE  user_id = '$openid' OR joiner_id = '$openid'
