@@ -111,7 +111,7 @@ class DefaultWeixin extends wxmessage {
      * return jokes
      */
     private function xiaohua() {
-        $text = "你好，亲爱的朋友，我可能不在电脑旁。先看个笑话吧。有个小姑娘穿了一件白色大衣在等车，一个熊孩子把巧克力雪糕整个拍她身上了，孩子他妈说对不起孩子很皮，姑娘蹲下身和蔼的说：小朋友，我们拉钩，以后谁在大马路上瞎闹谁就死全家好不好？孩子他妈吓尿了~";
+        $text = "你好，亲爱的朋友，我可能不在电脑旁。先看个笑话吧。\n朋友A：其实咱们和历史名人没啥区别，我要是活在几千年前，没准也是个名人。\n朋友B：你这么说就错了。\nA：怎么了？\nB：苹果砸在牛顿的头上，牛顿发现了万有引力定律；苹果砸在你的头上，你只会觉得这个苹果吃起来味道真不错。";
         $xml = $this->outputText($text);
         header('Content-Type: application/xml');
         echo $xml;
