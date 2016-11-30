@@ -160,15 +160,15 @@ class DefaultWeixin extends wxmessage {
 		else{
 		    $sql2 = "SELECT *
 		         FROM activity
-				 WHERE id = '$result1[0][activity_id]'";
+				 WHERE id = '$result1[0]['activity_id']'";
 		    $result2 = $mysql->getData($sql2);
 		    $post = array( 
 			    array(
 			        'title' => "即将开始的活动",
-				    'discription' => "活动名称：".$result2[0][activity_name]."\n".
-				                     "活动时间：".$result2[0][activity_time]."\n".
-								     "活动地点：".$result2[0][activity_place]."\n".
-								     "活动描述：".$result2[0][activity_describe]."\n";				             
+				    'discription' => "活动名称：".$result2[0]['activity_name']."\n".
+				                     "活动时间：".$result2[0]['activity_time']."\n".
+								     "活动地点：".$result2[0]['activity_place']."\n".
+								     "活动描述：".$result2[0]['activity_describe']."\n";				             
 				    'picurl' => "",
 				    'url' => "",
 				)
@@ -200,15 +200,15 @@ class DefaultWeixin extends wxmessage {
 		else{
 		    $sql2 = "SELECT *
 		             FROM activity
-				     WHERE id = '$result1[0][activity_id]'";
+				     WHERE id = '$result1[0]['activity_id']'";
 		    $result2 = $mysql->getData($sql2);
 		    $post = array( 
 			    array(
 			        'title' => "我加入的活动",
-				    'discription' => "活动名称：".$result2[0][activity_name]."\n".
-				                     "活动时间：".$result2[0][activity_time]."\n".
-								     "活动地点：".$result2[0][activity_place]."\n".
-								     "活动描述：".$result2[0][activity_describe]."\n";				             
+				    'discription' => "活动名称：".$result2[0]['activity_name']."\n".
+				                     "活动时间：".$result2[0]['activity_time']."\n".
+								     "活动地点：".$result2[0]['activity_place']."\n".
+								     "活动描述：".$result2[0]['activity_describe']."\n";				             
 				    'picurl' => "",
 				    'url' => "",    
 				)
@@ -240,15 +240,15 @@ class DefaultWeixin extends wxmessage {
 		else{
 		    $sql2 = "SELECT *
 		            FROM activity
-				    WHERE id = '$result1[0][activity_id]'";
+				    WHERE id = '$result1[0]['activity_id']'";
 		    $result2 = $mysql->getData($sql2);
 		    $post = array( 
 			    array(
 			        'title' => "我发起的活动",
-				    'discription' => "活动名称：".$result2[0][activity_name]."\n".
-				                     "活动时间：".$result2[0][activity_time]."\n".
-								     "活动地点：".$result2[0][activity_place]."\n".
-								     "活动描述：".$result2[0][activity_describe]."\n";				             
+				    'discription' => "活动名称：".$result2[0]['activity_name']."\n".
+				                     "活动时间：".$result2[0]['activity_time']."\n".
+								     "活动地点：".$result2[0]['activity_place']."\n".
+								     "活动描述：".$result2[0]['activity_describe']."\n";				             
 				'picurl' => "",
 				'url' => "", 
 				)
