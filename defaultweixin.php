@@ -142,7 +142,7 @@ class DefaultWeixin extends wxmessage {
 				 ORDER BY  'activity_time' desc";
 	    $result1 = $mysql->getData($sql1);
 		
-		//如果还没有参加过活动
+	/*	//如果还没有参加过活动
 		if (empty($result1)){
 			$text = "您还没有参加过活动，现在开始参加一个活动吧！";
 			$xml = $this->outputText($text);
@@ -151,7 +151,7 @@ class DefaultWeixin extends wxmessage {
 		}
 		
 		//已经参加过活动
-		else{
+		else{  */
 		    $sql2 = "SELECT 'id'
 		            FROM 'activity'
 				    WHERE 'id'  LIKE  '{$result1[0]['activity_id']}'";
@@ -168,7 +168,7 @@ class DefaultWeixin extends wxmessage {
 				)
             ); 
         $this->outputNews($post);
-		}
+	//	}
 	} 
 	
     /**
