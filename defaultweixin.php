@@ -137,13 +137,94 @@ class DefaultWeixin extends wxmessage {
 	} 
 	
 	/**
+	 * return myactivity
+	 */
+	private function re_activity($data){
+	    $mysql = new SaeMysql();
+		$openid = $this->escape($data->FromUserName);
+		$sql1 = "SELECT activity_id
+		         FROM   activity_user_joiner
+				 WHERE  user_id = '$openid' OR joiner_id = '$openid'
+		         ORDER BY activity_time desc";
+		$result1 = $mysql->getData($sql1);
+		
+		//如果还没有发起或参加活动
+		if  (empty($result1)){
+			$text = "您还没有发起或参加过活动，现在开始尝试加入一个活动吧！";
+			$xml = $this->outputText($text);
+			header('Content-Type: application/xml');
+			echo $xml;
+		}
+		
+		//已经有过活动信息
+		else{
+		    $sql2 = "SELECT *
+		         FROM activity
+				 WHERE id = '$result1[0][activity_id]'";
+		    $result2 = $mysql->getData($sql2);
+		    $post = array( 
+			    array(
+			        'title' => "即将开始的活动",
+				    'discription' => "活动名称：".$result2[0][activity_name]."\n".
+				                     "活动时间：".$result2[0][activity_time]."\n".
+								     "活动地点：".$result2[0][activity_place]."\n".
+								     "活动描述：".$result2[0][activity_describe]."\n";				             
+				    'picurl' => "",
+				    'url' => "",
+				)
+            ); 
+            $this->outputNews($post); 
+		}		
+	}
+
+	/**
+	 * return myjoin
+	 */
+	private function re_activity_join($data){
+		$openid = $this->escape($data->FromUserName);
+		$sql1 = "SELECT activity_id
+		         FROM   activity_user_joiner
+				 WHERE  joiner_id = '$openid'
+				 ORDER BY  activity_time desc";
+	    $result1 = $mysql->getData($sql1);
+		
+		//如果还没有参加过活动
+		if (empty($result1)){
+			$text = "您还没有参加过活动，现在开始参加一个活动吧！";
+			$xml = $this->outputText($text);
+			header('Content-Type: application/xml');
+			echo $xml;
+		}
+		
+		//已经参加过活动
+		else{
+		    $sql2 = "SELECT *
+		             FROM activity
+				     WHERE id = '$result1[0][activity_id]'";
+		    $result2 = $mysql->getData($sql2);
+		    $post = array( 
+			    array(
+			        'title' => "我加入的活动",
+				    'discription' => "活动名称：".$result2[0][activity_name]."\n".
+				                     "活动时间：".$result2[0][activity_time]."\n".
+								     "活动地点：".$result2[0][activity_place]."\n".
+								     "活动描述：".$result2[0][activity_describe]."\n";				             
+				    'picurl' => "",
+				    'url' => "",    
+				)
+            ); 
+            $this->outputNews($post);
+		}
+	}
+	
+	/**
 	 * return myinit
 	 */
 	private function re_activity_initiate($data){
 		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT activity_id
 		         FROM   activity_user_joiner
-				 WHERE  user_id = '{$openid}'
+				 WHERE  user_id = '$openid'
 				 ORDER BY  activity_time desc";
 		$result1 = $mysql->getData($sql1);
 		
@@ -159,15 +240,15 @@ class DefaultWeixin extends wxmessage {
 		else{
 		    $sql2 = "SELECT *
 		            FROM activity
-				    WHERE id = '{$result1[0]}'";
+				    WHERE id = '$result1[0][activity_id]'";
 		    $result2 = $mysql->getData($sql2);
 		    $post = array( 
 			    array(
 			        'title' => "我发起的活动",
-				    'discription' => "活动名称：".$result2[activity_name]."\n".
-				                     "活动时间：".$result2[activity_time]."\n".
-								     "活动地点：".$result2[activity_place]."\n".
-								     "活动描述：".$result2[activity_describe]."\n";				             
+				    'discription' => "活动名称：".$result2[0][activity_name]."\n".
+				                     "活动时间：".$result2[0][activity_time]."\n".
+								     "活动地点：".$result2[0][activity_place]."\n".
+								     "活动描述：".$result2[0][activity_describe]."\n";				             
 				'picurl' => "",
 				'url' => "", 
 				)
