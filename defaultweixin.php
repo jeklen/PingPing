@@ -29,6 +29,9 @@ class DefaultWeixin extends wxmessage {
 				case 'aipinpin':
 				   $this->aboutUs();
 				   break;
+				case 'myjoin':
+				   $this->re_activity_join($data);
+				   break;
                 default:
                    $this->text($input);
                    break;
@@ -125,6 +128,47 @@ class DefaultWeixin extends wxmessage {
 		$xml = $this->outputText($text);
 		header('Content-Type: application/xml');
 		echo $xml;
+	} 
+	
+	/**
+	 * return myjoin
+	 */
+	private function re_activity_join($data) {
+		$mysql = new SaeMysql();
+		$openid = $this->escape($data->FromUserName);
+		$sql1 = "SELECT joiner_id
+		         FROM   'activity_user_joiner'
+				 WHERE  'joiner_id'  LIKE  '{$openid}'
+				 ORDER BY  'activity_time' desc";
+	    $result1 = $mysql->getData($sql1);
+		
+		//如果还没有参加过活动
+		if (empty($result1)){
+			$text = "您还没有参加过活动，现在开始参加一个活动吧！";
+			$xml = $this->outputText($text);
+			header('Content-Type: application/xml');
+			echo $xml;
+		}
+		
+		//已经参加过活动
+		else{
+		    $sql2 = "SELECT 'id'
+		            FROM 'activity'
+				    WHERE 'id'  LIKE  '{$result1[0]['activity_id']}'";
+		    $result2 = $mysql->getData($sql2);
+		    $post = array( 
+			    array(
+			        'title' => "我加入的活动",
+				    'discription' => "活动名称：".$result2['activity_name']."\n".
+				                     "活动时间：".$result2['activity_time']."\n".
+								     "活动地点：".$result2['activity_place']."\n".
+								     "活动描述：".$result2['activity_describe']."\n";				             
+				    'picurl' => "",
+				    'url' => "",
+				)
+            ); 
+        $this->outputNews($post);
+		}
 	} 
 	
     /**
