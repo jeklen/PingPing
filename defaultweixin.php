@@ -114,7 +114,7 @@ class DefaultWeixin extends wxmessage {
         $posts = array(
             array(
                 'title' => '福利来了',
-                'discription' => $text,
+                'description' => $text,
                 'picurl' => 'http://mmsns.qpic.cn/mmsns/XWia2Xj7RZ8mhQaESostBicFaX2HjVBbJYKKCBk9PkuicKrSZdfNL7XAw/0',
                 'url' => 'http://mp.weixin.qq.com/mp/appmsg/show?__biz=MjM5MDE4Njg2MQ==&appmsgid=10000009&itemidx=1#wechat_redirect',
             )
@@ -180,11 +180,11 @@ class DefaultWeixin extends wxmessage {
 		    $result2 = $mysql->getData($sql2);
 		    $posts = array( 
 			    array(
-			        'title' => '我发起的活动:\n 活动名称：'.$result2[0]['activity_name'].'\n'.
-				                               '活动时间：'.$result2[0]['activity_time'].'\n'.
-								               '活动地点：'.$result2[0]['activity_place'].'\n'.
-								               '活动描述：'.$result2[0]['activity_describe'].'\n',
-				    'discription' => '',			             
+			        'title' => '我发起的活动',
+				    'description' => '活动名称：'.$result2[0]['activity_name'].'\n'.
+				                     '活动时间：'.$result2[0]['activity_time'].'\n'.
+								     '活动地点：'.$result2[0]['activity_place'].'\n'.
+								     '活动描述：'.$result2[0]['activity_describe'].'\n',         		             
 				    'picurl' => '',
 				    'url' => '',
 				)
@@ -222,11 +222,11 @@ class DefaultWeixin extends wxmessage {
 		    $result2 = $mysql->getData($sql2);
 		    $posts = array( 
 			    array(
-			        'title' => '我加入的活动\n 活动名称：'.$result2[0]['activity_name'].'\n'.
-				                              '活动时间：'.$result2[0]['activity_time'].'\n'.
-								              '活动地点：'.$result2[0]['activity_place'].'\n'.
-								              '活动描述：'.$result2[0]['activity_describe'].'\n',	
-					'discription' => '',		             
+			        'title' => '我加入的活动',	
+					'description' => '活动名称：'.$result2[0]['activity_name'].'\n'.
+				                     '活动时间：'.$result2[0]['activity_time'].'\n'.
+						             '活动地点：'.$result2[0]['activity_place'].'\n'.
+								     '活动描述：'.$result2[0]['activity_describe'].'\n',		             
 				    'picurl' => '',
 				    'url' => '',    
 				)
@@ -264,11 +264,11 @@ class DefaultWeixin extends wxmessage {
 		    $result2 = $mysql->getData($sql2);
 		    $posts = array( 
 			    array(
-			        'title' => '即将开始的活动\n活动名称：'.$result2[0]['activity_name'].'\n'.
-				                               '活动时间：'.$result2[0]['activity_time'].'\n'.
-								               '活动地点：'.$result2[0]['activity_place'].'\n'.
-								               '活动描述：'.$result2[0]['activity_describe'].'\n',	
-				    'discription' => '', 		             
+			        'title' => '即将开始的活动',
+				    'description' => '活动名称：'.$result2[0]['activity_name'].'\n'.
+				                     '活动时间：'.$result2[0]['activity_time'].'\n'.
+								     '活动地点：'.$result2[0]['activity_place'].'\n'.
+								     '活动描述：'.$result2[0]['activity_describe'].'\n',	 		             
 				    'picurl' => '',
 				    'url' => '',
 				)
