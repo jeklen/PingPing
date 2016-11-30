@@ -163,7 +163,7 @@ class DefaultWeixin extends wxmessage {
 				    'discription' => '活动名称：'.$result2[0]['activity_name'].'\n'.
 				                     '活动时间：'.$result2[0]['activity_time'].'\n'.
 								     '活动地点：'.$result2[0]['activity_place'].'\n'.
-								     '活动描述：'.$result2[0]['activity_describe'].'\n';				             
+								     '活动描述：'.$result2[0]['activity_describe'].'\n',				             
 				'picurl' => '',
 				'url' => '', 
 				)
