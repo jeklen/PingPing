@@ -219,7 +219,7 @@
 				<div class="row">
 				    <div class="span2">
 				    <IMG SRC=<?php $id=$obj['id'];
-					            echo $obj['picdirectory'] ?> width=100% height=110%>
+					            echo $obj['picdirectory'] ?> width=100% height=150%>
 					</div>
 					<div class="span10">
 					<h4><?php echo $obj['activity_name'] ?></h4>
