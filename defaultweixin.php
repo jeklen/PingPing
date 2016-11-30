@@ -180,13 +180,13 @@ class DefaultWeixin extends wxmessage {
 		    $result2 = $mysql->getData($sql2);
 		    $posts = array( 
 			    array(
-			        'title' => '我发起的活动',
-				    'discription' => '活动名称：'.$result2[0]['activity_name']."n".
+			        'Title' => '我发起的活动',
+				    'Description' => '活动名称：'.$result2[0]['activity_name']."n".
 				                     '活动时间：'.$result2[0]['activity_time']."\n".
 								     '活动地点：'.$result2[0]['activity_place']."\n".
 								     '活动描述：'.$result2[0]['activity_describe']."\n",         		             
-				    'picurl' => '',
-				    'url' => '',
+				    'PicUrl' => '',
+				    'Url' => '',
 				)
             ); 
             $xml = $this->outputNews($posts);
@@ -222,13 +222,13 @@ class DefaultWeixin extends wxmessage {
 		    $result2 = $mysql->getData($sql2);
 		    $posts = array( 
 			    array(
-			        'title' => '我加入的活动',	
-					'description' => '活动名称：'.$result2[0]['activity_name'].'\n'.
-				                     '活动时间：'.$result2[0]['activity_time'].'\n'.
-						             '活动地点：'.$result2[0]['activity_place'].'\n'.
-								     '活动描述：'.$result2[0]['activity_describe'].'\n',		             
-				    'picurl' => '',
-				    'url' => '',    
+			        'Title' => '我加入的活动',	
+					'Description' => '活动名称：'.$result2[0]['activity_name']."\n".
+				                     '活动时间：'.$result2[0]['activity_time']."\n".
+						             '活动地点：'.$result2[0]['activity_place']."\n".
+								     '活动描述：'.$result2[0]['activity_describe']."\n",		             
+				    'PicUrl' => '',
+				    'Url' => '',    
 				)
             ); 
             $xml = $this->outputNews($posts);
@@ -264,13 +264,13 @@ class DefaultWeixin extends wxmessage {
 		    $result2 = $mysql->getData($sql2);
 		    $posts = array( 
 			    array(
-			        'title' => '即将开始的活动',
-				    'description' => '活动名称：'.$result2[0]['activity_name'].'\n'.
-				                     '活动时间：'.$result2[0]['activity_time'].'\n'.
-								     '活动地点：'.$result2[0]['activity_place'].'\n'.
-								     '活动描述：'.$result2[0]['activity_describe'].'\n',	 		             
-				    'picurl' => '',
-				    'url' => '',
+			        'Title' => '即将开始的活动',
+				    'Description' => '活动名称：'.$result2[0]['activity_name']."\n".
+				                     '活动时间：'.$result2[0]['activity_time']."\n".
+								     '活动地点：'.$result2[0]['activity_place']."\n".
+								     '活动描述：'.$result2[0]['activity_describe']."\n",	 		             
+				    'PicUrl' => '',
+				    'Url' => '',
 				)
             ); 
             $xml = $this->outputNews($posts);
