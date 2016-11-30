@@ -5,10 +5,18 @@ Help you find fun guys to do fantastic things
 - 发布活动
 
 http://lovepingping.applinzi.com/publish.php
-- 查看参加活动
-- http://lovepingping.applinzi.com/join.php
-- 一个正在开发的网页
-- http://lovepingping.applinzi.com/group/1/multi/index1.php
+
+- 发布活动
+
+http://lovepingping.applinzi.com/join.php
+
+- 参加活动
+
+http://lovepingping.applinzi.com/dianzan.php
+
+- 点赞页面
+# 微信二维码见主目录下图片
+
 
 # 第二轮sprint
 
