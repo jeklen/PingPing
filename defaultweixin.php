@@ -165,7 +165,7 @@ class DefaultWeixin extends wxmessage {
 								     '活动地点：'.$result2[0]['activity_place'].'\n'.
 								     '活动描述：'.$result2[0]['activity_describe'].'\n',				             
 				'picurl' => '',
-				'url' => '', 
+				'url' => '',
 				)
             ); 
             $this->outputNews($post);
