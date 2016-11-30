@@ -111,7 +111,7 @@ class DefaultWeixin extends wxmessage {
     }
 
     /**
-     * return jokes
+     * return joke
      */
     private function xiaohua() {
         $text = "你好，亲爱的朋友，我可能不在电脑旁。先看个笑话吧。\n朋友A：其实咱们和历史名人没啥区别，我要是活在几千年前，没准也是个名人。\n朋友B：你这么说就错了。\nA：怎么了？\nB：苹果砸在牛顿的头上，牛顿发现了万有引力定律；苹果砸在你的头上，你只会觉得这个苹果吃起来味道真不错。";
@@ -134,13 +134,13 @@ class DefaultWeixin extends wxmessage {
 	 * return myinit
 	 */
 	private function re_activity_initiate($data){
-	    $mysql1 = new SaeMysql();
+	    $mysql = new SaeMysql();
 		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT activity_id
 		         FROM   activity_user_joiner
 				 WHERE  user_id = '$openid'
 				 ORDER BY  activity_time desc";
-		$result1 = $mysql1->getData($sql1);
+		$result1 = $mysql->getData($sql1);
 		
 		//如果还没有发起过活动
 		if (empty($result1)){
@@ -152,12 +152,11 @@ class DefaultWeixin extends wxmessage {
 		
 		//已经发布过活动
 		else{
-			$mysql2 = new SaeMysql();
 		    $sql2 = "SELECT *
 		            FROM activity
 				    WHERE id = '$result1[0]['activity_id']'";
-		    $result2 = $mysql2->getData($sql2);
-		    $post = array( 
+		    $result2 = $mysql->getData($sql2);
+		    $posts = array( 
 			    array(
 			        'title' => '我发起的活动',
 				    'discription' => '活动名称：'.$result2[0]['activity_name'].'\n'.
@@ -168,7 +167,7 @@ class DefaultWeixin extends wxmessage {
 				'url' => '',
 				)
             ); 
-            $this->outputNews($post);
+            $this->outputNews($posts);
 		}
 	}
 	
