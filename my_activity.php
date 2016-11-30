@@ -80,7 +80,7 @@
 					<p><span class="label label-info">活动简介</span></p>
 					<p><?php echo $result1['activity_describe'] ?></p>
 					<p style="text-align:right"><a class="btn btn-danger" href="./show.php?id=<?php echo $id?>"><i class="icon-star icon-white"></i>查看</a></p>
-					<p style="text-align:right"><a class="btn btn-danger" href="./show.php?id=<?php echo $id?>"><i class="icon-star icon-white"></i>删除活动</a></p>
+					<p style="text-align:right"><a class="btn btn-danger" href="./deleteJoinedActivity.php?id=<?php echo $id?>"><i class="icon-star icon-white"></i>删除活动</a></p>
 					</div>
 				</div>
 				<?php } }?>
