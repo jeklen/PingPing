@@ -29,7 +29,7 @@ class DefaultWeixin extends wxmessage {
 				case 'aipinpin':
 				   $this->aboutUs();
 				   break;
-				case "我加入的":
+				case "myJoin":
 				   $this->re_activity_join($data);
 				   break;
                 default:
@@ -130,7 +130,7 @@ class DefaultWeixin extends wxmessage {
 		echo $xml;
 	} 
 	/**
-	 * return "我加入的"
+	 * return myJoin
 	 */
 	private function re_activity_join($data) {
 		$mysql = new SaeMysql();
