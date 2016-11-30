@@ -10,7 +10,7 @@
 		echo'<script type="text/javascript">location.href="../../../join.php"</script>';
 	}
 	$link=new SaeMysql();
-	$sql4="delete from activity_user_joiner where where activity_id='$id' and joiner_id='$user_id'";
+	$sql4="delete from activity_user_joiner where where activity_id=$show_id and joiner_id='$user_id'";
 	$link->runSql($sql4);
 	echo'<script type="text/javascript">location.href="../../../join.php"</script>';		
 ?>

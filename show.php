@@ -87,7 +87,7 @@
 	//获取发起人ID
 	$uid=$result['user_id'];
 	//获取发起人联系信息
-	$sql3="select top 1 * from user where id='$uid' order by tel";
+	$sql3="select * from user where id='$uid'";
 	$result3=$link->getLine($sql3);
 	//获取评论数目
 	$sql1="select * from comments where activity_id=$show_id";
