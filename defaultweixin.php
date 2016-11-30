@@ -140,13 +140,13 @@ class DefaultWeixin extends wxmessage {
 	 * return myactivity
 	 */
 	private function re_activity($data){
-	    $mysql = new SaeMysql();
+	    $mysql1 = new SaeMysql();
 		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT activity_id
 		         FROM   activity_user_joiner
 				 WHERE  user_id = '$openid' OR joiner_id = '$openid'
 		         ORDER BY activity_time desc";
-		$result1 = $mysql->getData($sql1);
+		$result1 = $mysql1->getData($sql1);
 		
 		//如果还没有发起或参加活动
 		if  (empty($result1)){
@@ -158,10 +158,11 @@ class DefaultWeixin extends wxmessage {
 		
 		//已经有过活动信息
 		else{
+			$mysql2 = new SaeMysql();
 		    $sql2 = "SELECT *
 		         FROM activity
 				 WHERE id = '$result1[0]['activity_id']'";
-		    $result2 = $mysql->getData($sql2);
+		    $result2 = $mysql2->getData($sql2);
 		    $post = array( 
 			    array(
 			        'title' => "即将开始的活动",
@@ -181,13 +182,13 @@ class DefaultWeixin extends wxmessage {
 	 * return myjoin
 	 */
 	private function re_activity_join($data){
-	    $mysql = new SaeMysql();
+	    $mysql1 = new SaeMysql();
 		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT activity_id
 		         FROM   activity_user_joiner
 				 WHERE  joiner_id = '$openid'
 				 ORDER BY  activity_time desc";
-	    $result1 = $mysql->getData($sql1);
+	    $result1 = $mysql1->getData($sql1);
 		
 		//如果还没有参加过活动
 		if (empty($result1)){
@@ -199,10 +200,11 @@ class DefaultWeixin extends wxmessage {
 		
 		//已经参加过活动
 		else{
+			$mysql2 = new SaeMysql();
 		    $sql2 = "SELECT *
 		             FROM activity
 				     WHERE id = '$result1[0]['activity_id']'";
-		    $result2 = $mysql->getData($sql2);
+		    $result2 = $mysql2->getData($sql2);
 		    $post = array( 
 			    array(
 			        'title' => "我加入的活动",
@@ -222,13 +224,13 @@ class DefaultWeixin extends wxmessage {
 	 * return myinit
 	 */
 	private function re_activity_initiate($data){
-	    $mysql = new SaeMysql();
+	    $mysql1 = new SaeMysql();
 		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT activity_id
 		         FROM   activity_user_joiner
 				 WHERE  user_id = '$openid'
 				 ORDER BY  activity_time desc";
-		$result1 = $mysql->getData($sql1);
+		$result1 = $mysql1->getData($sql1);
 		
 		//如果还没有发起过活动
 		if (empty($result1)){
@@ -240,10 +242,11 @@ class DefaultWeixin extends wxmessage {
 		
 		//已经发布过活动
 		else{
+			$mysql2 = new SaeMysql();
 		    $sql2 = "SELECT *
 		            FROM activity
 				    WHERE id = '$result1[0]['activity_id']'";
-		    $result2 = $mysql->getData($sql2);
+		    $result2 = $mysql2->getData($sql2);
 		    $post = array( 
 			    array(
 			        'title' => "我发起的活动",
