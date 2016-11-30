@@ -173,7 +173,9 @@ class DefaultWeixin extends wxmessage {
 				'url' => '',
 				)
             ); 
-            $this->outputNews($posts);
+            $xml = $this->outputNews($posts);
+            header('Content-Type: application/xml');
+            echo $xml;
 		}
 	}
 	
@@ -214,7 +216,9 @@ class DefaultWeixin extends wxmessage {
 				    'url' => '',    
 				)
             ); 
-            $this->outputNews($posts);
+            $xml = $this->outputNews($posts);
+            header('Content-Type: application/xml');
+            echo $xml;
 		}
 	}
 
@@ -255,8 +259,10 @@ class DefaultWeixin extends wxmessage {
 				    'url' => '',
 				)
             ); 
-            $this->outputNews($posts); 
-		}		
+            $xml = $this->outputNews($posts);
+            header('Content-Type: application/xml');
+            echo $xml;
+		} 		
 	}
 	
     /**
