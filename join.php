@@ -186,9 +186,9 @@
 					<div>&nbsp;</div>
 					<div class="span12"><h2>热门活动</h2>
 					     <div class="row">
-						 <?php foreach($result2 as $one){?> 
-						    <div class="span5 outlined"><p><img src=<?php echo $one["url"];?>></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
-						 <?php}?>
+						 <?php foreach($result2 as $one){ ?> 
+						    <div class="span5 outlined"><p><img src=<?php echo $one['picdirectory'];?>></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div>
+						 <?php } ?>
 						 </div>
 					</div>
 				</div>
