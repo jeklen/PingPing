@@ -37,7 +37,7 @@ id user_name tel qq activity_id_initiate activity_id_join
 -->
 <div class="dark-matter">
 <form enctype="multipart/form-data"  method="post" name="changer" role="form" action="insertPublish.php"  accept-charset="utf-8" onsubmit="var the_result=check_form();return the_result;">
-    <div  class="titile" > 活动信息</div> 
+    <div  class="title" > 活动信息</div> 
 	<div class="form-group">
         <label for="activity_name">活动名称</label>
         <input name = "activity_name" type="text" class="form-control" id="activity_name" placeholder="请输入活动名称">
@@ -58,13 +58,13 @@ id user_name tel qq activity_id_initiate activity_id_join
         <label for="activity_place">活动地点</label>
         <input type="text" class="form-control" id="activity_place" name="activity_place">
     </div>
-	<div class="titile" > 海报上传</div>
+	<div class="title" > 海报上传</div>
     <div class="form-group">
         <label for="inputpicture">上传图片</label>
         <input name = "image" accept="image/jpeg" type="file" id="inputpicture">
         <p class="help-block">请上传jpeg格式的图片</p>
     </div>
-	<div class="titile" > 个人信息</div>
+	<div class="title" > 个人信息</div>
     <div class="form-group">
         <label for="user_name">姓名（必填）</label>
         <input type="text" class="form-control" id="user_name" name="user_name">
