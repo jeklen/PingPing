@@ -181,6 +181,7 @@ class DefaultWeixin extends wxmessage {
 	 * return myjoin
 	 */
 	private function re_activity_join($data){
+	    $mysql = new SaeMysql();
 		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT activity_id
 		         FROM   activity_user_joiner
@@ -221,6 +222,7 @@ class DefaultWeixin extends wxmessage {
 	 * return myinit
 	 */
 	private function re_activity_initiate($data){
+	    $mysql = new SaeMysql();
 		$openid = $this->escape($data->FromUserName);
 		$sql1 = "SELECT activity_id
 		         FROM   activity_user_joiner
