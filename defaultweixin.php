@@ -24,17 +24,23 @@ class DefaultWeixin extends wxmessage {
                     $this->yishengmusic();
                     break;              
                 case 'joke':
-                   $this->xiaohua();
-                   break;
+                    $this->xiaohua();
+                    break;
 				case 'aipinpin':
-				   $this->aboutUs();
-				   break;
+				    $this->aboutUs();
+				    break;
 				case 'myinit':
-				   $this->re_activity_initiate($data);
-				   break;				   
+				    $this->re_activity_initiate($data);
+				    break;				   
+				case 'myjoin':
+                   	$this->re_activity_join($data);
+                    break;		
+                case 'myactivity':
+                    $this->re_activity($data);
+                    break;					
                 default:
-                   $this->text($input);
-                   break;
+                    $this->text($input);
+                    break;
             }         
         }
         // deal with geographical location
@@ -169,6 +175,88 @@ class DefaultWeixin extends wxmessage {
             ); 
             $this->outputNews($posts);
 		}
+	}
+	
+	/**
+	 * return myjoin
+	 */
+	private function re_activity_join($data){
+	    $mysql = new SaeMysql();		
+		$openid = $this->escape($data->FromUserName);
+		$sql1 = "SELECT activity_id
+		         FROM   activity_user_joiner
+				 WHERE  joiner_id = '$openid'
+				 ORDER BY  activity_time desc";
+	    $result1 = $mysql->getData($sql1);
+		
+		//如果还没有参加过活动
+		if (empty($result1)){
+			$text = "您还没有参加过活动，现在开始参加一个活动吧！";
+			$xml = $this->outputText($text);
+			header('Content-Type: application/xml');
+			echo $xml;
+		}
+		
+		//已经参加过活动
+		else{
+		    $sql2 = "SELECT *
+		             FROM activity
+				     WHERE id = '$result1[0]['activity_id']'";
+		    $result2 = $mysql->getData($sql2);
+		    $posts = array( 
+			    array(
+			        'title' => '我加入的活动',
+				    'discription' => '活动名称：'.$result2[0]['activity_name'].'\n'.
+				                     '活动时间：'.$result2[0]['activity_time'].'\n'.
+								     '活动地点：'.$result2[0]['activity_place'].'\n'.
+								     '活动描述：'.$result2[0]['activity_describe'].'\n',			             
+				    'picurl' => '',
+				    'url' => '',    
+				)
+            ); 
+            $this->outputNews($posts);
+		}
+	}
+
+	/**
+	 * return myactivity
+	 */
+	private function re_activity($data){
+	    $mysql = new SaeMysql();
+		$openid = $this->escape($data->FromUserName);
+		$sql1 = "SELECT activity_id
+		         FROM   activity_user_joiner
+				 WHERE  user_id = '$openid' OR joiner_id = '$openid'
+		         ORDER BY activity_time desc";
+		$result1 = $mysql->getData($sql1);
+		
+		//如果还没有发起或参加活动
+		if  (empty($result1)){
+			$text = "您还没有发起或参加过活动，现在开始尝试加入一个活动吧！";
+			$xml = $this->outputText($text);
+			header('Content-Type: application/xml');
+			echo $xml;
+		}
+		
+		//已经有过活动信息
+		else{
+		    $sql2 = "SELECT *
+		         FROM activity
+				 WHERE id = '$result1[0]['activity_id']'";
+		    $result2 = $mysql->getData($sql2);
+		    $posts = array( 
+			    array(
+			        'title' => '即将开始的活动',
+				    'discription' => '活动名称：'.$result2[0]['activity_name'].'\n'.
+				                     '活动时间：'.$result2[0]['activity_time'].'\n'.
+								     '活动地点：'.$result2[0]['activity_place'].'\n'.
+								     '活动描述：'.$result2[0]['activity_describe'].'\n',			             
+				    'picurl' => '',
+				    'url' => '',
+				)
+            ); 
+            $this->outputNews($posts); 
+		}		
 	}
 	
     /**
