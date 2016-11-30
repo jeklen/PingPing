@@ -21,6 +21,7 @@ session_start();
     <title>发布活动</title>
     <meta name="viewport" content="width=device-width", initial-scale="1.0">
     <meta charset="utf-8">
+	body {background-color:#b0c4de;}
     <!--Bootstrap-->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/publish.css" >
@@ -37,7 +38,7 @@ id user_name tel qq activity_id_initiate activity_id_join
 -->
 <div class="dark-matter">
 <form enctype="multipart/form-data"  method="post" name="changer" role="form" action="insertPublish.php"  accept-charset="utf-8" onsubmit="var the_result=check_form();return the_result;">
-    <div  class="title" style="background-color:blue" style="color:black" style="front-size:200%" > 活动信息</div> 
+    <div  class="title" style="background-color:rgb(0,255,255)" style="color:black" style="font-weight:bold" style="front-size:800%" > 活动信息</div> 
 	<div class="form-group">
         <label for="activity_name">活动名称</label>
         <input name = "activity_name" type="text" class="form-control" id="activity_name" placeholder="请输入活动名称">
@@ -58,13 +59,13 @@ id user_name tel qq activity_id_initiate activity_id_join
         <label for="activity_place">活动地点</label>
         <input type="text" class="form-control" id="activity_place" name="activity_place">
     </div>
-	<div class="title" style="background-color:blue" style="color:black" style="front-size:200%" > 海报上传</div>
+	<div class="title" style="background-color:rgb(0,255,255)" style="color:black") style="front-size:800%" > 海报上传</div>
     <div class="form-group">
         <label for="inputpicture">上传图片</label>
         <input name = "image" accept="image/jpeg" type="file" id="inputpicture">
         <p class="help-block">请上传jpeg格式的图片</p>
     </div>
-	<div class="title" style="background-color:blue" style="color:black" style="front-size:200%"  > 个人信息</div>
+	<div class="title" style="background-color:rgb(0,255,255)" style="color:black" style="front-size:800%"  > 个人信息</div>
     <div class="form-group">
         <label for="user_name">姓名（必填）</label>
         <input type="text" class="form-control" id="user_name" name="user_name">
