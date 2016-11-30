@@ -29,6 +29,15 @@ class DefaultWeixin extends wxmessage {
 				case 'aipinpin':
 				   $this->aboutUs();
 				   break;
+				case 'myactivity':
+				   $this->re_activity($data);
+				   break;
+				case 'myjoin':
+				   $this->re_activity_join($data);
+				   break;
+				case 'myinit':
+				   $this->re_activity_initiate($data);
+				   break;
                 default:
                    $this->text($input);
                    break;
@@ -121,7 +130,7 @@ class DefaultWeixin extends wxmessage {
 	 * return aipinpin
 	 */
 	private function aboutUs() {
-		$text = "爱拼拼是一个在线的拼团平台。您可以在这里发布活动，召集志同道合的小伙伴一起吃喝玩乐，或者约图自习。希望爱拼拼能给您的校园生活带来便利与舒心！\n现在，尝试发布您的第一个活动吧！";
+		$text = "爱拼拼是一个在线的拼团平台。您可以在这里发布活动，召集志同道合的小伙伴一起吃喝玩乐，或者约图自习。希望爱拼拼能给您的校园生活带来便利与舒心！\n输入\n1、myactivity获得您的活动信息\n2、myjoin获得您加入的活动信息\n3、myinit获得您发起的活动信息\n4、joke或music或news，获得信息。";
 		$xml = $this->outputText($text);
 		header('Content-Type: application/xml');
 		echo $xml;
