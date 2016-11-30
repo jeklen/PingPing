@@ -130,11 +130,51 @@ class DefaultWeixin extends wxmessage {
 	 * return aipinpin
 	 */
 	private function aboutUs() {
-		$text = "爱拼拼是一个在线的拼团平台。您可以在这里发布活动，召集志同道合的小伙伴一起吃喝玩乐，或者约图自习。希望爱拼拼能给您的校园生活带来便利与舒心！\n输入\n1、myactivity获得您的活动信息\n2、myjoin获得您加入的活动信息\n3、myinit获得您发起的活动信息\n4、joke或music或news，获得信息。";
+		$text = "爱拼拼是一个在线的拼团平台。您可以在这里发布活动，召集志同道合的小伙伴一起吃喝玩乐，或者约图自习。希望爱拼拼能给您的校园生活带来便利与舒心！\n输入以下信息获取回复：\n1、myactivity获得您的活动信息\n2、myjoin获得您加入的活动信息\n3、myinit获得您发起的活动信息\n4、joke\n5、music\n6、news";
 		$xml = $this->outputText($text);
 		header('Content-Type: application/xml');
 		echo $xml;
 	} 
+	
+	/**
+	 * return myinit
+	 */
+	private function re_activity_initiate($data){
+		$openid = $this->escape($data->FromUserName);
+		$sql1 = "SELECT activity_id
+		         FROM   activity_user_joiner
+				 WHERE  user_id = '{$openid}'
+				 ORDER BY  activity_time desc";
+		$result1 = $mysql->getData($sql1);
+		
+		//如果还没有发起过活动
+		if (empty($result1)){
+			$text = "您还没有发起过活动，现在开始发布一个活动吧！";
+			$xml = $this->outputText($text);
+			header('Content-Type: application/xml');
+			echo $xml;
+		}
+		
+		//已经发布过活动
+		else{
+		    $sql2 = "SELECT *
+		            FROM activity
+				    WHERE id = '{$result1[0]}'";
+		    $result2 = $mysql->getData($sql2);
+		    $post = array( 
+			    array(
+			        'title' => "我发起的活动",
+				    'discription' => "活动名称：".$result2[activity_name]."\n".
+				                     "活动时间：".$result2[activity_time]."\n".
+								     "活动地点：".$result2[activity_place]."\n".
+								     "活动描述：".$result2[activity_describe]."\n";				             
+				'picurl' => "",
+				'url' => "", 
+				)
+            ); 
+            $this->outputNews($post);
+		}
+	}
 	
     /**
      * return welcome msg
